@@ -1,0 +1,186 @@
+.sign-progress-bar,
+.custom-progress-bar {
+  background: #ffe8bd;
+  height: 40px;
+  border-radius: 50px;
+}
+.sign-progress-child,
+.custom-progress-child {
+  background: var(--main-color);
+  height: 100%;
+  border-radius: 50px;
+}
+.sign-up-steps-progress {
+  padding-top: 30px;
+  
+  @for $i from 1 through 4 {
+    .step-#{$i} {
+      .sign-progress-child {
+        width: (25% * $i);
+        max-width: 100%;
+
+      }
+      .sign-progress-text {
+        h5:nth-child(#{$i}) {
+          color: var(--main-color);
+          &:after {
+            background: #fff;
+          }
+          &:before {
+            display: none;
+          }
+
+          & ~ h5 {
+            &:after {
+              display: none;
+            }
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sign-progress-text,
+.custom-progress-text {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  h5 {
+    font-size: 0.8rem;
+    color: #000;
+    font-weight: 600;
+    text-align: center;
+    strong {
+      display: block;
+      color: var(--main-color);
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+  }
+}
+
+.sign-progress-text , .custom-progress-text {
+    h5 {
+      font-weight: bold;
+      color: #000;
+      position: relative;
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 15px;
+        height: 15px;
+      }
+      &:after {
+        background: #fff;
+
+        border-radius: 50%;
+      }
+      &:before {
+        background: url("../images/checkbox-mark-small.svg");
+        background-size: 70%;
+        background-position: center center;
+        z-index: 2;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+@for $i from 0 through 2 {
+    .custom-progress-parent.step-#{$i + 1} {
+    .custom-progress-child {
+      width: (50% * $i + 5%);
+      max-width: 100%;
+    }
+    .custom-progress-text {
+      h5:nth-child(#{$i + 1}) {
+        color: var(--main-color);
+        &:after {
+          background: #fff;
+        }
+        &:before {
+          display: none;
+        }
+
+        & ~ h5 {
+          &:after {
+            display: none;
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.home-progress{
+  background: url(../images/progress-bg.png);
+  background-size: 100% 100%;
+  padding: 40px;
+  // display: flex;
+  margin-bottom: 40px;
+  @media (max-width: 575.98px){
+    padding: 40px 15px;
+    display: block;
+  }
+}
+
+h2.home-progress-title {
+  color: #d64f3c;
+  font-size: 1.7rem;
+  font-weight: bold;
+  @media (max-width: 575.98px){
+  	width: 100%;
+  }
+}
+
+.home-progress-bar-parent {
+  height: 35px;
+  background: #fff;
+  flex: 1;
+  margin: 0 30px;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: 575.98px){
+  	width: 100%;
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+
+.home-progress-bar-inner {
+  background: #eb631e;
+  height: 100%;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  animation: leftProgress 4s;
+}
+
+.home-progress-bar-parent h4 {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 1rem;
+  top: 6px;
+  color: #fff;
+}
+@keyframes leftProgress {
+  0%{
+    right: -100%;
+  }
+  100%{
+    right: 0;
+  }
+}

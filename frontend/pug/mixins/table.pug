@@ -1,0 +1,95 @@
+mixin checkbox()
+    .form-check
+        input#flexCheckDefault.form-check-input(type='checkbox' value='')
+        label.form-check-label(for='flexCheckDefault')
+
+mixin table(table)
+
+    if table.filters
+        .table-filters
+            if table.filters.dateFromTo
+                .fiters-from-to 
+                    h3 #{table.filters.dateFromTo.title }
+                    .fiters-from-to-box.first 
+                        h4 من   
+                        input(type="date" class="form-control")
+                    .fiters-from-to-box 
+                        h4 إلى   
+                        input(type="date" class="form-control")
+            if table.filters.selects 
+                each select in table.filters.selects
+                    +select({ options:[select , 'إختر' , 'إختر' , 'إختر' , 'إختر' ] , class:"mx-1 mb-0"})
+
+            if table.filters.btnSort 
+                .btn-filter 
+                    button.btn.hvr-shadow فلترة
+            if table.filters.searchBox 
+            .table-search-box 
+                input(type="text" class="form-control")
+                .icon 
+                    svg
+                        use(href="../../assets/images/icons/icons.svg#search")
+    .table-container(class=table.isInner ? 'inner-padding' : '')
+        if table.buttons 
+            .table-inner-head 
+                h3 #{table.headTitle}
+                .tabl-head-buttons 
+                    each button in table.buttons
+                        +Button(button)
+        .dash-table(class=table.isDataTable ? '' : 'table-responsive')
+            table.table.responsive(id=table.isDataTable ? 'example' : '' class=table.isTheadHidden ? 'isTheadHidden' : '')
+                thead 
+                    if table.isTableCheckbox
+                        th(style="width:30px") 
+                            .form-check(style="width:30px") 
+                                input#table-parent.form-check-input(type='checkbox' value='')
+                                label.form-check-label(for='table-parent')
+                    each field in table.fields
+                        th #{field}
+                tbody
+                    each item , index in table.items
+                        - var number = Math.floor(Math.random() * 1000); 
+
+                        tr 
+                            if table.isTableCheckbox
+                                td(style="width:30px")  
+                                    .form-check(style="width:30px") 
+                                        input.form-check-input(type='checkbox' id="ceack-" + index  value='' class="td-check")
+                                        label.form-check-label(for="ceack-" + index)
+                            each itemTd in item
+                                td!= itemTd
+                            if table.actions
+                                td
+                                    .table-actions
+                                        if table.actions.isButton
+                                            each action in table.actions.list                           
+                                                a(href="#" class="table-action-btn")
+                                                    svg 
+                                                        use(href="../../assets/images/icons/icons.svg#" + action)
+                                        if table.actions.isSwitch 
+                                            .table-action-btn-custom 
+                                                .form-check.form-switch.form-switch-md
+                                                    input.form-check-input(type='checkbox' id="switch" + index role='switch')
+                                                    label.form-check-label(for="switch" + index)
+                                        if table.actions.isAvailableForMe
+
+                                            .available-check 
+                                                input(type="checkbox" id="available-check" + number )
+                                                label(for="available-check" + number class="btn hvr-shadow") متوفر لدي
+                                        if table.actions.isCustomBtn
+                                            +Button({color:table.actions.isCustomBtn.color , name:table.actions.isCustomBtn.name}) 
+                                        if table.actions.isInputNumber
+                                            .table-InputNumber
+                                                form.d-flex.align-items-center(action="")
+                                                    +input_number({})
+
+                                                    button.btnn.btn.btnn-orange.rounded-0.btn-fill حفظ
+                                        if table.actions.isRate
+                                            .table-rating 
+                                                .table-rating-number 
+                                                    svg 
+                                                        use(href="../../assets/images/icons/icons.svg#" + 'star')
+                                                    span 4.9
+                                                .table-rating-progress
+                                                    .progress
+                                                        div(class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100")

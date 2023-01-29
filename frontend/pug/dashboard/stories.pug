@@ -1,0 +1,69 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | القصص
+block content
+    +pageHead(' القصص <span>( 555 )</span>' , null  , {label:'إضافة قصة' , items:[{url:'#' , title:'  سحب منتج من قائمة المنتجات '} , {url:'#' , title:'  اضافة منتج جديد '}]})
+    .row.row-cols-lg-4.row-cols-2 
+        +statusInfo(' ﻗﺼﺺ ﺣﺎﻟﻴﺔ'  , 'orange' , ' 450 ﻗﺼﺔ')
+        +statusInfo('ﻗﺼﺺ ﻣﻨﺘﻬﻴﺔ'  , 'green' , '450 ﻗﺼﺔ ')
+
+    .bargains-page
+        .page-filters-2
+            .inputs-btn
+                +select({label:'' , options:[' الأحدث' , 'حسب القسم']})
+                +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-3 btn-fill' })
+            .table-search-box 
+                input(type="text" class="form-control")
+                .icon 
+                    svg
+                        use(href="../../assets/images/icons/icons.svg#search")
+        .row.row-cols-md-2.row-cols-lg-3.row-cols-xl-3.match-height 
+            .col 
+                +storyBox({progress:'bg-success'})
+            .col   
+                +storyBox({progress:'bg-danger', isDanger:true})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col 
+                +storyBox({progress:'bg-success'})
+            .col   
+                +storyBox({progress:'bg-danger', isDanger:true})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col 
+                +storyBox({progress:'bg-success'})
+            .col   
+                +storyBox({progress:'bg-danger', isDanger:true})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col 
+                +storyBox({progress:'bg-success'})
+            .col   
+                +storyBox({progress:'bg-danger', isDanger:true})
+            .col   
+                +storyBox({progress:'bg-orange'})
+            .col   
+                +storyBox({progress:'bg-orange'})
+        nav(aria-label='Page navigation example')
+            ul.pagination
+                li.page-item
+                  a.page-link(href='#')
+                    i(class="fa-solid fa-chevron-right")
+                li.page-item.active
+                    a.page-link(href='#') 1
+                li.page-item
+                    a.page-link(href='#') 2
+                li.page-item
+                    a.page-link(href='#') 3
+                li.page-item
+                    a.page-link(href='#')
+                        i(class="fa-solid fa-chevron-left")
+

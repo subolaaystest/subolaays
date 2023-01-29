@@ -1,0 +1,55 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | جميع الطلبات
+block content
+    .dash-tabs
+        .nav-tabs-1 
+            ul#myTab.nav.nav-tabs(role='tablist')
+                li.nav-item(role='presentation')
+                    button#Basic-Settings-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#Basic-Settings' type='button' role='tab' aria-controls='Basic-Settings' aria-selected='true') اﻟﺎﻋﺪادات اﻟﺎﺳﺎﺳﻴﺔ
+                li.nav-item(role='presentation')
+                    button#Establishment-settings-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Establishment-settings' type='button' role='tab' aria-controls='Establishment-settings' aria-selected='false') اﻋﺪادات اﻟﻤﻨﺸﺌﺔ
+
+            #myTabContent.tab-content
+                #Basic-Settings.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='Basic-Settings-tab') 
+                    .add-product-title 
+                        h2 صور المنتج 
+                        p يمكنك إضافة صور بحد أقصى 4 صور للمنتج 
+                            span.textt-red.mr-2 مقاس 1080*1080
+                    .row.row-cols-md-4
+                        .col 
+                            +upload_image_1({})
+
+                    .input-text-icon-box.form-group.rounded-0 
+                        svg 
+                            use(href="../../assets/images/icons/icons.svg#shop")
+                        span اﻟﺒﺮﻳﺪ اﻟﺎﻟﻜﺘﺮوﻧﻰ :
+                        input(type="text")
+                    .input-text-icon-box.rounded-0.mb-4  
+                        svg 
+                            use(href="../../assets/images/icons/icons.svg#phone")
+                        span رقم الجوال
+                        input(type="text" id="phone" class="phone_number")
+                        input(type="hidden" id="fullNumber")
+                    .input-text-icon-box.form-group.rounded-0 
+                        svg 
+                            use(href="../../assets/images/icons/icons.svg#shop")
+                        span كلمة المرور :
+                        input(type="text")
+
+
+       
+
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 
+
+                #Establishment-settings.tab-pane.fade(role='tabpanel' aria-labelledby='Establishment-settings-tab') 
+                    +select({label:'  ﻧﻮع اﻟﻤﻨﺸﺄة' , options:['  البقالة' , ' البقالة   '  ]})
+                    +select({label:'  ﻋﻨﻮان اﻟﻤﻨﺸﺄة  ' , options:['ﺣﺪد ﻣﻮﻗﻌﻚ ﻋﻠﻰ اﻟﺨﺮﻳﻄﺔ  ' , '  ﺣﺪد ﻣﻮﻗﻌﻚ ﻋﻠﻰ اﻟﺨﺮﻳﻄﺔ  '  ]})
+                    +input({label:'رﻗﻢ اﻟﺴﺠﻞ اﻟﺘﺠﺎرى' })
+                    +input({label:'رﻗﻢ اﻟﺴﺠﻞ اﻟﺘﺠﺎرى' , type:'date'})
+
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 

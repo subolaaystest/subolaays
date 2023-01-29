@@ -1,0 +1,47 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | ﻗﺴﺎﺋﻢ اﻟﺘﺨﻔﻴﺾ 
+block content 
+    +pageHead(' ﻗﺴﺎﺋﻢ اﻟﺘﺨﻔﻴﺾ <span>( 555 )</span>' , {url:'#' , title:'اﻧﺸﺎء ﻗﺴﻴﻤﺔ ﺟﺪﻳﺪة  '})
+    .row.row-cols-lg-4.row-cols-2 
+        +statusInfo(' ﻗﺴﺎﺋﻢ ﻣﻔﻌﻠﺔ'  , 'green' , '450 ﻗﺴﻴﻤﺔ')
+        +statusInfo('قسائم غير مفعلة  '  , 'orange' , '450 ﻗﺴﻴﻤﺔ')
+    - var fields = ['الكوبون ' , 'تاريخ الطلب' , 'ﺳﻴﻨﺘﻬﻰ ﻓﻰ ' , 'ﺣﺎﻟﺔ اﻟﻜﻮﺑﻮن' , '' , 'الإجراءات']
+    - var buttons = [{class:'btnn-red btn-active-disactive' , name:'تعطيل'} , {class:'btnn-orange btn-active-disactive' , name:'تفعيل'} ]
+
+    - var actions = {isSwitch:true}
+    - var filters =  {selects:['الأحدث'],btnSort:true,searchBox:true}
+    - var items = []
+    - var i = 0;
+    while i < 4
+        - items.push([ '#6461313', '<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>', '<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>' ,'<h5>مفعل</h5>','<button class="btn btnn btnn-orange hvr-shadow" data-bs-toggle="modal" data-bs-target="#statisticsModal"><span>الاحصائيات</span></button>']);
+        - i++
+    
+
+    +table( {filters  , fields ,  items , actions ,buttons, isInner:true,  isDataTable:true , headTitle:'ﻗﺴﺎﺋﻢ اﻟﺘﺨﻔﻴﺾ' , isTableCheckbox:true})
+
+
+    #statisticsModal.modal.fade(tabindex='-1' aria-labelledby='statisticsModalLabel' aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content
+
+                .modal-body
+                    .send-offer-modal
+                        h2 الاحصائيات
+                        p اﺣﺼﺎﺋﻴﺎت ﻗﺴﻴﻤﺔ اﻟﺘﺨﻔﻴﺾ ﻣﻨﺬ اﻧﺸﺎﺋﻬﺎ وﺣﺘﻰ اﻟﺎن
+                        hr.cus-hr
+
+                    .statisticsModal-body 
+                        .row 
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2 ﻣﺮات اﻟﺎﺳﺘﺨﺪام
+                                    h5  350 ﻣﺮة
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2  ﻋﺪد اﻟﻌﻤﻠﺎء 
+                                    h5  350 عميل
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2  ﻣﺒﻴﻌﺎت اﻟﻜﻮﺑﻮن
+                                    h5  350 رﻳﺎل 

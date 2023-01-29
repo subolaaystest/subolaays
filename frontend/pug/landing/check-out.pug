@@ -1,0 +1,32 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block content 
+    .order-success.text-center
+        .icon
+            svg
+                use(href="../../assets/images/icons/icons.svg#plus")
+        h3.mt-5.fw-bold تم ارسال طلبك بنجاح
+        a  Grocery shope
+        .order-total.mt-5
+            ul 
+                li 
+                    h5 عدد المنتجات
+                    h6 2
+                li 
+                    h5 اجمالى الطلب 
+                    h6 350 ريال
+                li 
+                    h5 طريقة الدفع 
+                    h6 فيزا
+                li 
+                    h5 رقم الطلب
+                    h6 #646431
+            .comp-order.mt-4
+                +Button({color:'orange' , name:'اتمام الطلب' , class:"btn-fill px-5" }) 
+        .text-center.mt-5    
+            h3 لنا مكان فى كل دُ كان
+            p جميع عمليات الدفع والطلب لدينا مضمونة 100%     
+
+
+

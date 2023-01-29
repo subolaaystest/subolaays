@@ -1,0 +1,68 @@
+include ../mixins/dashboardMixin.pug
+include ../mixins/table.pug
+include ../mixins/Button.pug
+include ../mixins/form.pug
+
+doctype html
+html(lang="en" dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        include ../includes/styles.pug
+
+
+        title Document
+    body
+        .temporary-discount
+            .container
+                .temporary-discount-title 
+                    h2 مواصفات المنتج
+                    p هي مواصفات تسهل على المستخدم إتخاذ قرار الشراء مثل الحجم - الوزن - اللون
+                    hr.cus-hr
+                .te-body 
+                    .add-product-title 
+                        h2   ﻧﻮع اﻟﺨﺼﻢ
+                    .d-flex.justify-content-between
+                        .add-product-title 
+                            h2  ﺷﺤﻦ ﻣﺠﺎﻧﻰ
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                            label.form-check-label(for="switch" + 5)
+                    .d-flex.justify-content-between
+                        .add-product-title 
+                            h2   ﺧﺼﻢ اﻟﺴﻠﺔ
+                            p   ﻣﻨﺢ اﻟﻌﻤﻴﻞ ﺧﺼﻢ وﺗﺤﺪﻳﺪ ﻧﻮع اﻟﺨﺼﻢ إﻣﺎ ﻣﺒﻠﻎ ﺛﺎﺑﺖ أو ﻧﺴﺒﺔ ﻣﻦ ﺳﻠﺔ اﻟﻤﺸﺘﺮﻳﺎت. 
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+                            label.form-check-label(for="switch" + 6)
+                    .row.row-cols-1.row-cols-md-2 
+                        .col 
+                            +select({label:' ﻧﻮع اﻟﺨﺼﻢ' , options:['ﻣﺒﻠﻎ ﺛﺎﺑﺖ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت' , 'ﻧﺴﺒﺔ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت' ]})
+                        .col 
+                            +select({label:' ﻃﺮﻳﻘﺔ اﻟﺎرﺳﺎل' , options:['رﺳﺎﻟﺔ ﻧﺼﻴﺔ' , 'إختر' , 'إختر' , 'إختر']}) 
+                    +input({placeholder:'ادﺧﻞ ﻫﻨﺎ ﻣﺒﻠﻎ اﻟﺨﺼﻢ ' , valueText:'دينار'})
+                    +input({label:'ﻧﺺ اﻟﺮﺳﺎﻟﺔ' } , true)
+
+                    +Button({color:'orange' , name:'ﻣﻌﺎﻳﻨﺔ اﻟﺮﺳﺎﻟﺔ ' , class:'w-100 p-4 mb-5' })
+                    +input({label:'ﺗﺎرﻳﺦ ووﻗﺖ اﻧﺘﻬﺎء اﻟﻌﺮض' , type:'date' })
+                    +input({label:'   ﺗﺎرﻳﺦ ووﻗﺖ اﻟﺎرﺳﺎل' , type:'date' })
+
+                button.btnn-orange.btn.btnn.hvr-shadow.btn-fill.mt-5(data-bs-toggle='modal' data-bs-target='#successModal')
+                    span إرسال العرض
+                #successModal.modal.fade(tabindex='-1' aria-labelledby='successModalLabel' aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h5#successModalLabel.modal-title 
+                                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                            .modal-body.p-0
+                                .send-offer-modal 
+                                    .icon 
+                                        img(src="../../assets/images/success-icon-big.png", alt="")
+                                    h2 تم ارسال الخصم بنجاح
+                                    p ﺳﻴﺘﻢ ﺗﺤﻮﻳﻠﻚ ﺗﻠﻘﺎﺋﻴﺎ اﻟﻰ ﺻﻔﺤﺔ اﻟﺮﺋﻴﺴﻴﺔ
+                include ../includes/scripts.pug
+
+
+

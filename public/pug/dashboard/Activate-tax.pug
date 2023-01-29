@@ -1,0 +1,34 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  ﺗﻔﻌﻴﻞ اﻟﻀﺮﻳﺒﺔ
+block content 
+    +pageHead('ﺗﻔﻌﻴﻞ اﻟﻀﺮﻳﺒﺔ  <span>( 555 )</span>' , {url:'#' , title:'اﻧﺸﺎء ﺿﺮﻳﺒﺔ ﺟﺪﻳﺪة   '})
+    .page-content-inner
+        .required-box.mb-4 
+            p تعيين الرقم الضريبي 
+            span مطلوب
+        .d-flex.justify-content-between 
+            .form-group
+                label(for="switch5")  اﺣﺘﺴﺎب اﻟﻀﺮﻳﺒﺔ ﻋﻠﻰ ﺧﺪﻣﺎت اﻟﺸﺤﻦ
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                label.form-check-label(for="switch" + 5)
+
+        .d-flex.justify-content-between 
+            .form-group
+                label(for="switch6")  ﻋﺮض أﺳﻌﺎر اﻟﻤﻨﺘﺠﺎت ﺷﺎﻣﻠﺔ اﻟﻀﺮﻳﺒﺔ
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+                label.form-check-label(for="switch" + 6)
+
+    .page-content-inner.mt-4 
+        - var fields = ['ﻧﺴﺒﺔ اﻟﻀﺮﻳﺒﺔ' , 'تاريخ الإنشاء' , ' ﺣﺎﻟﺔ اﻟﻀﺮﻳﺒﺔ', 'الإجراءات']
+        - var actions = {isSwitch:true, html: ['switch']} 
+        - var items = []
+        - items.push([ '3%','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5 class="textt-orange">مفعل</h5>']);
+        +table( {filters:false  , fields , items  , isInner: false , isDataTable:false , actions , headTitle:'ﺿﺮﻳﺒﺔ اﻟﺨﺪﻣﺔ اﻟﻤﻀﺎﻓﺔ' })
+
+
+
+
+

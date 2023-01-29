@@ -1,0 +1,120 @@
+include ../mixins/dashboardMixin.pug
+include ../mixins/landingMixin.pug
+include ../mixins/table.pug
+include ../mixins/Button.pug
+include ../mixins/form.pug
+
+doctype html
+html(lang="en" dir="rtl")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    include ../includes/landingStyles.pug
+    title Document
+  body
+  .account-layout 
+    .account-navbar
+      .right-side
+        .logo   
+          img(src="../../assets/images/logo.png" alt="alt")
+        .search.landing-search 
+            form(action="#" method="method")
+              .form-group.mb-0 
+                input(type="text" class="form-control")
+                button 
+                  svg
+                    use(href="../../assets/images/icons/icons.svg#search")
+                  
+        .coin 
+          span العملة:
+          img(src="../../assets/images/coin.png" alt="alt")
+          span ر.س 
+      .left-side
+        .dash-actions
+          ul.landing-action-list
+            li
+              svg
+                use(href="../../assets/images/icons/icons.svg#notifi")            
+              li
+                svg
+                  use(href="../../assets/images/icons/icons.svg#heart")
+              li
+                svg
+                  use(href="../../assets/images/icons/icons.svg#cart")
+          .login 
+            svg
+                use(href="../../assets/images/icons/icons.svg#person")
+            span تسجيل الدخول
+          a.lang-btn 
+            .code  ar 
+            span العربية 
+    block headContent   
+    #main
+      include ../includes/account-sidebar.pug
+      .main-content.pb-5
+        .sidbar-icon 
+          i.fas.fa-bars 
+        block content
+    .footer 
+      .container
+        .row.w-100.m-0 
+          .col-md-3.mb-3
+            img(src="../../assets/images/landing/logo.png" alt="alt")
+          .col-md-3.mb-3.m-0
+            ul.m-0.p-0 
+              li 
+                a(href='#') عن سبلايز
+              li 
+                a(href='#') الوظائف لدينا
+              li 
+                a(href='#') الانضمام كتاجر
+              li 
+                a(href='#') مدونة سبلايز
+              li 
+                a(href='#') اتصل بنا
+          .col-md-3.mb-3.m-0
+            ul.m-0.p-0 
+                li 
+                  a(href='#') سياسة الخصوصية
+                li 
+                  a(href='#') الشروط والاحكام
+                li 
+                  a(href='#') الدخول 
+          .col-md-3.mb-3.m-0
+            ul.m-0.p-0 
+              li 
+                a(href='#') الرياض ، الممكلة العربية السعودية
+              li 
+                a(href='#') customer@subolaays.net
+              li 
+                a(href='#') 966500045778+
+        .row.w-100.m-0 
+          .col-md-6.d-flex.align-items-center
+            .text-footer.mb-3.m-0 
+              p.mb-0 © 2021 — All Rights Reserved
+          .col-md-6
+              ul.footer-list-social.m-0.p-0
+                li
+                  a 
+                    svg
+                      use(href="../../assets/images/icons/icons.svg#plus")   
+                li
+                  a 
+                    svg
+                      use(href="../../assets/images/icons/icons.svg#plus")   
+                li
+                  a 
+                    svg
+                      use(href="../../assets/images/icons/icons.svg#plus")   
+                li
+                  a 
+                    svg
+                      use(href="../../assets/images/icons/icons.svg#plus")   
+
+    include ../includes/landingScripts.pug
+    block scripts
+
+
+
+

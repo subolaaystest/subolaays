@@ -1,0 +1,72 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |   ﻣﻮاﻗﻊ اﻟﺘﺨﺰﻳﻦ
+block content
+    .page-content-inner
+        .map.mb-5
+            .map-box
+                button#locat_me.btn
+                    svg 
+                        use(href="../../assets/images/icons/icons.svg#location")
+                #map
+        +select({label:'النوع', options:[' فرع ' , 'ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , 'إختر']})
+        +input({label:'الإسم' , placeholder:'ﻓﺮع اﻟﺴﻠﻤﺎﻧﻴﺔ'})
+        .add-product-title 
+            h2   المدينة
+            p أﺧﺘﺮ ﻣﺪﻳﻨﺔ ﻣﻦ ﻣﺪن اﻟﺴﻌﻮدﻳﺔ
+        +select({ options:[' أﺧﺘﺮ اﻟﻤﺪن ' , 'ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , 'إختر']})
+
+        .row.row-cols-1.row-cols-md-2 
+            .col 
+                +input({label:'العنوان'})
+            .col 
+                +input({label:'اﻟﺮﻗﻢ اﻟﺒﺮﻳﺪى'})
+            .col 
+                +input({label:'الشارع'})
+            .col 
+                +input({label:'البناية'})
+
+
+        .row.row-cols-1.row-cols-md-3.mb-3 
+            .col 
+                .input-group.flex-nowrap
+                    span#phone_number.input-group-text 
+                        i.fas.fa-phone
+                    input.form-control(type='text' aria-label='Username' aria-describedby='phone_number')
+            .col 
+                .input-group.flex-nowrap
+                    span#mobile.input-group-text 
+                        i.fas.fa-mobile-alt
+
+                    input.form-control(type='text' aria-label='Username' aria-describedby='mobile')
+
+            .col 
+                .input-group.flex-nowrap
+                    span#whatsapp.input-group-text 
+                        i.fab.fa-whatsapp
+
+                    input.form-control(type='text' aria-label='Username' aria-describedby='whatsapp')
+        +input({label:'ﻣﺪة ﺗﺠﻬﻴﺰ اﻟﻄﻠﺐ ﻓﻰ اﻟﻔﺮع' , placeholder: 'ﻣﺜﻠﺎ : ﻣﻦ 2 3 - أﻳﺎم'})
+
+
+        .add-product-footer
+            +Button({color:'orange' , name:'حفظ ' , class:'ml-2 go-to-step-2' })
+            +Button({color:'red' , name:'إلغاء ' })
+
+
+
+
+
+
+
+
+
+
+    <input id="lng" type="hidden" value="hamza">
+    <input id="lat" type="hidden" value="hamza">
+
+
+
+
+
+

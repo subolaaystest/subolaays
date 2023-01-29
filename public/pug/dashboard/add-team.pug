@@ -1,0 +1,32 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |   ادارة اﻟﻔﺮﻳﻖ
+block content
+    .page-content-inner
+
+        +input({label:'  اﺳﻢ اﻟﻤﻮﻇﻒ  '})
+        .row.row-cols-1.row-cols-md-2 
+            .col
+                +input({label:' رﻗﻢ اﻟﺠﻮال'})
+            .col
+                +input({label:' اﻟﺒﺮﻳﺪ اﻟﺎﻟﻜﺘﺮوﻧﻰ '})
+
+
+        .d-flex.justify-content-between.mt-5
+            .add-product-title 
+                h2 ﻣﺪﻳﺮ ﻋﺎم
+                p   ﻣﻨﺢ اﻟﻤﺔﻇﻒ ﺟﻤﻴﻊ اﻟﺼﻠﺎﺣﻴﺎت
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+                label.form-check-label(for="switch" + 6)
+
+
+        .add-product-title 
+                h2  ﺻﻠﺎﺣﻴﺔ اﻟﻤﻮﻇﻒ
+                p   أﺧﺘﺮ اﻟﻤﻌﻠﻮﻣﺎت واﻟﺼﻔﺤﺎت اﻟﺘﻰ ﻳﺴﺘﻄﻴﻊ اﻟﻤﻮﻇﻒ اﻟﻮﺻﻮل اﻟﻴﻬﺎ 
+        +multiSelect({id:'employeeAuthority' , label:' صلاحية الموظف' , options:'[{"label": "ادارة اﻟﻤﻨﺘﺠﺎت","value": "NY"},{"label": "ادارة اﻟﻤﻨﺘﺠﺎت","value": "WA"},{"label": "ادارة اﻟﻤﻨﺘﺠﺎت","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+
+     
+        .add-product-footer
+            +Button({color:'orange' , name:'إضافة ' , class:'ml-2 go-to-step-2' })
+            +Button({color:'red' , name:'إلغاء ' })

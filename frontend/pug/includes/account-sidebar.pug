@@ -1,0 +1,31 @@
+mixin listLinks(listSidebar)
+
+    .mt-5
+        ul
+            each listItem in listSidebar
+                li.mb-3
+                    a(href="#").d-flex.justify-content-between.align-items-center
+                        div.d-flex
+                            .icon 
+                                img(src="../../assets/images/account-menu/" + listItem.icon + ".svg" alt="")
+                            span #{listItem.title} 
+                        if listItem.number
+                            .number.fw-bold #{listItem.number}
+
+
+- var listSidebar = [{"title":"اتابع","icon":"followers", "number": "646"},{"title":"طلب جديد","icon":"newOrder", "number": "0"},{"title":"نقاط مكافئة","icon":"points", "number": "66"},{"title":"الفروع","icon":"layer"},{"title":"طرق الدفع","icon":"credit"},{"title":"الدعم الفنى ","icon":"technical-support"},{"title":"الرسائل","icon":"comm"},{"title":" تعديل بياناتى","icon":"setting"}];
+
+.account-sidebar
+    .top-sidebar 
+        .logo   
+            img(src="../../assets/images/logo.png" alt="alt")
+        .close-menu 
+            i.fas.fa-times     
+    .list-links 
+        .d-flex.justify-content-start.align-items-center 
+            .img.me-3 
+                img(src="../../assets/images/landing/avatar.png" alt="" class="img")
+            .info
+                h5.fw-bold التاجر
+                h6 Grocery shope
+        +listLinks(listSidebar)

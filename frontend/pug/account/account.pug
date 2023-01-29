@@ -1,0 +1,37 @@
+extends ../layouts/accountLayout.pug
+include ../mixins/landingMixin.pug
+include ../mixins/accountMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .home-progress
+        .row.m-0.w-100
+            .col-10
+                h2.home-progress-title أكمل إعدادات متجرك
+                .home-progress-bar-parent.m-0 
+                    .home-progress-bar-inner(style="width:57%")
+                    h4
+                        span مكتمل
+                        span <div class="counter">57</div>% 
+        .icon 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#plus")
+    .users-account.mt-5 
+        .row.w-100.m-0
+            .col-md-6
+                +merchant-details({ follow: false})
+            .col-md-6
+                +merchant-details({ follow: false})
+            .col-md-6
+                +merchant-details({ follow: false})
+            .col-md-6
+                +merchant-details({ follow: false})
+            .col-md-6
+                +merchant-details({ follow: false})
+            .col-md-6
+                +merchant-details({ follow: false})
+
+
+
+    

@@ -1,0 +1,36 @@
+//- include ../mixins/authMixin.pug
+
+doctype html
+html(lang="en" dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        include ../includes/styles.pug
+        title Document
+    body
+
+        .auth-layout 
+            .container-fluid.p-0
+                .row.row-cols-1.g-0.row-cols-lg-2
+                    .col 
+                        .auth-side-content 
+                            .auth-nav 
+                                .auth-nav-logo 
+                                    img(src="../../assets/images/logo.png" alt="")
+                                .btn-lang 
+                                    a(href="")
+                                        img(src="../../assets/images/saudi-arabia.svg" alt="")
+                            .auth-header 
+                                h2 لنا مكان في  <br> كل دكان
+                                h3 قم بإدارة طلباتك , عروضك , عملائك بسهولة
+                            .auth-bg 
+                                img(src="../../assets/images/auth-bg.png" alt="")
+                    .col 
+                        .auth-form                  
+                            block content
+
+        include ../includes/scripts.pug
+
+
+

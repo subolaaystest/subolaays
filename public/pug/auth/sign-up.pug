@@ -1,0 +1,171 @@
+//- include ../mixins/authMixin.pug
+
+doctype html
+html(lang="en" dir="rtl")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        include ../includes/styles.pug
+        title Document
+    body
+
+
+        .sign-up-steps-page 
+            .sign-up-steps-head
+
+                .img-bg
+                    img(src="../../assets/images/sign-steps-head.png" alt="") 
+                .container
+                    .sign-up-steps-head-inner 
+                        .user-box 
+                            a.back(data-back=0) 
+                                svg 
+                                    use(href="../../assets/images/icons/icons.svg#arrow-right-2")
+                            .sign-up-page-info
+                                svg 
+                                    use(href="../../assets/images/icons/icons.svg#user-2")
+                                span تسجيل جديد
+
+                        .logo 
+                            img(src="../../assets/images/logo.png" alt="")
+            .sign-up-steps-progress
+                .container 
+                    .sign-progress-parent(class='step-' + 1) 
+                        .sign-progress-bar
+                            .sign-progress-child 
+                        .sign-progress-text 
+                            h5 المعلومات الشخصية 
+                            h5 ﻧﻮع اﻟﻤﻨﺸﺄة
+                            h5 الموقع
+                            h5 ﻋﻦ اﻟﻤﻨﺸﺄة
+            .container
+                form
+                    .sign-up-steps-body 
+                        .tab-content
+                            #step-1-details.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='step-1-details-tab') 
+                                .sign-up-steps-title 
+                                    h2  ﻧﻮع اﻟﻤﻨﺸﺄة
+                                    p  ﻣﻦ ﻓﻀﻠﻚ أﺧﺘﺮ ﻧﻮع اﻟﻤﻨﺸﺄة   
+                                .row.mt-5
+                                    - var boxes = [{title:'مطعم' , icon:'food-delivery'} , {title:'بقالة' , icon:'shopping-basket'} , {title:'مقهى' , icon:'coffee-pack'}, {title:'صيدلية' , icon:'medicine'}, {title:'فندق  ' , icon:'reception-bell'} , {title:'مدرسة  ' , icon:'pencil-case'} , {title:'حلاق' , icon:'barber-chair'} , {title:'فندق  ' , icon:'reception-bell'}]
+                                    each box in boxes 
+                                        .col
+                                            .building-box
+                                                input(type="radio" name="building" id=box.icon) 
+                                                .icon 
+                                                    img(src="../../assets/images/building/" + box.icon + '.png' alt="")
+
+                                                h3 #{box.title}
+                                    .col
+                                        .building-box.other-building
+                                            input(type="radio" name="building" id='position') 
+                                            .icon  
+                                                img(src="../../assets/images/building/" + 'position' + '.png' alt="")
+
+                                            h3 أخرى
+                                .form-other.other-building-form
+                                    .form-group 
+                                        input(type="text" class="form-control" placeholder="إضافة منشأة أخرى")
+                                .steps-action-btn.mt-5.pt-3 
+                                    button.btn.hvr-float-shadow.go-to-step-2(type="button") التالي 
+
+                            #step-2-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-2-details-tab') 
+                                .sign-up-steps-title 
+                                    h2  اﻟﻤﻨﺘﺠﺎت اﻟﺘﻰ ﺗﺒﻴﻌﻬﺎ
+                                    p  ﻣﺎﻫﻰ اﻟﻤﻨﺘﺠﺎت اﻟﺘﻰ ﺗﻘﻮم ﺑﺒﻴﻌﻬﺎ
+                                .product-type-list.mt-5.pt-3
+                                    -var types = ['خضراوات' , 'مخبوزات' , 'الدجاج' , 'حلويات وبسكويت' , 'وجبات خفيفة' , 'البقالة' , 'معلبات' , 'مجمدات' , 'العناية بالطفل' , 'العناية الشخصية' , 'منتجات الألبان' ]  
+                                        each prduct_type , index in types 
+                                            .product-type
+                                                input(type="checkbox" name="prduct_type" + index) 
+
+                                                .image 
+                                                    img(src="../../assets/images/products-types/type-"+ (index + 1) +".png" alt="")
+                                                h3 #{prduct_type}
+                                        .building-box.other-product-type
+                                            input(type="checkbox" name="building" id='position') 
+                                            .icon 
+                                                img(src="../../assets/images/building/" + 'position' + '.png' alt="")
+
+                                            h3 أخرى
+
+
+                                .form-other.other-product-types-form
+                                    .form-group 
+                                        input(type="text" class="form-control" placeholder="إضافة منتجات جديدة")
+                                .steps-action-btn.mt-5.pt-3 
+                                    button.btn.hvr-float-shadow.go-to-step-3(type="button") التالي 
+                            #step-3-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-3-details-tab') 
+                                .sign-up-steps-title 
+                                    h2  اﻟﻌﻨﻮان او اﻟﻔﺮع
+                                    p  ﻣﻦ ﻓﻀﻠﻚ أﺧﺘﺮ ﻋﻨﻮان اﻟﻤﻨﺸﺄة
+
+                                .map
+                                    .map-box
+                                        button#locat_me.btn
+                                            svg 
+                                                use(href="../../assets/images/icons/icons.svg#location")
+                                        #map
+                                    .steps-action-btn.mt-5 
+                                        button.btn.hvr-float-shadow.go-to-step-4(type="button") التالي 
+
+                            #step-4-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-4-details-tab') 
+                                .sign-up-steps-title 
+                                    h2  ﺗﺒﻘﻰ ﺧﻄﻮة واﺣﺪة 
+                                    p  أﻛﻤﻞ ﻣﻌﻠﻮﻣﺎت ﻣﻨﺸﺄﺗﻚ
+
+                                    .form
+                                        .input-text-icon-box.form-group 
+                                            svg 
+                                                use(href="../../assets/images/icons/icons.svg#user-2")
+                                            span أﺳﻢ اﻟﻤﻨﺸﺄة :
+                                            input(type="text")
+                                        h3 ﺑﻴﺎﻧﺎت ﺗﻮاﺻﻞ اﻟﻤﻨﺸﺄة
+                                        .input-text-icon-box.form-group 
+                                            svg 
+                                                use(href="../../assets/images/icons/icons.svg#envelope")
+                                            span اﻟﺒﺮﻳﺪ اﻟﺎﻟﻜﺘﺮوﻧﻰ :
+                                            input(type="text")
+                                        .login-with 
+                                            a(href="")
+                                                svg 
+                                                    use(href="../../assets/images/icons/icons.svg#phone")
+
+                                            a(href="")
+                                                svg 
+                                                    use(href="../../assets/images/icons/icons.svg#whatsapp")                 
+                                        .btn-submit 
+                                            button.btn.hvr-float-shadow
+                                                span تسجيل    
+
+
+
+
+
+
+                        <input id="lng" type="hidden" value="hamza">
+                        <input id="lat" type="hidden" value="hamza">
+
+
+
+
+            ul.nav.nav-tabs.d-none
+                li.nav-item(role='presentation')
+                    button#step-1-details-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#step-1-details' type='button' role='tab' aria-controls='step-1-details' aria-selected='true') Home
+                li.nav-item(role='presentation')
+                    button#step-2-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-2-details' type='button' role='tab' aria-controls='step-2-details' aria-selected='false') Profile
+                li.nav-item(role='presentation')
+                    button#step-3-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-3-details' type='button' role='tab' aria-controls='step-3-details' aria-selected='false') Messages
+                li.nav-item(role='presentation')
+                    button#step-4-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-4-details' type='button' role='tab' aria-controls='step-4-details' aria-selected='false') Messages
+
+
+            include ../includes/scripts.pug
+            script(src="https://polyfill.io/v3/polyfill.min.js?features=default")
+
+
+            script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSbSmPAGJ9yjR_hfPXnHBH_5zplpE_5sY&callback=initAutocomplete&libraries=places&v=weekly" defer)
+
+
+

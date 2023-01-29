@@ -1,0 +1,30 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  اﻟﺸﺤﻦ واﻟﺘﻮﺻﻴﻞ
+block content 
+    +pageHead('ﺷﺮﻛﺎﺗﻰ اﻟﺤﺎﻟﻴﺔ  <span>( 35 ﺷﺮﻛﺔ ﺗﻢ رﺑﻂ اﻟﺨﺪﻣﺔ ﺑﻬﺎ )</span>' ,  {url:'#' , title:'اﺿﺎﻓﺔ ﺷﺮﻛﺔ ﺷﺤﻦ '})
+    .row.row-cols-md-2.row-cols-lg-3.row-cols-xl-4.match-height 
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'aramex' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'jbi' , check:true })
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'sab' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'aramex' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'sab' , btn:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'jbi' , btn:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'sab' , btn:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'aramex' , btn:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'sab' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'aramex' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'jbi' , check:true})
+        .col 
+            +CompanyBox({title:'اﺳﻢ اﻟﺸﺮﻛﺔ' , name: 'ارامكس' , logo:'jbi' , check:true})

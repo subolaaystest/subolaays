@@ -1,0 +1,194 @@
+mixin pageHead(title , link , dropdown)
+    .dash-page-head
+        h2!= title
+        if link
+            a.main-link(href=link.url class="btn hvr-float-shadow") #{link.title}
+        if dropdown 
+            - var number = Math.floor(Math.random() * 1000); 
+
+            .dropdown
+                button.btn.dropdown-toggle.main-link(id="dropdown-" +  number  type='button' data-bs-toggle='dropdown' aria-expanded='false') #{dropdown.label}
+                ul.dropdown-menu(aria-labelledby="dropdown-" +  number)
+                    each option in dropdown.items   
+                        li
+                            a.dropdown-item(href=option.url) #{option.title}
+
+
+mixin orderDetailsBox(top , bottom) 
+    .order-details-box 
+        span #{top}
+        h5!= bottom
+
+mixin statusInfo(title , color ,  number , period , chart)
+    .col 
+        .status-info-box
+            span(class=color) #{title}
+            h4!= number
+            if period
+                h5 #{period}
+            if chart
+                .status-info-box-icon(class=chart.icon)
+                    svg 
+                        use(href='../../assets/images/icons/icons.svg#' + chart.icon)
+                    span!= chart.number
+
+mixin customProgress(progress)
+    .custom-progress-parent(class='step-' + progress.step) 
+        .custom-progress-bar
+            .custom-progress-child 
+        .custom-progress-text 
+            h5 #{progress.textOne} 
+            h5!= progress.textTwo 
+            h5 #{progress.textThree} 
+
+mixin bargainsBox(bargains)
+    a.cus-bargains.hvr-float-shadow(href="#") 
+        .top-box 
+            span عدد المنتجات المطلوبة
+            span منذ ساعتين
+        .total  5 منتجات
+        .image 
+            img(src="../../assets/images/lemons-1.png" alt="")
+        .price 
+            span السعر التقريبي للمنتجات
+            h3 350 ريال سعوجي
+        .buttons 
+            +Button({color:'orange' , name:'بقالة ' })
+            +Button({color:'orange' , name:'خضراوات ' })
+        if bargains.isCansel
+            .cancel-bargains
+                +Button({color:'red' , name:'خضراوات ' })
+        else
+            .progress
+                .progress-bar( class=bargains.progress role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+            .progress-text    العروض المقدمة 50 عرض
+                if bargains.isDanger 
+                    span.textt-red لديك فرصة بسيطة
+mixin storyBox(bargains)
+    a.cus-bargains.hvr-float-shadow(href="#") 
+        .top-box 
+            span ﻋﻨﻮان اﻟﻘﺼﺔ  
+            span منذ ساعتين
+        .total  ﻟﻴﻤﻮن ﻃﺎزج ﻣﺰارع
+        .image 
+            img(src="../../assets/images/lemons-1.png" alt="")
+        .price-row 
+            .price 
+                span   ﺳﻌﺮ اﻟﻤﻨﺘﺞ
+                h3 350 ريال سعوجي
+            .discount 
+                h4 % 25 ﺧﺼﻢ
+                span (450 رﻳﺎل)
+        .buttons 
+            +Button({color:'orange' , name:'بقالة ' })
+            +Button({color:'orange' , name:'خضراوات ' })
+        if bargains.isCansel
+            .cancel-bargains
+                +Button({color:'red' , name:'خضراوات ' })
+        else
+            .progress
+                .progress-bar( class=bargains.progress role='progressbar' style='width: 25%' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100')
+            .progress-text    ﻋﺪد اﻟﻤﺸﺎﻫﺪات : 500 ﻣﺸﺎﻫﺪة
+                if bargains.isDanger 
+                    span.textt-red ﻋﺪد ﻣﺸﺎﻫﺪات ﻣﺮﺗﻔﻊ
+
+
+mixin searchProduct()
+    .search-results-box
+        .form-group 
+            input(type="text" class="search-results-input form-control")
+        .search-results-list 
+            ul 
+                li(data-id="1") 
+                    .side
+                        .table-img
+                            img(src="../../assets/images/product-thumb.png" alt="") 
+                        .table-two-texts
+                            h5 خضراوات مشكل
+                            h6 #54545454
+                    .side
+                        h5.textt-green 45 ريال
+                li(data-id="3") 
+                    .side
+                        .table-img
+                            img(src="../../assets/images/product-thumb.png" alt="") 
+                        .table-two-texts
+                            h5 خضراوات مشكل
+                            h6 #54545454
+                    .side
+                        h5.textt-green 45 ريال
+                li(data-id="4") 
+                    .side
+                        .table-img
+                            img(src="../../assets/images/product-thumb.png" alt="") 
+                        .table-two-texts
+                            h5 خضراوات مشكل
+                            h6 #54545454
+                    .side
+                        h5.textt-green 45 ريال
+                li(data-id="5") 
+                    .side
+                        .table-img
+                            img(src="../../assets/images/product-thumb.png" alt="") 
+                        .table-two-texts
+                            h5 خضراوات مشكل
+                            h6 #54545454
+                    .side
+                        h5.textt-green 45 ريال
+        .data-addedd
+            ul 
+                li(data-id="1") 
+                    .side
+                        .table-img
+                            img(src="../../assets/images/product-thumb.png" alt="") 
+                        .table-two-texts
+                            h5 خضراوات مشكل
+                            h6 #54545454
+                    .side
+                        h5.textt-green 45 ريال
+                        a(href="#" class="delete text-red")
+                            i.fas.fa-times 
+
+mixin CompanyBox(company)
+    - var number = Math.floor(Math.random() * 1000); 
+
+    .company-box 
+        .company-box-top 
+            .company-box-name
+                span #{company.title}
+                h2 #{company.name}
+            if company.settings
+                .company-box-settings 
+                    a(href="")
+                        svg 
+                            use(href='../../assets/images/icons/icons.svg#settings')
+        .company-box-logo 
+            img(src="../../assets/images/logos/" + company.logo + '.png' alt="")
+        if company.check
+
+            .company-box-check 
+                .form-group.m-0
+                    label(for="switch" + + number)    مفعلة
+                .form-check.form-switch.form-switch-md.m-0
+                    input.form-check-input(type='checkbox' id="switch" + number role='switch')
+                    label.form-check-label(for="switch" + number)
+        if company.btn
+            .company-box-btn
+                a.btn.btnn.btnn-orange.btn-fill(href="") 
+                    span ربط الخدمة
+mixin cardBox(card)
+    .cover-point-sec
+        .form-check.form-switch.form-switch-md
+            input.form-check-input(type='checkbox' id="switch" + 8 role='switch')
+            label.form-check-label(for="switch" + 8)
+            img.bg-image-checked(src="../../assets/images/landing/active-cover-points.png" alt="")
+            img.bg-image(src="../../assets/images/landing/cover-points-box.png" alt="")
+            .text 
+                h2  العنوان الافتراضي
+                .d-flex.justify-content-start.align-items-start
+                    .shap ...
+                    div
+                        h3 التوصيل الى عنوانى الحالى
+                        h4 اول مكرم ، مدينة نصر   
+                        h4 القاهرة جمهورية مصر العربية
+

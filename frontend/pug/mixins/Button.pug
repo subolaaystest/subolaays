@@ -1,0 +1,7 @@
+mixin Button(button)
+    button(class=['btnn-' + button.color , 'btn' , 'btnn' , button.class , 'hvr-shadow' ] type=button.type || 'button' )
+        if button.name
+            span #{button.name}
+        if button.icon
+            svg 
+                use(href='../../assets/images/icons/icons.svg#' + button.icon)

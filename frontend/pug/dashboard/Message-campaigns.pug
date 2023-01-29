@@ -1,0 +1,45 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | ﺣﻤﻠﺎت اﻟﺮﺳﺎﺋﻞ
+block content 
+    +pageHead(' ﺣﻤﻠﺎت اﻟﺮﺳﺎﺋﻞ<span>( 555 )</span>' , {url:'#' , title:'اﻧﺸﺎء حملة ﺟﺪﻳﺪة  '})
+    - var fields = ['ﻋﻨﻮان اﻟﺤﻤﻠﺔ ' , 'ﺗﺎرﻳﺦ اﻟﺎﻧﺸﺎء ' , ' ﻋﺪد اﻟﺮﺳﺎﺋﻞ ' , 'ﺣﺎﻟﺔ اﻟﺤﻤﻠﺔ ' , '' , 'الإجراءات']
+    - var actions = {isSwitch:true}
+    - var filters =  {selects:['الأحدث', ' راﺑﻂ ﻣﻨﺘﺞ'],btnSort:true,searchBox:true}
+    - var items = []
+    - var i = 0;
+    while i < 4
+        - items.push([ 'الانتشار', '<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>', '<h5>350 رﺳﺎﻟﺔ</h5>' ,'<h5>مفعل</h5>','<button class="btn btnn btnn-orange hvr-shadow" data-bs-toggle="modal" data-bs-target="#statisticsModal"><span>الاحصائيات</span></button>']);
+        - i++
+    
+
+    +table( {filters  , fields ,  items , actions , isInner:true,  isDataTable:false , headTitle:'ﺣﻤﻠﺎت اﻟﺮﺳﺎﺋﻞ  '})
+
+
+    #statisticsModal.modal.fade(tabindex='-1' aria-labelledby='statisticsModalLabel' aria-hidd en='true')
+        .modal-dialog.modal-lg
+            .modal-content
+
+                .modal-body
+                    .send-offer-modal
+                        h2 الاحصائيات
+                        p اﺣﺼﺎﺋﻴﺎت ﺣﻤﻠﺔ اﻟﺮﺳﺎﺋﻞ ﻣﻨﺬ اﻧﺸﺎﺋﻬﺎ وﺣﺘﻰ اﻟﺎن
+                        hr.cus-hr
+
+                    .statisticsModal-body 
+                        .row 
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2 ﻋﺪد اﻟﻌﻤﻠﺎء اﻟﺴﻌﻮدﻳﻦ
+                                    h5 350 ﻋﻤﻴﻞ
+                                    span ﻫﺬا اﻟﺸﻬﺮ
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2  ﻋﺪد اﻟﻌﻤﻠﺎء ﺟﻨﺴﻴﺔ اﺧﺮى
+                                    h5  350 عميل
+                                    span ﻫﺬا اﻟﺸﻬﺮ
+                            .col-lg-4 
+                                .statisticsModal-box
+                                    h2  ﻋﺪد ﻣﺮات اﻟﻨﻘﺮ
+                                    h5  350 ﻧﻘﺮة   
+                                    span ﻫﺬا اﻟﺸﻬﺮ

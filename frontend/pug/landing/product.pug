@@ -1,0 +1,118 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .header
+        nav(aria-label="breadcrumb")
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href="#") الرئيسية
+                li.breadcrumb-item
+                    a(href="#") البقالة
+                li.breadcrumb-item الجبن
+    .product-details.mt-5
+        .row.w-100.m-0 
+            .col-md-6.px-5
+                .images-side
+                    .fotorama( data-loop="true" data-allowfullscreen="true" data-autoplay="true" data-nav='thumbs' data-thumbwidth='200' data-thumbheight='200' data-thumbmargin="20" data-thumbborderwidth="1")
+                        img(src="../../assets/images/product-details/details-1.png" alt="")
+                        img(src="../../assets/images/product-details/details-2.png" alt="")
+                        img(src="../../assets/images/product-details/details-3.png" alt="")
+                        img(src="../../assets/images/product-details/details-4.png" alt="")
+                        img(src="../../assets/images/product-details/details-1.png" alt="")
+                        img(src="../../assets/images/product-details/details-2.png" alt="")
+                        img(src="../../assets/images/product-details/details-3.png" alt="")
+                        img(src="../../assets/images/product-details/details-4.png" alt="")
+
+            .col-md-6 
+                .details-side
+                    .details-header.d-flex.justify-content-between.mb-3
+                        .d-flex.justify-content-start.align-items-center     
+                            p.mb-0 منتجات الألبان 
+                            p.mb-0  جبن
+                        .icon.d-flex.justify-content-center.align-items-center 
+                            svg 
+                                use(href="../../assets/images/icons/icons.svg#heart-fill")
+                    .details-content
+                        a(href="#") Grocery shope
+                        h2.my-3 جبنة كريمي سبريد كيري - 500 جم
+                        p.mb-0 صندوق 50 كيلو جرام
+                        .d-flex.justify-content-start.align-items-center.mt-3 
+                            p.price.m-0 350 
+                                span ريال
+                                span.old-price 50 دينار
+                            p.mb-0.discount
+                                svg 
+                                    use(href="../../assets/images/icons/icons.svg#heart")
+                                | 25 % خصم
+                        p.mb-0.mt-3 هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام 
+                        p.mb-0.mt-4.amount تبقى 5 قطع فقط
+                        .input-margin.d-flex.justify-content-start.align-items-center.mt-3 
+                            +input_number({label:'' }) 
+                            p.mb-0.add-cart.d-flex.justify-content-between.align-items-center 
+                                sapn اضافة للسلة
+                                span.font-bold 350 ريال
+        .add-product-title.mt-5 
+            h2 مواصفات المنتج
+        .order-details
+            .order-total 
+                ul.m-0 
+                    li 
+                        h5 الحجم 
+                        h6 50 كيلو جرام
+                    li 
+                        h5 النوع
+                        h6 مزارع
+                    li 
+                        h5 التاجر 
+                        h6 
+                            a Grocery shope
+                    li 
+                        h5 مواد حافظة
+                        h6 لا
+                    li 
+                        h5 الحجم
+                        h6 50 كيلو جرام
+        .add-product-title.mt-5 
+            h2 جدول الكمية
+                span كل مازادت الكمية قل السعر
+        .amount-table
+            .row.w-100.m-0 
+                .col-6.mb-4
+                    h5.fw-bold 100 ريال
+                    span 5-55 حبة
+                .col-6.mb-4
+                    h5.fw-bold 100 ريال
+                    span 5-55 حبة
+                .col-6.mb-4
+                    h5.fw-bold 100 ريال
+                    span 5-55 حبة
+                .col-6.mb-4
+                    h5.fw-bold 100 ريال
+                    span 5-55 حبة
+                .col-12 
+                    span السعر الاساسى 85 ريال
+        .add-product-title.mt-5 
+            h2 منتجات مشابهة
+        .row.m-0.w-100
+            //- -var products = [{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'}]  
+            //- each product , index in products
+            .col 
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+                

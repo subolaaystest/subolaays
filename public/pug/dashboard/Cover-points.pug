@@ -1,0 +1,40 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |    ادارة نقاط التغطية
+block content
+
+    +pageHead('  نقاط التغطية <span>( 555 )</span>' , {url:'#' , title:'اضافة نطاق جديد      '})
+
+    .page-content-inner
+        .cover-points-sec  
+            .row 
+                .col-lg-6 
+                    .cover-point-sec
+
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 7 role='switch')
+                            label.form-check-label(for="switch" + 7)
+                            img.bg-image-checked(src="../../assets/images/active-cover-points.png" alt="")
+                            img.bg-image(src="../../assets/images/cover-points-box.png" alt="")
+                            .text 
+                                h2  ZONE- C
+                                h3 مساحة الزون: 20 الف كم/ مربع
+                                h4 المنطقة: الوسطى 
+                                h5 الحى : الرياض
+                                h6 R649789
+
+
+                .col-lg-6 
+                    .cover-point-sec
+
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 8 role='switch')
+                            label.form-check-label(for="switch" + 8)
+                            img.bg-image-checked(src="../../assets/images/active-cover-points.png" alt="")
+                            img.bg-image(src="../../assets/images/cover-points-box.png" alt="")
+                            .text 
+                                h2  ZONE- C
+                                h3 مساحة الزون: 20 الف كم/ مربع
+                                h4 المنطقة: الوسطى 
+                                h5 الحى : الرياض
+                                h6 R649789

@@ -1,0 +1,539 @@
+.auth-layout {
+  .auth-side-content {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 200px;
+    .auth-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      margin-bottom: 70px;
+      @media (max-width: 767.98px) {
+        margin-bottom: 50px;
+      }
+    }
+    .auth-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      h2 {
+        font-size: 4.3em;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+      h3 {
+        color: #1c1f2c;
+        font-size: 1.5rem;
+      }
+    }
+
+    .auth-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.auth-form {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 540px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 50px 20px;
+  background: url("../images/form-bg.png");
+  @media (max-width: 767.98px) {
+    min-height: auto;
+  }
+  .icon {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    svg {
+      width: 30px;
+      height: 30px;
+      stroke: #26001b
+    }
+    img {
+      width: 50px;
+      margin-bottom: 28px;
+    }
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  .bottom-form-text {
+    h5 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 20px;
+      a {
+        color: var(--main-color);
+      }
+    }
+  }
+  .btn-submit {
+    button {
+      background-color: var(--main-color);
+      box-shadow: 0 6px 40px 0 rgba(253, 185, 51, 0.47);
+      width: 100%;
+      border-radius: 150px;
+      color: #fff;
+      font-size: 1.3rem;
+      margin-top: 16px;
+      font-weight: bold;
+      padding: 15px 0;
+    }
+  }
+  .myPinCode {
+    display: flex;
+    justify-content: space-between;
+    input {
+      margin: 0 5px;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      font-size: 1.8rem;
+      border: solid 0.5px #e3e3e3;
+
+      @media (max-width: 575.98px) {
+        width: 65px;
+        height: 65px;
+      }
+      &:focus {
+        box-shadow: 0 4px 40px 0 rgba(187, 187, 187, 0.25);
+        border: solid 0.5px #e3e3e3;
+      }
+    }
+  }
+}
+
+.input-text-icon-box {
+  border-radius: 150px;
+  border: solid 1px #e3e3e3;
+  padding: 15px 30px;
+  display: flex;
+  svg {
+    height: 20px;
+    min-width: 20px;
+    width: 20px;
+  }
+  input:not(#phone) {
+    flex: 1;
+    height: 50px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  span {
+    margin: 0 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    min-width: 100px;
+  }
+}
+
+.iti--allow-dropdown {
+  flex: 1;
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.sign-up-steps-head .img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.sign-up-steps-head {
+  position: relative;
+  padding: 15px 0;
+}
+.sign-up-steps-head-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sign-up-steps-head .img-bg img {
+  width: 100%;
+  height: 100%;
+}
+
+.sign-up-steps-head .user-box {
+  display: flex;
+  align-items: center;
+}
+
+.sign-up-steps-head .user-box .back {
+  display: block;
+  cursor: pointer;
+}
+
+.sign-up-steps-head .user-box .back svg {
+  width: 25px;
+  height: 25px;
+  stroke: var(--main-color);
+  stroke-width: 10;
+  stroke: #26001b
+}
+
+.sign-up-steps-head .user-box .sign-up-page-info {
+  margin: 0 10px;
+}
+
+.sign-up-steps-head .user-box .sign-up-page-info svg {
+  width: 25px;
+  height: 25px;
+  fill: var(--main-color);
+  margin: 0 5px;
+}
+
+.sign-up-steps-head .user-box .sign-up-page-info span {
+  color: var(--main-color);
+  margin: 0 5px;
+  font-size: 1.3rem;
+}
+
+.sign-up-steps-head .logo img {
+  height: 50px;
+}
+
+.sign-up-steps-title {
+  text-align: center;
+  h2 {
+    color: #707070;
+    font-size: 1.5rem;
+    margin-bottom: 9px;
+  }
+  p {
+    font-size: 1.9rem;
+    font-weight: bold;
+  }
+}
+
+.sign-up-steps-page {
+  #step-1-details,
+  #step-2-details,
+  #step-3-details,
+  #step-4-details {
+    padding: 100px 0;
+  }
+  #step-4-details {
+    .form {
+      max-width: 500px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 40px;
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.building-box {
+  position: relative;
+}
+
+.building-box .icon {
+  width: 100px;
+  height: 100px;
+  border: solid 0.5px #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.building-box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.building-box input:checked ~ .icon {
+  background: var(--main-color);
+}
+
+.building-box input:checked ~ h3 {
+  color: var(--main-color);
+}
+
+.building-box .icon svg {
+  width: 50px;
+  height: 50px;
+  fill: #d1d1d1;
+}
+
+.building-box input:checked ~ .icon img {
+  filter: brightness(1.8);
+}
+
+.building-box h3 {
+  margin-top: 13px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #757575;
+  transition: all 0.5s;
+}
+
+.steps-action-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.steps-action-btn button {
+  width: 100%;
+  background: var(--main-color);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.3rem;
+  max-width: 300px;
+}
+.product-type-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .product-type {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.product-type {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.product-type input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 22;
+  cursor: pointer;
+}
+
+.product-type {
+  .image {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+  &.story {
+    .image {
+      height: 230px;
+      width: 100%;
+    }
+    input:checked ~ .image{
+      border-radius: 0;
+    }
+  }
+}
+
+.product-type .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.product-type h3 {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #000;
+  transition: all 0.5s;
+}
+.product-type .image:after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 34px;
+  top: 0;
+  right: 0;
+  background: url(../images/icons/checkmark.svg);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.product-type input:checked ~ .image:after {
+  opacity: 1;
+}
+
+.product-type input:checked ~ .image {
+  border: 2px solid var(--main-color);
+}
+
+.product-type input:checked ~ h3 {
+  color: var(--main-color);
+}
+
+.login-with {
+  display: flex;
+}
+
+.login-with a {
+  width: 70px;
+  height: 70px;
+  border: solid 1px #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.4s;
+  margin-left: 10px;
+}
+
+.login-with a svg {
+  width: 30px;
+  height: 30px;
+  fill: #cacaca;
+  transition: all 0.4s;
+}
+
+.login-with a:hover {
+  background: var(--main-color);
+}
+
+.login-with a:hover svg {
+  fill: #fff;
+}
+
+.sign-up-steps-page #step-4-details .form .btn-submit button {
+  width: 100%;
+  background: var(--main-color);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.3rem;
+  max-width: 300px;
+  padding: 10px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+#map {
+  width: 100%;
+  height: 500px;
+}
+
+.map-box {
+  position: relative;
+}
+
+button#locat_me {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 1000;
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button#locat_me svg {
+  width: 30px;
+  height: 30px;
+}
+
+div#error-msg {
+  color: var(--bs-red);
+}
+
+div#valid-msg {
+  color: var(--bs-green);
+}
+
+.form-other {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  display: none;
+}
+
+.form-other .form-group {
+  display: flex;
+}
+
+.form-other .form-group input {
+  border-radius: 50px;
+}
+.account-area ul li a {
+  padding: 10px 10px;
+  border-bottom: 1px solid #efefef;
+  transition: all 0.5s;
+  &:hover {
+    background: #fff5e1;
+  }
+}
+.account-area ul li a h5 {
+  font-size: 1.2rem;
+  color: #1c1f2c;
+  margin-bottom: 5px;
+}
+
+.account-area ul li a span {
+  font-size: 1.2rem;
+  color: #a9c0d3;
+}
+
+.account-area ul li:nth-last-child(1) a {
+  border: navajowhite;
+}
+
+.account-area .dropdown-menu {
+  border-radius: 10px;
+  padding: 0;
+  border: 1px solid #f1f1f1;
+  bottom: 50px;
+  transition: all 0.5s;
+  .show {
+    bottom: 0;
+  }
+}
+.account-area .dropdown-toggle::after {
+  display: none;
+}
+// .form-other .form-group button {
+//   background: var(--main-color);
+//   border-radius: 50px 0 0 50px;
+//   color: #fff;
+//   padding: 0 30px;
+// }

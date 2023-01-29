@@ -1,0 +1,100 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |   الرسائل
+block content
+    .page-chat 
+        .chat-users
+            .nav-tabs-1 
+                ul#myTab.nav.nav-tabs(role='tablist')
+                    li.nav-item(role='presentation')
+                        button#Offer-messages-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#Offer-messages' type='button' role='tab' aria-controls='Offer-messages' aria-selected='true') رﺳﺎﺋﻞ اﻟﻌﺮوض
+                    li.nav-item(role='presentation')
+                        button#Deal-Messages-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Deal-Messages' type='button' role='tab' aria-controls='Deal-Messages' aria-selected='false') رﺳﺎﺋﻞ اﻟﺼﻔﻘﺎت
+                #myTabContent.tab-content
+                    #Offer-messages.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='Offer-messages-tab') 
+                        .chat-users-list
+                            ul 
+                                - var i = 0;
+                                while i < 4
+                                    li
+                                        .user-details 
+                                            .img 
+                                                img(src="../../assets/images/photo-top.png" alt="")
+                                            .name-message 
+                                                h3  Mohamed ahmed
+                                                .new-message
+                                                    span  ﻣﺘﺎح ﻋﻨﺪك 5 ﻛﻴﻠﻮ ؟                                 
+                                        .message-time 
+                                            span اﻟﻴﻮم 40 ،:12 ﻣﺴﺎء 
+                                    - i++
+
+                    #Deal-Messages.tab-pane.fade(role='tabpanel' aria-labelledby='Deal-Messages-tab') 
+        .message-view-box 
+            .message-view-box-head 
+                .user-details 
+                    .img 
+                        img(src="../../assets/images/photo-top.png" alt="")
+                    .name-message 
+                        h3  Mohamed ahmed
+                        .new-message
+                            span  اليوم ، 40:12 مساء
+                .message-view-box-actions 
+                    +Button({color:'orange' , class:'mr-2' , icon:'phone'})
+                    +Button({color:'orange' , class:'mr-2' , icon:'envelope'})
+            .message-view-box-body 
+                ul.list-messages
+                        li.current-user
+                            .message-box 
+                                .message-item كم الكمية المتاحة معك
+                                .read-check 
+                                    svg 
+                                        use(href='../../assets/images/icons/icons.svg#' + 'read-check')
+                        li.other-user
+                            .user-avatar
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .message-box 
+                                .message-item نعم هذا المنتج متاح عندى 
+                                .message-read منذ ساعتان
+                        li.current-user
+                            .message-box 
+                                .message-item كم الكمية المتاحة معك
+                                .read-check 
+                                    svg 
+                                        use(href='../../assets/images/icons/icons.svg#' + 'read-check')
+                        li.other-user
+                            .user-avatar
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .message-box 
+                                .message-item نعم هذا المنتج متاح عندى 
+                                .message-read منذ ساعتان
+
+                        li.current-user
+                            .message-box 
+                                .message-item كم الكمية المتاحة معك
+                                .read-check 
+                                    svg 
+                                        use(href='../../assets/images/icons/icons.svg#' + 'read-check')
+                        li.other-user
+                            .user-avatar
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .message-box 
+                                .message-item نعم هذا المنتج متاح عندى 
+                                .message-read منذ ساعتان
+
+
+                        li.current-user
+                            .message-box 
+                                .message-item كم الكمية المتاحة معك
+                                .read-check 
+                                    svg 
+                                        use(href='../../assets/images/icons/icons.svg#' + 'read-check')
+                        li.other-user
+                            .user-avatar
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .message-box 
+                                .message-item نعم هذا المنتج متاح عندى 
+                                .message-read منذ ساعتان            .message-view-box-bottom
+                form(action="")
+                    textarea(name="" placeholder="أكتب رسالتك")
+                    +Button({color:'orange' , class:'mr-2 btn-fill' , icon:'send'})
+

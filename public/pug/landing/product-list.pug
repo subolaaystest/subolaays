@@ -1,0 +1,94 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .header
+        nav(aria-label="breadcrumb")
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href="#") الرئيسية
+                li.breadcrumb-item البقالة
+    .page-content.mt-5
+        - var listSidebar = [{"title":"حسب القسم الفرعى","list":[{"title":"جميع الاقسام الفرعية","icon":"All_Section"},{"title":"جبن","icon":"Cheese"},{"title":"ألبان","icon":"Milk"},{"title":"بيض","icon":"Ege"},{"title":"زبادي","icon":"Yogurt"}]},{"title":"السعر"},{"title":"حسب العلامة التجارية","list":[{"title":"جميع الاقسام الفرعية","icon":"All_Section"},{"title":"اسم المتجر","icon":"Cheese"},{"title":"اسم المتجر","icon":"Cheese"},{"title":"اسم المتجر","icon":"Cheese"},{"title":"اسم المتجر","icon":"Cheese"},{"title":"اسم المتجر","icon":"Cheese"}]}];
+        .dash-sidebar
+            .top-sidebar 
+                .logo   
+                    img(src="../../assets/images/logo.png" alt="alt")
+                .close-menu 
+                    i.fas.fa-times     
+            .list-links 
+                .filtering.d-flex.align-items-center.justify-content-between.mb-4.pb-4
+                    h5.m-0 تصفية
+                        p.filter-no.d-inline-block.m-0 
+                            span 2
+                    span.reload إعادة تعيين
+                each group in listSidebar
+                    .list-links-group 
+                        if group.title 
+                            h5 #{group.title}
+                        if group.list 
+                            ul
+                                each listItem , index in group.list
+                                    li
+                                        a(href="#")
+                                            .icon 
+                                                img(src="../../assets/images/landing-menu/" + listItem.icon + ".svg" alt="")
+                                            span #{listItem.title} 
+        
+        .main-content
+            .header.d-md-flex.align-items-md-center.justify-content-md-between
+                .result.d-flex.align-items-center
+                    p.result-number.mb-0 155
+                    h4.m-0 نتائج البحث لـ 
+                        span "البقالة"
+                .filter.d-flex 
+                    p.mb-0 ترتيب حسب 
+                    .page-filters-2
+                        .inputs-btn
+                            +select({label:'' , options:[' الأدنى سعر للأعلى' , 'الأعلى سعر للأدنى']})
+                    .icon
+                        svg
+                            use( href="../../assets/images/icons/icons.svg#plus")
+                    .icon
+                        svg
+                            use( href="../../assets/images/icons/icons.svg#plus")
+            .row.row-cols-md-2.row-cols-lg-3.row-cols-xl-3.match-height.mt-5
+                .col 
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : false})
+                .col   
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : false})
+                .col   
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : true})
+                .col   
+                    +product({isDiscount : false})
+                .col   
+                    +product({isDiscount : true})
+            nav(aria-label='Page navigation example')
+                ul.pagination
+                    li.page-item
+                        a.page-link(href='#')
+                            i(class="fa-solid fa-chevron-right")
+                    li.page-item.active
+                        a.page-link(href='#') 1
+                    li.page-item
+                        a.page-link(href='#') 2
+                    li.page-item
+                        a.page-link(href='#') 3
+                    li.page-item
+                        a.page-link(href='#')
+                            i(class="fa-solid fa-chevron-left")
+
+
+

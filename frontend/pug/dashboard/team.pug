@@ -1,0 +1,17 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | ادارة الفريق
+block content 
+    +pageHead(' ادارة الفريق<span>( 555 )</span>' , {url:'#' , title:'اضافة موظف   '})
+
+    - var buttons = [{class:'btn-active-disactive btnn-red' , name:'تسجيل خروج كل الموظفين  '} , {class:'btn-active-disactive btnn-orange' , name:'تعديل  '} , {class:'btn-active-disactive btnn-red' , name:'حذف '} , {class:'btn-active-disactive btnn-red' , name:'تعليق   '} ]
+    - var fields = ['الاسم' , 'ﺗﺎرﻳﺦ اﻟﺎﻧﻀﻤﺎم ' , '  رﻗﻢ اﻟﻬﺎﺗﻒ' , ' نوع الصلاحيات '  , 'الإيميل', 'الإجراءات']
+    - var actions = {isSwitch:true} 
+    - var items = []
+    - var i = 0;
+    while i < 10
+
+        - items.push([ '<h5>Mohamed ahmed</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>+966 464 131 646</h5>' , 'Admin' ,'Mohamed@gmail.com ']);
+        - i++
+    +table( {filters:false , buttons , fields , items , headTitle: 'ﻓﺮﻳﻖ اﻟﻤﺘﺠﺮ ' , isInner: true , isDataTable:true , actions , isTableCheckbox:true })
+

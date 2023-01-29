@@ -1,0 +1,32 @@
+mixin listLinks(listSidebar)
+    .list-links-group
+        h5
+        ul
+            li
+                a(href="#" class="active")
+                    .icon 
+                        img(src="../../assets/images/menu/" + 'home' + ".svg" alt="")
+                    span الرئيسة
+    each group in listSidebar
+        .list-links-group 
+            if group.title 
+                h5 #{group.title}
+            ul
+                each listItem , index in group.list
+                    li
+                        a(href="#")
+                            .icon 
+                                img(src="../../assets/images/menu/" + listItem.icon + ".svg" alt="")
+                            span    #{listItem.title} 
+
+
+- var listSidebar = [{"title":"المنتجات","list":[{"title":"المنتجات","icon":"Product_Package"},{"title":"تصنيفات المنتجات","icon":"plus"}]},{"title":"الطلبات","list":[{"title":"الطلبات","icon":"Shopping_Bag"},{"title":"الصفقات","icon":"Tag"},{"title":"عروض الصفقات ","icon":"offer"},{"title":"التقارير ","icon":"circular-diagram"}]},{"title":"التسويق","list":[{"title":"السلات المتروكة","icon":"cart"},{"title":"قسائم التخفيض","icon":"coupon"},{"title":"حملات الرسائل ","icon":"send"},{"title":"إضافة القصص ","icon":"instagram-live"}]},{"title":"العملاء","list":[{"title":"العملاء","icon":"users"},{"title":"الرسائل","icon":"comm-chat"}]},{"title":"الإعدادات","list":[{"title":"إعدادات الموقع","icon":"setting 2"},{"title":"الشحن والتوصيل","icon":"fast"},{"title":"مواقع التخزين ","icon":"shed"},{"title":"تفعيل الضريبة","icon":"Bank-Statement"},{"title":"طرق الدفع","icon":"wallet"},{"title":"المخزون ","icon":"shipping"},{"title":"إدارة نقاط التغطية","icon":"location"},{"title":"إدارة التقييمات","icon":"favorites"},{"title":"إدارة الفريق ","icon":"users"}]}];
+
+.dash-sidebar
+    .top-sidebar 
+        .logo   
+            img(src="../../assets/images/logo.png" alt="alt")
+        .close-menu 
+            i.fas.fa-times     
+    .list-links 
+        +listLinks(listSidebar)

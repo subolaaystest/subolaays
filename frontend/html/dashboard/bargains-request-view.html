@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <title>Document</title>
+  </head>
+  <body></body>
+  <div class="dashboard-layout"> 
+    <div class="dashbord-navbar"> 
+      <div class="logo">  <img src="../../assets/images/logo.png" alt="alt"></div>
+      <div class="dash-breadcrumb"> 
+        <h1> الصفقات
+        </h1>
+      </div>
+      <div class="dash-actions"><a class="lang-btn"> 
+          <div class="code"> ar </div><span>العربية </span></a>
+        <div class="search"> 
+          <form action="#" method="method">
+            <div class="form-group"> 
+              <input class="form-control" type="text">
+              <button>~<i class="fas fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="noti"> 
+          <button>
+            <svg> 
+              <use href="../../assets/images/icons/icons.svg#notification"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="account-area">
+          <div class="dropdown">
+            <button class="btn p-0 dropdown-toggle" id="userStatus" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/photo-top.png" alt=""></button>
+            <ul class="dropdown-menu" aria-labelledby="userStatus">
+              <li><a class="dropdown-item" href="#"> 
+                  <h5>Matgar One</h5><span>46313</span></a></li>
+              <li><a class="dropdown-item" href="#"> 
+                  <h5>Mazen</h5><span>Mazen98@gmail.com</span></a></li>
+              <li><a class="dropdown-item" href="#">
+                  <h5>تسجيل الخروج</h5></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div class="dash-sidebar">
+        <div class="top-sidebar"> 
+          <div class="logo">  <img src="../../assets/images/logo.png" alt="alt"></div>
+          <div class="close-menu"> <i class="fas fa-times">    </i></div>
+        </div>
+        <div class="list-links"> 
+                <div class="list-links-group">
+                  <h5></h5>
+                  <ul>
+                    <li><a class="active" href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/home.svg" alt=""></div><span>الرئيسة</span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>المنتجات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Product_Package.svg" alt=""></div><span> المنتجات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/plus.svg" alt=""></div><span> تصنيفات المنتجات </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>الطلبات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Shopping_Bag.svg" alt=""></div><span> الطلبات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Tag.svg" alt=""></div><span> الصفقات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/offer.svg" alt=""></div><span> عروض الصفقات  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/circular-diagram.svg" alt=""></div><span> التقارير  </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>التسويق</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/cart.svg" alt=""></div><span> السلات المتروكة </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/coupon.svg" alt=""></div><span> قسائم التخفيض </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/send.svg" alt=""></div><span> حملات الرسائل  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/instagram-live.svg" alt=""></div><span> إضافة القصص  </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>العملاء</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/users.svg" alt=""></div><span> العملاء </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/comm-chat.svg" alt=""></div><span> الرسائل </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>الإعدادات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/setting 2.svg" alt=""></div><span> إعدادات الموقع </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/fast.svg" alt=""></div><span> الشحن والتوصيل </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/shed.svg" alt=""></div><span> مواقع التخزين  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Bank-Statement.svg" alt=""></div><span> تفعيل الضريبة </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/wallet.svg" alt=""></div><span> طرق الدفع </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/shipping.svg" alt=""></div><span> المخزون  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/location.svg" alt=""></div><span> إدارة نقاط التغطية </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/favorites.svg" alt=""></div><span> إدارة التقييمات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/users.svg" alt=""></div><span> إدارة الفريق  </span></a></li>
+                  </ul>
+                </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="sidbar-icon"> <i class="fas fa-bars"> </i></div>
+        <div class="page-content-inner bargains-request">
+          <div class="bargains-request-head"> 
+            <h2>تفاصيل العميل</h2>
+            <button class="btnn-orange btn btnn hvr-shadow" type="button"><span>تفاصيل العرض</span>
+            </button>
+          </div>
+          <div class="order-details"> 
+            <div class="row">
+              <div class="col-lg-4"> 
+                <div class="order-details-box"> <span> موعد ارسال العرض </span>
+                  <h5>12 سبتمبر 2021</h5>
+                </div>
+              </div>
+              <div class="col-lg-4"> 
+                <div class="order-details-box"> <span>حالة العرض </span>
+                  <h5>منتظرة</h5>
+                </div>
+              </div>
+              <div class="col-lg-4"> 
+                <div class="order-details-box"> <span>إجمالي العرض</span>
+                  <h5>64 ريال</h5>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-lg-2"> 
+                <div class="order-details-box"> <span>نوع المنشأة</span>
+                  <h5>بقالة</h5>
+                </div>
+              </div>
+              <div class="col-lg-4"> 
+                <div class="order-details-box"> <span>إسم العميل</span>
+                  <h5>Mohamed ahmed</h5>
+                </div>
+              </div>
+              <div class="col-lg-4"> 
+                <div class="order-details-box"> <span>البريد الإلكتروني</span>
+                  <h5>Mohamed ahmed @gmail.com</h5>
+                </div>
+              </div>
+              <div class="col-lg-2"> 
+                <div class="order-details-box"> <span>عضو من</span>
+                  <h5>2021/4/21</h5>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="add-product-title"> 
+            <h2>اﻟﻤﻨﺘﺠﺎت اﻟﻤﻄﻠﻮﺑﺔ</h2>
+            <p>ﻣﻦ ﻓﻀﻠﻚ ﻗﻢ ﺑﻮﺿﻊ ﻋﻠﺎﻣﺔ ﺻﺢ ﻟﻠﻤﻨﺘﺞ اذا ﻛﺎن ﻣﺘﻮﻓﺮ ﻟﺪﻳﻚ وﺑﺎﻟﻜﻤﻴﺔ اﻟﻤﻄﻠﻮﺑﺔ</p>
+          </div>
+          <div class="table-container">
+            <div class="dash-table table-responsive">
+              <table class="table responsive" id="">
+                <thead> 
+                  <th>المنتج</th>
+                  <th>الإسم</th>
+                  <th>القسم</th>
+                  <th>السعر</th>
+                  <th>الكمية</th>
+                  <th>الإجراءات</th>
+                </thead>
+                <tbody>
+                  <tr> 
+                    <td><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div></td>
+                    <td><div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div></td>
+                    <td><div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div></td>
+                    <td><h5 class="textt-green">45 ريال</h5></td>
+                    <td><h5><strong>5</strong></h5></td>
+                    <td>
+                      <div class="table-actions">
+                        <div class="available-check"> 
+                          <input type="checkbox" id="available-check354"/>
+                          <label class="btn hvr-shadow" for="available-check354">متوفر لدي</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div></td>
+                    <td><div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div></td>
+                    <td><div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div></td>
+                    <td><h5 class="textt-green">45 ريال</h5></td>
+                    <td><h5><strong>5</strong></h5></td>
+                    <td>
+                      <div class="table-actions">
+                        <div class="available-check"> 
+                          <input type="checkbox" id="available-check960"/>
+                          <label class="btn hvr-shadow" for="available-check960">متوفر لدي</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div></td>
+                    <td><div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div></td>
+                    <td><div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div></td>
+                    <td><h5 class="textt-green">45 ريال</h5></td>
+                    <td><h5><strong>5</strong></h5></td>
+                    <td>
+                      <div class="table-actions">
+                        <div class="available-check"> 
+                          <input type="checkbox" id="available-check70"/>
+                          <label class="btn hvr-shadow" for="available-check70">متوفر لدي</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div></td>
+                    <td><div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div></td>
+                    <td><div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div></td>
+                    <td><h5 class="textt-green">45 ريال</h5></td>
+                    <td><h5><strong>5</strong></h5></td>
+                    <td>
+                      <div class="table-actions">
+                        <div class="available-check"> 
+                          <input type="checkbox" id="available-check367"/>
+                          <label class="btn hvr-shadow" for="available-check367">متوفر لدي</label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <hr class="my-5 cus-hr">
+          <div class="add-product-title"> 
+            <h2>تفاصيل الشحن</h2>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 align-items-end"> 
+            <div class="col"> 
+              <div class="order-details-box"> <span> موعد اللشحن </span>
+                <h5>50 ريال + 20 ريال توصيل سريع</h5>
+              </div>
+            </div>
+            <div class="col"> 
+              <div class="order-details-box"> <span> خيارات الشحن </span>
+                <h5><b class="textt-red">50 ريال + 20 ريال توصيل سريع</b> الشركة المتحدة للتوصيل</h5>
+              </div>
+            </div>
+            <div class="col"> 
+              <div class="order-details-box"> <span> السعر للمنتجات المطلوبة  </span>
+                <h5><b class="textt-green">35 ريال</b></h5>
+              </div>
+            </div>
+          </div>
+          <div class="add-product-title pt-5"> 
+            <h2>ملاجظاتك</h2>
+          </div>
+          <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء</p>
+          <div class="add-product-title pt-5"> 
+            <h2>الفاتورة</h2>
+          </div>
+          <div class="order-details">
+            <div class="order-total"> 
+              <ul class="p-0 m-0"> 
+                <li> 
+                  <h5>السعر الفرعي </h5>
+                  <h6>350 ريال</h6>
+                </li>
+                <li> 
+                  <h5>التوصيل<span class="express">Express </span></h5>
+                  <h6>350 ريال</h6>
+                </li>
+                <li> 
+                  <h5>كوبون الخصم </h5>
+                  <h6>20 ريال</h6>
+                </li>
+                <li> 
+                  <h5>إجمالي الطلبات</h5>
+                  <h6 class="fw-bold">620 ريال</h6>
+                </li>
+              </ul>
+              <hr>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between flex-wrap"> 
+            <div class="add-product-title">
+              <h2>وﺳﺎﺋﻞ اﻟﺪﻓﻊ اﻟﻤﻨﺎﺳﺒﺔ ﻟﻚ</h2>
+            </div>
+            <div class="payments-list-check">
+              <ul class="p-0 m-0"> 
+                <li> 
+                  <input class="active" type="radio" name="payment" id="visa">
+                  <label class="active" for="visa"> 
+                    <div class="title">فيزا / ماستر كارد</div><img class="img" src="../../assets/images/payments/visa.png" alt=""><img class="img-active" src="../../assets/images/payments/visa-active.png" alt="">
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="btn-submit cancel-bargains">
+            <button class="btnn-red btn btnn hvr-shadow" data-bs-toggle="modal" data-bs-target="#cancelOfferModal"><span>إلغاء العرض</span></button>
+          </div>
+          <div class="modal fade" id="cancelOfferModal" tabindex="-1" aria-labelledby="cancelOfferModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="cancelOfferModalLabel"> </h5>
+                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                  <div class="cansel-offer-modal"> 
+                    <h2>تم ارسال عرضك بنجاح</h2>
+                    <p>سيتم تحويلك تلقائيا الى صفحة عروض الصفقات</p>
+                    <div class="text-1">مر الكثير من الوقت ولم تتلقى موافقة</div>
+                    <hr>
+                    <div class="text-2">لم يعد لديك المنتجات التى يحتاجها العميل</div>
+                    <hr>
+                    <div class="text-3">سبب آخر</div>
+                    <button class="btnn-red btn btnn hvr-shadow" data-bs-toggle="modal" data-bs-target="#cancelOfferModal"><span>إلغاء العرض</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
+    <script src="../../assets/js/jquery-pincode-autotab.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSbSmPAGJ9yjR_hfPXnHBH_5zplpE_5sY&amp;callback=initAutocomplete&amp;libraries=places&amp;v=weekly" defer></script>
+    <script src="../../assets/js/bundle.min.js"> </script>
+    <script src="../../assets/js/moreFields.js"> </script>
+    <script src="../../assets/js/main.js"> </script>
+    <script src="../../assets/js/charts.js"> </script>
+  </div>
+</html>

@@ -1,0 +1,18 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | المخزون
+block content 
+    +pageHead('المخزون ')
+
+    - var buttons = [{class:'btnn-orange' , name:'رؤية الكل  ' , icon:''}]
+    - var fields = ['الإسم ' , ' القسم'  , 'SKU' , 'الحالة' , 'اﻟﻜﻤﻴﺔ اﻟﺤﺎﻟﻴﺔ ' , 'اﻟﻜﻤﻴﺔ اﻟﻮاردة' , 'تعديل الكمية']
+    - var actions = {isInputNumber:true}
+    - var filters =  {selects:['المتاح', 'ﺣﺴﺐ اﻟﻘﺴﻢ '],btnSort:true,searchBox:true}
+    - var items = []
+    - var i = 0;
+    while i < 4
+        - items.push([ '<div class="d-flex"><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div><h5 class="mx-2">ﺧﻀﺮوات ﻣﺸﻜﻞ</h5></div>' ,'<div class="table-two-texts"><h5> بقالة </h5><h6>خضروات</h6></div>','<h5>6497</h5>','<div class="table-status status-1">متاح</div>' ,'<h5 class="textt-green">64</h5>' , '<h5 class="textt-orange">64</h5>']);
+        - i++
+    
+
+    +table( {filters , buttons , fields ,  items , actions , isInner:true, isTableCheckbox:true,  isDataTable:false , headTitle:'المخزون'})

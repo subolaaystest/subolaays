@@ -1,0 +1,109 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | جميع الطلبات
+block content
+    .dash-tabs
+        .nav-tabs-1 
+            ul#myTab.nav.nav-tabs(role='tablist')
+                li.nav-item(role='presentation')
+                    button#invoice-details-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#invoice-details' type='button' role='tab' aria-controls='invoice-details' aria-selected='true') تفاصيل الفاتورة
+                li.nav-item(role='presentation')
+                    button#product-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#product-details' type='button' role='tab' aria-controls='product-details' aria-selected='false') تفاصيل المنتجات
+                li.nav-item(role='presentation')
+                    button#order-status-tab.nav-link(data-bs-toggle='tab' data-bs-target='#order-status' type='button' role='tab' aria-controls='order-status' aria-selected='false') حالة الطلب
+            #myTabContent.tab-content
+                #invoice-details.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='invoice-details-tab') 
+                    .order-details 
+                        .row
+                            .col-lg-2 
+                                +orderDetailsBox('رقم الطلب' , '6461313#')
+                            .col-lg-4 
+                                +orderDetailsBox('تاريخ ووقت الطلب' , '12 سبتمبر 2021')
+                            .col-lg-4 
+                                +orderDetailsBox('نوع الطلب' , 'عرض وطلب')
+                            .col-lg-2 
+                                +orderDetailsBox('إجمالي الطلب' , '64 ريال')
+                        hr
+                        .row
+                            .col-lg-2 
+                                +orderDetailsBox('نوع المنشأة' , 'بقالة')
+                            .col-lg-4 
+                                +orderDetailsBox('إسم العميل' , 'Mohamed ahmed')
+                            .col-lg-4 
+                                +orderDetailsBox('البريد الإلكتروني' , 'Mohamed ahmed @gmail.com')
+                            .col-lg-2 
+                                +orderDetailsBox('عضو من'  , '2021/4/21') 
+                        .bottom-row.d-flex.justify-content-between.flex-wrap.mt-5 
+                            +orderDetailsBox('موقع العميل' , 'تبوك السعودية')
+                            .buttons.d-flex 
+                                +Button({color:'gray' , name:'عرض الموقع' , icon:'marker'})
+                                +Button({color:'orange' , name:'تفاصيل العميل' , class:'mr-2' , icon:'user'})
+                        hr
+                        .order-total 
+                            ul 
+                                li 
+                                    h5 السعر الفرعي 
+                                    h6 350 ريال
+                                li 
+                                    h5 التوصيل
+                                        span.express Express 
+                                    h6 350 ريال
+                                li 
+                                    h5 كوبون الخصم 
+                                    h6 20 ريال
+                                li 
+                                    h5 إجمالي الطلبات
+                                    h6 620 ريال
+
+                        hr
+                        +Button({color:'orange' , name:'طباعة الفاتورة' , icon:'printer'})
+
+
+
+                #product-details.tab-pane.fade(role='tabpanel' aria-labelledby='product-details-tab') 
+                    - var fields = ['المنتج' , 'الإسم' , 'القسم', 'الحالة' , 'الكمية' , 'سعر المنتج' , 'الإجراءات' ]
+                    - var items = []
+                    - var i = 0;
+                        while i < 4
+                            - items.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>','<h5 class="textt-orange">متاح</h5>','<h5>45 </h5>','<h5>45 ريال</h5>']);
+                            - i++
+                    - var actions = {isButton:true , list: ['eye' , 'download']} 
+                    +table({fields , items , actions , headTitle: 'جميع الطلبات'})
+
+                #order-status.tab-pane.fade(role='tabpanel' aria-labelledby='order-status-tab') 
+                    .order-details 
+                        .row
+                            .col-lg-3 
+                                +orderDetailsBox('حالة الطلب' , 'جاري التوصيل')
+                            .col-lg-3 
+                                +orderDetailsBox('الوقت المتوقع للوصول  ' , '12 سبتمبر 2021')
+                            .col-lg-3 
+                                +orderDetailsBox('شركة الشحن' , 'علي إكسبرس')
+                            .col-lg-3 
+                                +orderDetailsBox('نوع الشحن ' , '<strong class="express">Express</strong>')
+
+                        hr
+                        +customProgress({step: 2 , textOne: 'تم التجهيز' , textTwo:'حالة الطلب <strong>جاري التوصيل</strong>' , textThree:'تم التسليم'})
+                        |
+                        hr
+                        .bottom-row.d-flex.justify-content-between.flex-wrap.mt-5 
+                            +orderDetailsBox('موقع العميل' , 'تبوك السعودية')
+                            .buttons.d-flex 
+                                +Button({color:'gray' , name:'عرض الموقع' ,icon:'marker'})
+                        |
+                        hr
+                        .dropdown
+                            button#changeAppStatus.btnn-orange.btn.btnn.hvr-shadow(control-id='ControlID-9' type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                span تغيير حالة الطلب
+
+                            ul.dropdown-menu(aria-labelledby='changeAppStatus')
+                                li.mb-2
+                                    a.dropdown-item(href='#') ﺟﺎرى اﻟﺘﺠﻬﻴﺰ
+                                li.mb-2
+                                    a.dropdown-item(href='#') ﺟﺎري اﻟﺘﻮﺻﻴﻞ
+                                li
+                                    a.dropdown-item(href='#') ﺗﻢ اﻟﺘﺴﻠﻴﻢ
+
+

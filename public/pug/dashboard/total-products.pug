@@ -1,0 +1,37 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | جميع المنتجات
+block content 
+    +pageHead('إجمالي المنتجات <span>( 555 )</span>' , {url:'#' , title:'إضافى منتج جديد'})
+    .page-filters-2
+        .inputs-btn
+            +select({label:'' , options:['الأحدث' , 'إختر' , 'إختر' , 'الأحدث']})
+            +select({label:'' , options:['حسب القسم' , 'إختر' , 'إختر' , 'حسب القسم']})
+            +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-3 btn-fill' })
+        .table-search-box 
+            input(type="text" class="form-control")
+            .icon 
+                svg
+                    use(href="../../assets/images/icons/icons.svg#search")
+    .row.row-cols-lg-4.row-cols-2.mt-5
+        +statusInfo('منتج بالفعل'  , 'orange' , '450 منتج')
+        +statusInfo('بإنتظار المراجعة'  , 'green' , '450 منتج')
+        +statusInfo('أوشك على النفاذ'  , 'red' , '450 منتج')
+        +statusInfo('مرفوض'  , 'red' , '450 منتج')
+    - var buttons = [ {class:'btnn-orange' , name:'تصدير' , icon:'download'} , {class:'btnn-gray' , name:'تحديث' , icon:'refresh'} ]
+    - var fields = [' المنتج' , 'الإسم' , 'القسم' , 'الحالة' , 'الكمية' , 'سعر المنتج'  , 'الإجراءات']
+    - var filters =  {selects:[ 'القسم '] ,btnSort:true,searchBox:true}
+
+    - var actions = {isButton:true , list: ['eye' , 'download']} 
+    - var items = []
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    - items.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<div class="table-status status-1">متاح</div>','<h5>52</h5>','<h5>64 ريال</h5>']);
+    +table( { buttons , fields , items , actions , isInner:true,   headTitle: 'جميع المنتجات' , filters })
+

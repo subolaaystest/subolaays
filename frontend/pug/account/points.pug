@@ -1,0 +1,43 @@
+extends ../layouts/accountLayout.pug
+include ../mixins/landingMixin.pug
+include ../mixins/accountMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .home-progress
+        .row.m-0.w-100
+            .col-10
+                h2.home-progress-title أكمل إعدادات متجرك
+                .home-progress-bar-parent.m-0 
+                    .home-progress-bar-inner(style="width:57%")
+                    h4
+                        span مكتمل
+                        span <div class="counter">57</div>% 
+        .icon 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#plus")
+    .points-content 
+        .head-points.mb-3
+            span.fw-bold نقاط مكافئة
+            span 4545   
+        a(href="#")
+            .share
+                img(src="../../assets/images/account/Group 21230.svg", alt="")
+                .auth-header.mt-4 
+                    h5 شارك التطبيق مع اصدقائك
+                    h6 وأكسب 10 نقاط اضافية
+        .head-points.justify-content-start.mt-3
+            .icon.me-3
+                svg 
+                    use(href="../../assets/images/icons/icons.svg#checklist")
+            
+            span تم الحصول على 50 نقطة <br>من خلال مشاركة التطبيق مع الاصدقاء
+
+
+
+
+
+
+
+    

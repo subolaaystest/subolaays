@@ -1,0 +1,21 @@
+extends ../layouts/authLayout.pug
+
+block content 
+    .icon 
+        img(src="../../assets/images/icons/waving-hand.svg" alt="")
+    h1 مرحباً . قم بتسجيل الدخول 
+    form(action="")
+        .input-text-icon-box 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#phone")
+            span رقم الجوال
+            input(type="text" id="phone" class="phone_number")
+            input(type="hidden" id="fullNumber")
+        #error-msg
+        #valid-msg
+        .btn-submit 
+            button.btn.hvr-float-shadow
+                span تسجيل الدخول   
+        .bottom-form-text 
+            h5 ما اشتركت معنا بعد   
+                a(href="") إشترك ألحين    

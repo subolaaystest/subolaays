@@ -1,0 +1,159 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | جميع الطلبات
+block content
+    .dash-tabs.shipping-delivery-page
+        .nav-tabs-1 
+            ul#myTab.nav.nav-tabs(role='tablist')
+                li.nav-item(role='presentation')
+                    button#Company-data-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#Company-data' type='button' role='tab' aria-controls='Company-data' aria-selected='true') ﺑﻴﺎﻧﺎت اﻟﺸﺮﻛﺔ
+                li.nav-item(role='presentation')
+                    button#Connection-data-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Connection-data' type='button' role='tab' aria-controls='Connection-data' aria-selected='false') ﺑﻴﺎﻧﺎت اﻟﺮﺑﻂ
+                li.nav-item(role='presentation')
+                    button#Shipping-price-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Shipping-price' type='button' role='tab' aria-controls='Shipping-price' aria-selected='false') ﺗﺴﻌﻴﺮة اﻟﺸﺤﻦ
+            #myTabContent.tab-content
+                #Company-data.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='Company-data-tab')
+                    .compay-top-details 
+                        img(src="../../assets/images/logos/sab.png" alt="")
+                        h3 ﻧﺒﺬة ﻋﻦ ﺷﺮﻛﺔ ﺻﺎب
+                        p ﻫﻨﺎك ﺣﻘﻴﻘﺔ ﻣﺜﺒﺘﺔ ﻣﻨﺬ زﻣﻦ ﻃﻮﻳﻞ وﻫﻲ أن اﻟﻤﺤﺘﻮى اﻟﻤﻘﺮوء ﻟﺼﻔﺤﺔ ﻣﺎ ﺳﻴﻠﻬﻲ اﻟﻘﺎرئ ﻋﻦ اﻟﺘﺮﻛﻴﺰ ﻋﻠﻰ اﻟﺸﻜﻞ اﻟﺨﺎرﺟﻲ ﻟﻠﻨﺺ أو ﺷﻜﻞ ﺗﻮﺿﻊ اﻟﻔﻘﺮات ﻓﻲ اﻟﺼﻔﺤﺔ اﻟﺘﻲ ﻳﻘﺮأﻫﺎ. وﻟﺬﻟﻚ ﻳﺘﻢ اﺳﺘﺨﺪام ﻃﺮﻳﻘﺔ ﻟﻮرﻳﻢ إﻳﺒﺴﻮم ﻟﺄﻧﻬﺎ ﺗﻌﻄﻲ ﺗﻮزﻳﻌﺎَ ﻃﺒﻴﻌﻴﺎَ -إﻟﻰ ﺣﺪ ﻣﺎ- ﻟﻠﺄﺣﺮف ﻋﻮﺿﺎً ﻋﻦ اﺳﺘﺨﺪام "ﻫﻨﺎ ﻳﻮﺟﺪ
+                    .shipping-delivery-head
+                        .icon  
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#settings-1')
+                        h3 Sab ﺧﺪﻣﺎت
+                        .shipping-delivery-finish 
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#settings-2')
+
+                    ul.cus-list 
+                        li 
+                            span خدمة الشحن والتوصيل من الباب للباب
+                        li 
+                            span خدمة التسليم والاستلام من/في الفرع.
+
+
+                    .shipping-delivery-head
+                        .icon  
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#marker')
+                        h3 نطاق التغطية 
+                        .shipping-delivery-finish 
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#marker-1')
+
+                    ul.cus-list 
+                        li 
+                            span المنطقة الشمالية
+                        li 
+                            span المنطقة الجنوبية
+
+                    .shipping-delivery-head
+                        .icon  
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#contract')
+                        h3 طريقة التعاقد والربط
+                        .shipping-delivery-finish 
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#link')
+
+                    p ﻳﺘﻢ اﻟﺘﻌﺎﻗﺪ ﻟﺪﻳﻨﺎ ﻣﻦ ﺧﻠﺎل ﺛﻠﺎث ﻃﺮق 
+                    p اﻟﺘﻮاﺻﻞ ﻣﻊ ﻓﺮﻳﻖ ﺧﺪﻣﺔ اﻟﻌﻤﻠﺎء ﻋﻠﻰ اﻟﺮﻗﻢ 920027292
+
+
+                    p اﻟﺘﻮاﺻﻞ ﻋﻠﻰ اﻟﺎﻳﻤﻴﻞ اﻟﺘﺎﻟﻲ:
+
+                    p  com.sa.lafasta@info
+
+                    p ﻋﻦ ﻃﺮﻳﻖ اﻟﺘﻮاﺻﻞ واﻟﺘﻨﺴﻴﻖ ﻣﻊ ﻓﺮﻳﻖ اﻟﻤﺒﻴﻌﺎت وﻓﺘﺢ ﺣﺴﺎب ﻓﻲ ﻣﻮﻗﻊ ﻟﺎﻓﺎﺳﺘﺎ  
+                    br
+
+
+                    p آﻟﻴﺔ ﻓﺘﺢ ﺣﺴﺎب ﻋﺒﺮ ﻣﻮﻗﻊ ﻟﺎﻓﺎﺳﺘﺎ ﺑﺸﻜﻞ ﻣﺒﺴﻂ: 
+
+                    p 1- اﻟﺪﺧﻮل اﻟﻰ ﻣﻮﻗﻊ ﻟﺎﻓﺎﺳﺘﺎ 
+
+                    p 2- اﻟﻀﻐﻂ ﻋﻠﻰ اﻳﻘﻮﻧﺔ ﺗﺴﺠﻴﻞ ﺣﺴﺎب ﺟﺪﻳﺪ 
+
+                    p 3- ﺗﺴﺠﻴﻞ اﻟﺒﻴﺎﻧﺎت اﻟﻤﻄﻠﻮﺑﺔ 
+
+                    p 4- رﻓﻊ ﺗﺬﻛﺮة ﻣﻦ ﺧﻠﺎل اﻟﻴﻮزر أو ارﺳﺎل اﻳﻤﻴﻞ ﻳﺘﻀﻤﻦ اﺳﻢ اﻟﻤﺴﺘﺨﺪم ﻟﺘﻔﻌﻴﻞ اﻟﺤﺴﺎب 
+                    br
+
+
+                    p ﺧﻄﻮات اﻟﺮﺑﻂ ﻣﻊ ﻟﺎﻓﺎﺳﺘﺎ 
+
+                    p 1-ﻣﻦ اﻟﻘﺎﺋﻤﺔ اﻟﺠﺎﻧﺒﻴﺔ ﻟﻠﻮﺣﺔ اﻟﺘﺤﻜﻢ، اﺿﻐﻂ ﻋﻠﻰ إﻋﺪادات اﻟﻤﺘﺠﺮ
+
+                    p 2- اﺿﻐﻂ ﻋﻠﻰ ﺧﻴﺎرات اﻟﺸﺤﻦ واﻟﺘﻮﺻﻴﻞ
+
+                    p 3- اﺿﻐﻂ ﻋﻠﻰ رﺑﻂ اﻟﺨﺪﻣﺔ اﻟﻤﻮﺟﻮد أﺳﻔﻞ اﺳﻢ اﻟﺸﺮﻛﺔ ﻟﺎﻓﺎﺳﺘﺎ 
+
+                    p 4- ﻣﻦ ﺗﺒﻮﻳﺐ ﺑﻴﺎﻧﺎت اﻟﺮﺑﻂ ،اﻛﺘﺐ ﺑﻴﺎﻧﺎت ﺣﺴﺎﺑﻚ ﻋﻠﻰ ﻟﺎﻓﺎﺳﺘﺎ ، ﺛﻢ اﺿﻐﻂ ﻋﻠﻰ ﺣﻔﻆ وﻟﻠﻤﺰﻳﺪ اﻟﺘﻮاﺻﻞ ﻋﻠﻰ اﻟﺮﻗﻢ 920027292
+
+
+
+                    p آﻟﻴﺔ ﺗﺴﻮﻳﺔ ﻣﺒﺎﻟﻎ اﻟﺪﻓﻊ ﻋﻨﺪ اﻟﺎﺳﺘﻠﺎم
+
+                    p ﻳﺘﻢ ﺗﺤﻮﻳﻞ اﻟﻤﺒﺎﻟﻎ ﻛﻞ ﻣﻨﺘﺼﻒ وﻧﻬﺎﻳﺔ  ﺷﻬﺮ ﻣﻴﻠﺎدي
+
+                    .shipping-delivery-head
+                        .icon  
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#ask')
+                        h3 طريقة التعاقد والربط
+                        .shipping-delivery-finish 
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#ask-1')
+
+                    ul.cus-list
+                        li
+                            span  ﺧﺪﻣﺔ اﻟﺸﺤﻦ واﻟﺘﻮﺻﻴﻞ ﻣﻦ اﻟﺒﺎب ﻟﻠﺒﺎب
+                            p ﻫﻨﺎك ﺣﻘﻴﻘﺔ ﻣﺜﺒﺘﺔ ﻣﻨﺬ زﻣﻦ ﻃﻮﻳﻞ وﻫﻲ أن اﻟﻤﺤﺘﻮى اﻟﻤﻘﺮوء ﻟﺼﻔﺤﺔ ﻣﺎ ﺳﻴﻠﻬﻲ اﻟﻘﺎرئ ﻋﻦ اﻟﺘﺮﻛﻴﺰ ﻋﻠﻰ اﻟﺸﻜﻞ اﻟﺨﺎرﺟﻲ ﻟﻠﻨﺺ أو ﺷﻜﻞ ﺗﻮﺿﻊ اﻟﻔﻘﺮات ﻓﻲ اﻟﺼﻔﺤﺔ اﻟﺘﻲ ﻳﻘﺮأﻫﺎ. وﻟﺬﻟﻚ ﻳﺘﻢ اﺳﺘﺨﺪام ﻃﺮﻳﻘﺔ ﻟﻮرﻳﻢ إﻳﺒﺴﻮم ﻟﺄﻧﻬﺎ ﺗﻌﻄﻲ ﺗﻮزﻳﻌﺎَ ﻃﺒﻴﻌﻴﺎَ -إﻟﻰ ﺣﺪ ﻣﺎ- ﻟﻠﺄﺣﺮف ﻋﻮﺿﺎً ﻋﻦ اﺳﺘﺨﺪام "ﻫﻨﺎ ﻳﻮﺟﺪ
+                        li
+                            span  ﺧﺪﻣﺔ اﻟﺸﺤﻦ واﻟﺘﻮﺻﻴﻞ ﻣﻦ اﻟﺒﺎب ﻟﻠﺒﺎب
+                            p ﻫﻨﺎك ﺣﻘﻴﻘﺔ ﻣﺜﺒﺘﺔ ﻣﻨﺬ زﻣﻦ ﻃﻮﻳﻞ وﻫﻲ أن اﻟﻤﺤﺘﻮى اﻟﻤﻘﺮوء ﻟﺼﻔﺤﺔ ﻣﺎ ﺳﻴﻠﻬﻲ اﻟﻘﺎرئ ﻋﻦ اﻟﺘﺮﻛﻴﺰ ﻋﻠﻰ اﻟﺸﻜﻞ اﻟﺨﺎرﺟﻲ ﻟﻠﻨﺺ أو ﺷﻜﻞ ﺗﻮﺿﻊ اﻟﻔﻘﺮات ﻓﻲ اﻟﺼﻔﺤﺔ اﻟﺘﻲ ﻳﻘﺮأﻫﺎ. وﻟﺬﻟﻚ ﻳﺘﻢ اﺳﺘﺨﺪام ﻃﺮﻳﻘﺔ ﻟﻮرﻳﻢ إﻳﺒﺴﻮم ﻟﺄﻧﻬﺎ ﺗﻌﻄﻲ ﺗﻮزﻳﻌﺎَ ﻃﺒﻴﻌﻴﺎَ -إﻟﻰ ﺣﺪ ﻣﺎ- ﻟﻠﺄﺣﺮف ﻋﻮﺿﺎً ﻋﻦ اﺳﺘﺨﺪام "ﻫﻨﺎ ﻳﻮﺟﺪ
+
+                #Connection-data.tab-pane.fade(role='tabpanel' aria-labelledby='Connection-data-tab') 
+                    .add-product-title 
+                        h2 اﺳﻢ اﻟﻌﺮض
+                        p ﻳﻤﻜﻨﻚ ﺗﺨﺼﻴﺺ اﺳﻢ ﺷﺮﻛﺔ اﻟﺸﺤﻦ اﻟﺬي ﻳﺘﻢ ﻋﺮﺿﻪ ﻟﻠﻌﻤﻠﺎء ﻓﻲ ﻗﺎﺋﻤﺔ ﺷﺮﻛﺎت اﻟﺸﺤﻦ اﻟﻤﺘﺎﺣﺔ ﻟﻜﻞ ﻋﻤﻴﻞ ﻓﻲ ﺻﻔﺤﺔ اﻧﻬﺎء اﻟﻄﻠﺐ
+
+                    +input({placeholder: 'ﻣﺜﻠﺎ : ﺷﺮﻛﺔ ﺷﺤﻦ ﺳﺮﻳﻊ'})
+                    +input({placeholder: 'Token API : اﻟﺘﻮﻛﻴﻦ' , label:'Token API : اﻟﺘﻮﻛﻴﻦ'})
+                    +input({placeholder: 'Code Customer' , label:'Code Customer'})
+
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'ربط' , class:"btn-fill px-5" }) 
+
+                #Shipping-price.tab-pane.fade(role='tabpanel' aria-labelledby='Shipping-price-tab') 
+                    +input({placeholder: 'اﻟﺸﺤﻦ ﻟﻠﻤﺪن اﻟﻤﺪﻋﻮﻣﺔ' , label:'ﻧﻮع اﻟﺸﺤﻦ'})
+                    .d-flex.justify-content-between(style="margin-top:-10px") 
+                        .form-group
+                            label(for="switch5")  تفعيل
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                            label.form-check-label(for="switch" + 5)
+                    .add-product-title 
+                        h2 ﻧﻮع اﻟﺘﺴﻌﻴﺮة
+                        p أﺧﺘﺮ ﻧﻮع اﻟﺘﺴﻌﻴﺮة ﺛﺎﺑﺘﺔ ام ﻣﺘﻐﻴﺮة ﺣﺴﺐ وزن اﻟﺸﺤﻨﺔ
+                    +select({ options:['ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , 'إختر']})
+
+                    .row.row-cols-1.row-cols-md-2 
+                        .col
+                            +input({label:'وزن اﻟﺸﺤﻨﺔ' , placehlder:'اﻛﺘﺐ وزن اﻟﺸﺤﻨﺔ', valueText:'كيلوجرام'})
+                        .col
+                            +input({label:'التكلفة' , valueText:'دينار'})
+                        .col
+                            +input({label:'ﺗﻜﻠﻔﺔ زﻳﺎدة' , valueText:'دينار'})
+                        .col
+                            +input({label:' الوزن' , valueText:'كيلوجرام'})
+                    +input({label:' ﻣﺪة اﻟﺸﺤﻦ' , valueText:'ﻣﺜﻠﺎ : ﻣﻦ 2 3 - أﻳﺎم'})
+                    +select({ label:'اﻟﺪﻓﻊ ﻋﻨﺪ اﻟﺎﺳﺘﻠﺎم', options:['ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , ' ' , 'أﺧﺘﺮ اﻟﻤﺪن']})
+                    
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 
+
+

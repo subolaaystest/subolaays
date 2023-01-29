@@ -1,0 +1,75 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | جميع الطلبات
+block content
+    .dash-tabs
+        .nav-tabs-1 
+            ul#myTab.nav.nav-tabs(role='tablist')
+                li.nav-item(role='presentation')
+                    button#Voucher-data-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#Voucher-data' type='button' role='tab' aria-controls='Voucher-data' aria-selected='true') ﺑﻴﺎﻧﺎت اﻟﻘﺴﻴﻤﺔ
+                li.nav-item(role='presentation')
+                    button#Voucher-Included-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Voucher-Included' type='button' role='tab' aria-controls='Voucher-Included' aria-selected='false') ﻣﺸﻤﻮل اﻟﻘﺴﻴﻤﺔ
+                li.nav-item(role='presentation')
+                    button#excluded-coupon-tab.nav-link(data-bs-toggle='tab' data-bs-target='#excluded-coupon' type='button' role='tab' aria-controls='excluded-coupon' aria-selected='false') ﻣﺴﺘﺜﻨﻰ ﻣﻦ اﻟﻘﺴﻴﻤﺔ
+            #myTabContent.tab-content
+                #Voucher-data.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='Voucher-data-tab') 
+                    .coupon-note
+                        .icon  
+                            img(src="../../assets/images/coupon-icon.png" alt="")
+                        h3 ﻛﻮد اﻟﻜﻮﺑﻮن ( اﺣﺮف اﻧﺠﻠﻴﺰﻳﺔ وارﻗﻢ ﻓﻘﻂ )
+                        +Button({color:'orange' , name:'مولد الأكواد' , class:"btn-fill px-5 mx-auto code-generator-btn" }) 
+
+                        .coupon-finish 
+                            img(src="../../assets/images/coupon-finish.png" alt="")
+                    .code-generator-box
+                        +input({placeholder:'اﻛﺘﺐ اﻟﻜﻮد'})
+                    .choose-amount
+                        +select({label:' ﻧﻮع اﻟﺨﺼﻢ' , options:['ﻣﺒﻠﻎ ﺛﺎﺑﺖ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت' , 'ﻧﺴﺒﺔ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت'  ]})
+                    div.Discount-amount 
+                        +input({placeholder:'ادﺧﻞ ﻫﻨﺎ ﻣﺒﻠﻎ اﻟﺨﺼﻢ ' , valueText:'دينار'})
+                    div.discount-percentage(style="display:none")
+                        +input({placeholder:'ادﺧﻞ ﻫﻨﺎ نسبة اﻟﺨﺼﻢ ' , valueText:'%'})
+
+                    .d-flex.justify-content-between(style="margin-top:-10px") 
+                        .form-group
+                            label(for="switch5")  ﻣﻊ ﺷﺤﻦ ﻣﺠﺎﻧﻰ
+                        .form-check.form-switch.form-switch-md
+                            input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                            label.form-check-label(for="switch" + 5)
+                    hr.cus-hr
+                    +input({placeholder:'ادﺧﻞ ﻫﻨﺎ ﻣﺒﻠﻎ اﻟﺨﺼﻢ ' , label:'اﻟﻤﺒﻠﻎ اﻟﺎﻗﺼﻰ ﻟﻠﺨﺼﻢ' , valueText:'دينار'})
+                    +input({ label:'ﺗﺎرﻳﺦ ووﻗﺖ اﻧﺘﻬﺎء اﻟﻌﺮض' , type:'datetime-local'})
+                    hr.cus-hr
+                    +select({label:'اﺳﺘﺜﻨﺎء اﻟﻤﻨﺘﺠﺎت اﻟﻤﺨﻔﻀﺔ' , options:['نعم' , 'لا'  ]})
+                    +input({placeholder:'اﻛﺘﺐ ﻋﺪد اﻟﻤﺮات ' , label:'ﻋﺪد اﻟﻤﺮات اﻟﺎﺳﺘﺨﺪام ﻟﻠﺠﻤﻴﻊ'})
+                    +input({placeholder:'اﻛﺘﺐ ﻋﺪد اﻟﻤﺮات ' , label:'ﻋﺪد اﻟﻤﺮات اﻟﺎﺳﺘﺨﺪام ﻟﻠﻌﻤﻴﻞ اﻟﻮاﺣﺪ   '})
+
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 
+
+                #Voucher-Included.tab-pane.fade(role='tabpanel' aria-labelledby='Voucher-Included-tab') 
+                    +multiSelect({id:'paymentsOptions' , label:'  ﻃﺮق اﻟﺪﻓﻊ اﻟﻤﺸﻤﻮﻟﺔ ﻓﻰ اﻟﻘﺴﻴﻤﺔ' , options:'[{"label": "New York","value": "NY"},{"label": "Washington","value": "WA"},{"label": "California","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+
+                    +multiSelect({id:'IncludedRatings' , label:' ﺗﺼﻨﻴﻔﺎت ﻣﺸﻤﻮﻟﺔ' , options:'[{"label": "New York","value": "NY"},{"label": "Washington","value": "WA"},{"label": "California","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+
+                    .add-product-title 
+                        h2 ﻣﻨﺘﺠﺎت ﻣﺸﻤﻮﻟﺔ
+                        p  ﻳﻤﻜﻨﻚ اﻟﺒﺤﺚ ﻓﻲ اﻟﻤﻨﺘﺠﺎت اﻟﺠﺎﻫﺰة اﻟﺘﻲ ﻟﺎ ﺗﺤﺘﻮي ﻋﻠﻰ ﺧﻴﺎرات
+                    +searchProduct()
+                    +multiSelect({id:'IncludedClients' , label:'ﻋﻤﻠﺎء ﻣﺸﻤﻮﻟﻴﻦ' , options:'[{"label": "New York","value": "NY"},{"label": "Washington","value": "WA"},{"label": "California","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+
+                    +select({label:'  ' , options:['إختر' , 'إختر'  ]})
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 
+                #excluded-coupon.tab-pane.fade(role='tabpanel' aria-labelledby='excluded-coupon-tab') 
+                    +select({label:'ﺗﺼﻨﻴﻔﺎت ﻣﺴﺘﺜﻨﺎة   ' , options:['إختر' , 'إختر'  ]})
+                    +select({label:'ﻣﺎرﻛﺎت ﻣﺴﺘﺜﻨﺎة    ' , options:['إختر' , 'إختر'  ]})
+                    .add-product-title 
+                        h2 ﻣﻨﺘﺠﺎت ﻣﺴﺘﺜﻨﺎة
+                        p  ﻳﻤﻜﻨﻚ اﻟﺒﺤﺚ ﻓﻲ اﻟﻤﻨﺘﺠﺎت اﻟﺠﺎﻫﺰة اﻟﺘﻲ ﻟﺎ ﺗﺤﺘﻮي ﻋﻠﻰ ﺧﻴﺎرات
+                    +searchProduct()
+                    +multiSelect({id:'ExcludedClients' , label:'ﻋﻤﻠﺎء ﻣﺴﺘﺜﻨﺎة' , options:'[{"label": "New York","value": "NY"},{"label": "Washington","value": "WA"},{"label": "California","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+                    .btn-submit-300.mt-5
+                        +Button({color:'orange' , name:'حفظ' , class:"btn-fill px-5" }) 

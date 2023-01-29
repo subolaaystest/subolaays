@@ -1,0 +1,90 @@
+
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .header
+        nav(aria-label="breadcrumb")
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href="#") الرئيسية
+                li.breadcrumb-item الصفقات
+    .page-content-inner.bargains-request.mt-5
+        .add-product-title.d-flex.justify-content-between  
+            h2 تفاصيل العرض
+            +Button({color:'orange' , name:'جارى التوصيل'})
+        .order-details 
+            .row
+                .col-lg-4 
+                    +orderDetailsBox('رقم العرض ' , '#6461313')
+                .col-lg-4 
+                    +orderDetailsBox(' تاريخ ووقت الطلب ' , '   12 سبتمبر ، 2021 -  50:4 مساءً')
+                .col-lg-4 
+                    +orderDetailsBox('إجمالي الطلب' , ' 00.64 ريال')
+
+
+        hr.my-5.cus-hr
+        .add-product-title 
+            h2 تفاصيل التاجر 
+            +merchant-details({ follow: false, chat: true})
+
+
+        hr.my-5.cus-hr
+        .add-product-title 
+            h2 اﻟﻤﻨﺘﺠﺎت 
+        - var fields = ['المنتج' , 'الإسم' , 'القسم', 'السعر' , 'الكمية' , 'الإجراءات']
+        - var items = []
+        - var actions = {isAvailableForMe:true}
+        - var i = 0;
+        while i < 4
+            - items.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>' , '<h5 class="textt-green">45 ريال</h5>' , '<h5><strong>5</strong></h5>']);
+            - i++
+        +table( {filters:false , fields , items , actions ,  headTitle: 'جميع الطلبات' , isInner: false , isDataTable:false })
+
+
+        hr.my-5.cus-hr
+        .add-product-title 
+            h2 تفاصيل الشحن
+        .row.row-cols-1.row-cols-md-2.align-items-end 
+            .col 
+                +orderDetailsBox(' تاريخ ووقت الطلب ' , '   12 سبتمبر ، 2021 -  50:4 مساءً')
+            .col 
+                +orderDetailsBox(' خيارات الشحن ' , ' خيارات الشحن  <b class="textt-red">50 ريال + 20 ريال توصيل سريع</b>')
+        .add-product-title.pt-5 
+            h2 ملاجظاتك
+            p هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء        
+       
+       
+        hr.my-5.cus-hr
+        .add-product-title
+            h2 الفاتورة
+        .order-details
+            .order-total 
+                ul.p-0.m-0 
+                    li 
+                        h5 السعر الفرعي 
+                        h6 350 ريال
+                    li 
+                        h5 التوصيل
+                            span.express Express 
+                        h6 350 ريال
+                    li 
+                        h5 كوبون الخصم 
+                        h6 20 ريال
+                    li 
+                        h5 إجمالي الطلبات
+                        h6.fw-bold 620 ريال
+                hr
+        .coupon-note
+            h3.m-0 تحتاج مساعدة ؟
+            .coupon-finish 
+                img(src="../../assets/images/landing/help.png" alt="")
+        .technical-support.d-flex.justify-content-between.align-items-center.mt-3
+            p.m-0 الدعم الفني
+            svg 
+                use(href="../../assets/images/icons/icons.svg#person")
+        .d-flex.justify-content-start.align-items-center.mt-3
+            +Button({color:'orange' , name:'تقييم التاجر' , class:'btn-fill px-5 me-3' })
+            +Button({color:'red' , name:'طباعة الفاتورة' , class:"btn-fill px-5" }) 

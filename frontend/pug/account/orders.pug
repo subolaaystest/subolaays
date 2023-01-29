@@ -1,0 +1,82 @@
+extends ../layouts/accountLayout.pug
+include ../mixins/landingMixin.pug
+include ../mixins/accountMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .home-progress
+        .row.m-0.w-100
+            .col-10
+                h2.home-progress-title أكمل إعدادات متجرك
+                .home-progress-bar-parent.m-0 
+                    .home-progress-bar-inner(style="width:57%")
+                    h4
+                        span مكتمل
+                        span <div class="counter">57</div>% 
+        .icon 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#plus")
+    .bargains-content.mt-5
+        .dash-tabs
+            .nav-tabs-1  
+                ul#myTab.nav.nav-tabs(role='tablist')
+                    li.nav-item(role='presentation')
+                        button#Voucher-data-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#Voucher-data' type='button' role='tab' aria-controls='Voucher-data' aria-selected='true') طلباتى الحالية
+                    li.nav-item(role='presentation')
+                        button#Voucher-Included-tab.nav-link(data-bs-toggle='tab' data-bs-target='#Voucher-Included' type='button' role='tab' aria-controls='Voucher-Included' aria-selected='false') طلباتى السابقة 
+                    li.nav-item(role='presentation')
+                        button#excluded-coupon-tab.nav-link(data-bs-toggle='tab' data-bs-target='#excluded-coupon' type='button' role='tab' aria-controls='excluded-coupon' aria-selected='false') المرفوضة
+                #myTabContent.tab-content
+                    #Voucher-data.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='Voucher-data-tab') 
+                        .all-bargins 
+                            .row.m-0.w-100.mt-4
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+
+                    #Voucher-Included.tab-pane.fade(role='tabpanel' aria-labelledby='Voucher-Included-tab') 
+                        .all-bargins 
+                            .row.m-0.w-100.mt-4
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+
+                    #excluded-coupon.tab-pane.fade(role='tabpanel' aria-labelledby='excluded-coupon-tab') 
+                        .all-bargins 
+                            .row.m-0.w-100.mt-4
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+                                .col-md-4.mb-4
+                                    +bargain()
+
+
+
+
+
+
+    

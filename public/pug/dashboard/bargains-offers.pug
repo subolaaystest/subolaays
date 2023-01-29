@@ -1,0 +1,54 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | الصفقات
+block content
+    .bargains-page
+        +pageHead('فلتر الصفقات')
+        .row.row-cols-lg-4.row-cols-2 
+            +statusInfo('عروض حالية'  , 'orange' , '450 طلب')
+            +statusInfo('عروض تحولت لطلبات'  , 'green' , '450 طلب')
+        .page-filters-2
+            .inputs-btn
+                +select({label:'' , options:['الأحدث' , 'إختر' , 'إختر' , 'الأحدث']})
+                +select({label:'' , options:['حسب القسم' , 'إختر' , 'إختر' , 'حسب القسم']})
+                +Button({color:'orange' , name:'فلترة ' , class:'ml-2 go-to-step-3 btn-fill' })
+            .table-search-box 
+                input(type="text" class="form-control")
+                .icon 
+                    svg
+                        use(href="../../assets/images/icons/icons.svg#search")
+        .row.row-cols-md-2.row-cols-lg-3.row-cols-xl-3.match-height 
+            .col 
+                +bargainsBox({progress:'bg-success', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-danger', isDanger:true, isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col 
+                +bargainsBox({progress:'bg-success', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-danger', isDanger:true, isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col 
+                +bargainsBox({progress:'bg-success', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-danger', isDanger:true, isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col 
+                +bargainsBox({progress:'bg-success', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-danger', isDanger:true, isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})
+            .col   
+                +bargainsBox({progress:'bg-orange', isCansel:true})

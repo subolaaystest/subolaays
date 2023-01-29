@@ -1,0 +1,170 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | التقارير
+block content 
+    .home-progress 
+        h2.home-progress-title أكمل إعدادات متجرك
+        .home-progress-bar-parent 
+            .home-progress-bar-inner(style="width:57%")
+            h4
+                span مكتمل
+                span <div class="counter">57</div>%
+
+    .row.row-cols-lg-4.row-cols-2 
+        +statusInfo('الارباح'  , '' , '<div class="counter">3504</div> رﻳﺎل' , 'ﻫﺬا اﻟﺎﺳﺒﻮع' , {number: '+<div class="counter">20</div>%' , icon:'chart-up'}) 
+        +statusInfo('الطلبات'  , '' , '<div class="counter">350</div>' , 'ﻫﺬا اﻟﺎﺳﺒﻮع' , {number: '+<div class="counter">20</div>%' , icon:'chart-up'}) 
+        +statusInfo('ﻋﺮوض اﻟﺼﻔﻘﺎت'  , '' , '<div class="counter">3540</div> ' , 'ﻫﺬا اﻟﺎﺳﺒﻮع' , {number: '+<div class="counter">20</div>%' , icon:'chart-down'}) 
+        +statusInfo('ﻣﺸﺎﻫﺪات ﻗﺼﺼﻰ'  , '' , '<div class="counter">3505</div> ' , 'ﻫﺬا اﻟﺎﺳﺒﻮع' , {number: '+<div class="counter">20</div>%' , icon:'chart-up'}) 
+    .row.match-height 
+        .col-lg-4
+            .custom-cart 
+                .custom-cart-header 
+                    h2  أﻛﺜﺮ اﻟﻌﻤﻠﺎء ﺷﺮاءً
+                .custom-cart-body 
+                    ul.clitens-link
+                        li 
+                            .img 
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .name 
+                                h4  Mohamed ahmed
+                                span   ﻋﻤﻴﻞ ﻣﻨﺬ 2021/4/21
+                            .paid SR 64.00
+                        li 
+                            .img 
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .name 
+                                h4  Mohamed ahmed
+                                span   ﻋﻤﻴﻞ ﻣﻨﺬ 2021/4/21
+                            .paid SR 64.00
+                        li 
+                            .img 
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .name 
+                                h4  Mohamed ahmed
+                                span   ﻋﻤﻴﻞ ﻣﻨﺬ 2021/4/21
+                            .paid SR 64.00
+                        li 
+                            .img 
+                                img(src="../../assets/images/photo-top.png" alt="")
+                            .name 
+                                h4  Mohamed ahmed
+                                span   ﻋﻤﻴﻞ ﻣﻨﺬ 2021/4/21
+                            .paid SR 64.00
+        .col-lg-8
+            .custom-cart 
+                .custom-cart-header 
+                    h2 ارﺑﺎح ﻣﺘﺠﺮك
+                .custom-cart-body 
+                    #chart1 
+
+    .row.match-height.mt-4 
+        .col-lg-12
+            .custom-cart 
+                .custom-cart-header 
+                    h2  اﻟﻄﻠﺒﺎت اﻟﺠﺪﻳﺪة
+                    +Button({color:'orange' , name:'رؤية الكل'})
+
+                .custom-cart-body 
+                    - var fields1 = ['رقم الطلب' , 'العميل' , 'تاريخ الطلب' , 'نوع الطلب' , 'الشحن' , 'الدفع' , 'حالة الطلب' , 'المجموع' , 'الإجراءات']
+                    - var items1 = []
+                    - var i = 0;
+                        while i < 4
+                            - items1.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+                            - i++
+                    - var actions1 = {isButton:true , list: ['eye' , 'download']} 
+                    +table( { fields: fields1 , items: items1 , actions: actions1 })
+
+
+    .row.match-height.mt-4 
+        .col-lg-6
+            .custom-cart 
+                .custom-cart-header 
+                    h2 أكثر المنتجات مبيعاً
+                    +Button({color:'orange' , name:'رؤية الكل'})
+
+                .custom-cart-body
+                    - var fields2 = ['المنتج' , 'الإسم' , 'القسم', 'الحالة' , 'الكمية' , 'سعر المنتج' , 'الإجراءات' ]
+                        - var items2 = []
+                        - var i = 0;
+                            while i < 4
+                                - items2.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>','<h5 class="textt-orange">متاح</h5>','<h5>45 </h5>','<h5>45 ريال</h5>']);
+                                - i++
+                        - var actions2 = {isButton:true , list: ['eye' , 'download']} 
+                        +table( { fields: fields2 , items: items2 , actions: actions2 ,   headTitle: 'جميع الطلبات' })
+
+        .col-lg-6
+            .custom-cart 
+                .custom-cart-header 
+                    h2 اوﺷﻚ ﻋﻠﻰ اﻟﻨﻔﺎذ
+                    +Button({color:'orange' , name:'رؤية الكل'})
+
+                .custom-cart-body 
+                    - var fields3 = ['المنتج' , 'الإسم' , 'القسم', 'السعر' , 'الكمية']
+                    - var items3 = []
+                    - var i = 0;
+                        while i < 4
+                            - items3.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>' , '<h5>45 ريال</h5>']);
+                            - i++
+                    - var actions3 = {isButton:true , list: ['eye' , 'download']} 
+                    +table( { fields: fields3 , items: items3 , actions: actions3 ,   headTitle: 'جميع الطلبات' })
+
+block scripts 
+    script.
+        var options = {
+            series: [
+                {
+                    name: "أرباح",
+                    data: [31, 40, 28, 51, 42, 109, 100],
+                },
+                {
+                    name: "مدفوعات",
+                    data: [11, 32, 45, 32, 34, 52, 41],
+                },
+            ],
+            chart: {
+                height: 350,
+                type: "area",
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                curve: "smooth",
+            },
+            toolbar: {
+                show: false,
+            },
+            legend: {
+                position: "top",
+            },
+            colors: ["#fdb933", "#eb631e"],
+            xaxis: {
+                categories: [
+                    "فبراير",
+                    "مارس",
+                    "ابريل",
+                    "يوليو",
+                    "يونيو",
+                    "اغسطس",
+                    "نوفمبر",
+                    "اكتوبر",
+
+                    "سبتمبر",
+                ],
+            },
+            tooltip: {
+                x: {
+                    format: "dd/MM/yy HH:mm",
+                },
+            },
+        };
+        const chart1 = document.querySelector("#chart1")
+
+
+        if (chart1) {
+            var chart = new ApexCharts(chart1, options);
+
+            chart.render(); 
+        }
+
+

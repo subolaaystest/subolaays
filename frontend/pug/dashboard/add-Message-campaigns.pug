@@ -1,0 +1,138 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | جميع الطلبات
+block content
+
+    .page-content-inner
+        .add-product-title 
+            h2 أﺧﺘﺮ اﻟﺒﺎﻗﺔ
+            p ﻗﻢ ﺑﺎﻟﺎﺷﺘﺮاك ﻓﻰ اﺣﺪى اﻟﺒﺎﻗﺎت ﻟﺘﺘﻤﻜﻦ ﻣﻦ اﻧﺸﺎء اﻟﺤﻤﻠﺔ
+        .packages-tables  
+            .row.row-cols-lg-3.row-cols-1 
+                .col    
+                    .package 
+                        span.package-type ﺑﺎﻗﺔ ﺷﻬﺮﻳﺔ 
+
+                        .price
+                            h2 356 رﻳﺎل 
+                                span / اﻟﺸﻬﺮ
+                        ul.features 
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li.exclude
+                                .icon 
+                                    i.fas.fa-times 
+                                span ﻟﺠﻤﻴﻊ ﻋﻤﻠﺎء اﻟﻮﻃﻦ اﻟﻌﺮﺑﻰ
+                        .btn-buy 
+                            button.btn.hvr-float-shadow 
+                                span أﺧﺘﺮ اﻟﺒﺎﻗﺔ 
+                .col    
+                    .package.center
+                        .most-used 
+                            span الأكثر إستخداماً 
+                        span.package-type ﺑﺎﻗﺔ ﺷﻬﺮﻳﺔ 
+
+                        .price
+                            h2 356 رﻳﺎل 
+                                span / اﻟﺸﻬﺮ
+                        ul.features 
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li.exclude
+                                .icon 
+                                    i.fas.fa-times 
+                                span ﻟﺠﻤﻴﻊ ﻋﻤﻠﺎء اﻟﻮﻃﻦ اﻟﻌﺮﺑﻰ
+                        .btn-buy 
+                            button.btn.hvr-float-shadow 
+                                span أﺧﺘﺮ اﻟﺒﺎﻗﺔ
+                .col    
+                    .package 
+                        span.package-type ﺑﺎﻗﺔ ﺷﻬﺮﻳﺔ 
+
+                        .price
+                            h2 356 رﻳﺎل 
+                                span / اﻟﺸﻬﺮ
+                        ul.features 
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﺟﻤﻬﻮر ﻣﺴﺘﻬﺪف
+                            li
+                                .icon 
+                                    i.fas.fa-check 
+                                span ﻋﻤﻠﺎء اﻟﺴﻌﻮدﻳﺔ
+                            li.exclude
+                                .icon 
+                                    i.fas.fa-times 
+                                span ﻟﺠﻤﻴﻊ ﻋﻤﻠﺎء اﻟﻮﻃﻦ اﻟﻌﺮﺑﻰ
+                        .btn-buy 
+                            button.btn.hvr-float-shadow 
+                                span أﺧﺘﺮ اﻟﺒﺎﻗﺔ
+
+
+        hr.cus-hr
+        +input({label:'ﻋﻨﻮان اﻟﺤﻤﻠﺔ' })
+        +input({label:'ﻧﺺ اﻟﺮﺳﺎﻟﺔ ' } , true)
+
+        +select({label:' أﺧﺘﺮ ﻧﻮع اﻟﺮاﺑﻂ' , options:['راﺑﻂ ﻣﻨﺘﺞ' , 'راﺑﻂ ﻣﻨﺘﺞ'  ]})
+        .form-group 
+            label يمكنك البحث في المنتجات
+        +searchProduct()
+
+        .d-flex.justify-content-between(style="margin-top:-10px") 
+            .form-group
+                label(for="switch5") اﺧﺘﺼﺎر اﻟﺮاﺑﻂ
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+
+        +Button({color:'orange' , name:'ﻣﻌﺎﻳﻨﺔ اﻟﺮﺳﺎﻟﺔ' , class:"p-4 w-100 mt-4" }) 
+        hr.cus-hr
+        +select({label:' اﻟﺸﺮﻳﺤﺔ اﻟﻤﺴﺘﻬﺪﻓﺔ  ' , options:['الذكور ﻓﻘﻂ ' , 'اﻟﺎﻧﺎث ﻓﻘﻂ '  ]})
+        +input({ label:'ﺗﺎرﻳﺦ ووﻗﺖ  الإرسال' , type:'datetime-local'})
+
+        .d-flex.justify-content-between(style="margin-top:-10px") 
+            .form-group
+                label(for="switch6") اﻟﺎرﺳﺎل اﻟﺎن
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+
+        .btn-submit-300.mt-5
+            +Button({color:'orange' , name:'اﻧﺸﺎء اﻟﺤﻤﻠﺔ' , class:"btn-fill px-5" }) 

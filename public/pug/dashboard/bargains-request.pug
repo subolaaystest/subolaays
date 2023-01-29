@@ -1,0 +1,112 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | الصفقات
+block content
+    .page-content-inner.bargains-request
+        .bargains-request-head 
+            h2 تفاصيل العميل
+            +Button({color:'orange' , name:'تفاصيل الصفقة'})
+        .order-details 
+            .row
+                .col-lg-2 
+                    +orderDetailsBox('نوع المنشأة' , 'بقالة')
+                .col-lg-4 
+                    +orderDetailsBox('إسم العميل' , 'Mohamed ahmed')
+                .col-lg-4 
+                    +orderDetailsBox('البريد الإلكتروني' , 'Mohamed ahmed @gmail.com')
+                .col-lg-2 
+                    +orderDetailsBox('عضو من'  , '2021/4/21') 
+            hr
+        .add-product-title 
+            h2 اﻟﻤﻨﺘﺠﺎت اﻟﻤﻄﻠﻮﺑﺔ
+            p ﻣﻦ ﻓﻀﻠﻚ ﻗﻢ ﺑﻮﺿﻊ ﻋﻠﺎﻣﺔ ﺻﺢ ﻟﻠﻤﻨﺘﺞ اذا ﻛﺎن ﻣﺘﻮﻓﺮ ﻟﺪﻳﻚ وﺑﺎﻟﻜﻤﻴﺔ اﻟﻤﻄﻠﻮﺑﺔ
+
+
+        - var fields = ['المنتج' , 'الإسم' , 'القسم', 'السعر' , 'الكمية' , 'الإجراءات']
+        - var items = []
+        - var actions = {isAvailableForMe:true}
+        - var i = 0;
+        while i < 4
+            - items.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>' , '<h5 class="textt-green">45 ريال</h5>' , '<h5><strong>5</strong></h5>']);
+            - i++
+
+        +table( {filters:false , fields , items , actions ,  headTitle: 'جميع الطلبات' , isInner: false , isDataTable:false })
+
+        hr.my-5.cus-hr
+        .add-product-title 
+            h2 تفاصيل الشحن
+        .row.row-cols-1.row-cols-md-2.align-items-end 
+            .col 
+                +select({label:'خيارات الشحن' , options:['أﺧﺘﺮ ﻃﺮﻳﻘﺔ اﻟﺸﺤﻦ' , 'إختر' , 'إختر' , 'إختر']})
+            .col 
+                +input({label:'موعد الشحن' , placeholder:'12 ﻧﻮﻗﻤﺒﺮ 2021' , type:'date'})
+            .col 
+                +input({label:'اﻟﺴﻌﺮ ﻟﻠﻤﻨﺘﺠﺎت اﻟﻤﻄﻠﻮﺑﺔ' , valueText:'دينار'})
+        +input({label:'ملاحظاتك  '} , true)
+        .add-product-title.pt-5 
+            h2 الفاتورة
+        .order-details
+
+            .order-total 
+                ul 
+                    li 
+                        h5 السعر الفرعي 
+                        h6 350 ريال
+                    li 
+                        h5 التوصيل
+                            span.express Express 
+                        h6 350 ريال
+                    li 
+                        h5 كوبون الخصم 
+                        h6 20 ريال
+                    li 
+                        h5 إجمالي الطلبات
+                        h6.fw-bold 620 ريال
+                hr 
+        .add-product-title.pt-5 
+            h2 وﺳﺎﺋﻞ اﻟﺪﻓﻊ اﻟﻤﻨﺎﺳﺒﺔ ﻟﻚ
+        ul.payments-list-check 
+            li 
+                input(type="radio" name="payment" id="visa")
+                label(for="visa") 
+                    .title فيزا / ماستر كارد
+                    img(src="../../assets/images/payments/visa.png" alt="" class="img")
+                    img(src="../../assets/images/payments/visa-active.png" alt="" class="img-active")
+            li 
+                input(type="radio" name="payment" id="apple")
+                label(for="apple") 
+                    .title أبل باي
+                    img(src="../../assets/images/payments/apple-p.png" alt="" class="img")
+                    img(src="../../assets/images/payments/apple-p-active.png" alt="" class="img-active")
+            li 
+                input(type="radio" name="payment" id="mada")
+                label(for="mada") 
+                    .title كي نت / مدى
+                    img(src="../../assets/images/payments/mada.png" alt="" class="img")
+                    img(src="../../assets/images/payments/mada-active.png" alt="" class="img-active")
+            li 
+                input(type="radio" name="payment" id="cash")
+                label(for="cash") 
+                    .title كاش
+                    img(src="../../assets/images/payments/cash.png" alt="" class="img")
+                    img(src="../../assets/images/payments/cash-active.png" alt="" class="img-active")
+            .btn-submit
+                button.btnn-orange.btn.btnn.hvr-shadow.btn-fill(data-bs-toggle='modal' data-bs-target='#successModal')
+                    span إرسال العرض
+                #successModal.modal.fade(tabindex='-1' aria-labelledby='successModalLabel' aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h5#successModalLabel.modal-title 
+                                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                            .modal-body.p-0
+                                .send-offer-modal 
+                                    .icon 
+                                        img(src="../../assets/images/success-icon-big.png", alt="")
+                                    h2 تم ارسال عرضك بنجاح
+                                    p سيتم تحويلك تلقائيا الى صفحة عروض الصفقات
+                            
+
+

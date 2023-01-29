@@ -1,0 +1,20 @@
+extends ../layouts/authLayout.pug
+
+block content 
+    .icon 
+        svg 
+            use(href="../../assets/images/icons/icons.svg#arrow-right")
+    h1 مرحباً . قم بتسجيل الدخول 
+    form(action="")
+        input(type="hidden" id="fullPin") 
+        .myPinCode
+            input(type="tel" maxlength="3" class="form-control")
+            input(type="tel" maxlength="3" class="form-control")
+            input(type="tel" maxlength="3" class="form-control")
+            input(type="tel" maxlength="3" class="form-control")
+        .btn-submit 
+            button.btn.hvr-float-shadow 
+                span تسجيل الدخول   
+        .bottom-form-text 
+            h5 ما اشتركت معنا بعد   
+                a(href="") إشترك ألحين    

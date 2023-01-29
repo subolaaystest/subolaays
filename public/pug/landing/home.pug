@@ -1,0 +1,111 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+
+block headContent
+    +notisHead
+block content 
+    .home-slider
+        .owl-carousel.owl-theme
+            -var slideImgs = ['1', '1', '1']
+            each slideImg , index in slideImgs 
+                .itme 
+                    img(src="../../assets/images/landing/home-slide-" + (slideImg) + ".png" alt="")
+    .product-type-list.mt-5
+        .owl-carousel.owl-theme
+            -var types = ['خضراوات' , 'مخبوزات' , 'الدجاج' , 'حلويات وبسكويت' , 'وجبات خفيفة' , 'البقالة' , 'معلبات' , 'مجمدات' , 'العناية بالطفل' , 'العناية الشخصية' , 'منتجات الألبان' ]  
+            each prduct_type , index in types 
+                .item.product-type
+                    input(type="checkbox" name="prduct_type" + index) 
+                    .image 
+                        img(src="../../assets/images/products-types/type-"+ (index + 1) +".png" alt="")
+                    h3 #{prduct_type} 
+    .stories.mt-5
+        -var head = {'button':'عرض الكل  ','header':'قصص عروض التجار','pargh':'شاهد حالات وقصص التجار'}
+        +homeHead(head) 
+        .owl-carousel.owl-theme
+            -var marchants = ['Grocery' , 'Grocery' , 'Grocery' , ' Grocery' , 'Grocery ' , 'Grocery' , 'Grocery' , 'Grocery' , ' Grocery' , ' Grocery' , 'Grocery ' ]  
+            each marchant , index in marchants 
+                .item.product-type
+                    input(type="checkbox" name="marchants" + index) 
+                    .image 
+                        img(src="../../assets/images/merchants/merchant-1" +".png" alt="")
+                    h3 #{marchant}            
+    .products.mt-5
+        -var head = {'header': 'وصل حديثا فى قسم البقالة','link':'زيارة القسم','button':'زيارة القسم'}
+        +homeHead(head)
+        .row.m-0.w-100.mt-5
+            //- -var products = [{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'}]  
+            //- each product , index in products
+            .col 
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+                
+    .img-section.mt-5 
+        img(src="../../assets/images/landing/img-1.png" alt="")
+    .bargains.mt-5
+        -var head = {'header': 'الصفقات الحديثة','pargh':'أحدث الصفقات الي طلبها المستخدمين','button':'زيارة القسم'}
+        +homeHead(head)
+        .row.m-0.w-100.mt-5
+            .col-md-4
+                .bargains-img
+                    p أحدث صفقات البقالة
+            .col-md-8
+                .all-bargins 
+                    p.mt-3
+                        a(href="#") عرض جميع الصفقات لهذا القسم 
+                            svg
+                                use( href="../../assets/images/icons/icons.svg#arrow-right")
+                    .row.m-0.w-100.mt-4
+                        -var bargains = [{'case':'لم يتم الترسية بعد','section': 'بقالة - خضراوات','name': 'Grocery shope','amount': '40 صندوق','offer': '50 عرض'},{'case':'لم يتم الترسية بعد','section': 'بقالة - خضراوات','name': 'Grocery shope','amount': '40 صندوق','offer': '50 عرض'},{'case':'لم يتم الترسية بعد','section': 'بقالة - خضراوات','name': 'Grocery shope','amount': '40 صندوق','offer': '50 عرض'},{'case':'لم يتم الترسية بعد','section': 'بقالة - خضراوات','name': 'Grocery shope','amount': '40 صندوق','offer': '50 عرض'}]  
+                        each bargain , index in bargains
+                            .col-md-6.mb-4
+                                +bargain(bargain, index)
+    .electronics.mt-5
+        -var head = {'header': 'حديثا فى قسم الالكترونيات','link':'زيارة القسم','button':'زيارة القسم'}
+        +homeHead(head)
+        .row.m-0.w-100.mt-5
+            //- -var products = [{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'},{'discount': '10%','marchantName': 'اسم التاجر ','image': 'products/product-1','productName': 'جبنة لافاش كيري','price': '150 دينار','oldPrice': '50 دينار','number': '48 قطعة'}]  
+            //- each product , index in products
+            .col 
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : false})
+            .col   
+                +product({isDiscount : true})
+            .col   
+                +product({isDiscount : true})
+                         
+    .img-section.mt-5 
+        img(src="../../assets/images/landing/img-1.png" alt="")
+    .stories-marchants.mt-5 
+        -var head = {'button':'زيارة القسم','header':' عروض التجار'}
+            +homeHead(head) 
+    .offers.mt-5 
+        -var offers =[{'name':'الإلكترونيات','discount': 'خصم 50%','image': 'landing/offer-1'},{'name':'الإلكترونيات','discount': 'خصم 50%','image': 'landing/offer-1'},{'name':'الإلكترونيات','discount': 'خصم 50%','image': 'landing/offer-1'},{'name':'الإلكترونيات','discount': 'خصم 50%','image': 'landing/offer-1'},{'name':'الإلكترونيات','discount': 'خصم 50%','image': 'landing/offer-1'}]
+        each offer , index in offers
+            +offer(offer)
+
+
+            

@@ -1,0 +1,47 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | الصفقات
+block content
+    .page-content-inner
+        .order-details 
+            .row
+                .col-lg-4 
+                    +orderDetailsBox('ﺗﺎرﻳﺦ اﻟﺎﻧﺸﺎء' , ' 12 ﺳﺒﺘﻤﺒﺮ ، 2021')
+                .col-lg-4 
+                    +orderDetailsBox('ﻋﺪد اﻟﻤﻨﺘﺠﺎت  ' , '5 ﻣﻨﺘﺠﺎت  ')
+                .col-lg-4 
+                    +orderDetailsBox('اﺣﻤﺎﻟﻰ اﻟﻄﻠﺐ ' , '64.00 رﻳﺎل')
+
+            hr
+            .row
+                .col-lg-2 
+                    +orderDetailsBox('نوع المنشأة' , 'بقالة')
+                .col-lg-4 
+                    +orderDetailsBox('إسم العميل' , 'Mohamed ahmed')
+                .col-lg-4 
+                    +orderDetailsBox('البريد الإلكتروني' , 'Mohamed ahmed @gmail.com')
+                .col-lg-2 
+                    +orderDetailsBox('عضو من'  , '2021/4/21') 
+            .bottom-row.d-flex.justify-content-between.flex-wrap.mt-5  
+                +orderDetailsBox('موقع العميل' , 'تبوك السعودية')
+                .buttons.d-flex
+                    button(class=['btnn-' + 'gray' , 'btn' , 'btnn' , 'hvr-shadow' ] type='button' data-bs-toggle='modal' data-bs-target='#mapModal')
+                        span عرض الموقع
+                            svg 
+                                use(href='../../assets/images/icons/icons.svg#' + 'marker')
+
+                    +Button({color:'orange' , name:'تفاصيل العميل' , class:'ml-2' , icon:'user'})
+            .mt-5
+                - var fields = [ 'المنتج' , 'الإسم' , 'القسم', 'السعر' , 'الكمية' , 'الإجراءات']
+                - var actions = {isButton:true , list: ['eye']} 
+
+                - var items = []
+                - var i = 0;
+                while i < 4
+                    - items.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>' , '<h5 class="textt-green">45 ريال</h5>' , '<h5><strong>5</strong></h5>']);
+                    - i++
+                +table( {filters:false , fields , actions ,items , headTitle: 'جميع الطلبات' , isInner: false , isDataTable:false })
+            hr.cus-hr
+            .mt-5
+                a(href="temporary-discount.html" class="btn btnn btnn-orange")  إرسال تنبيه
+

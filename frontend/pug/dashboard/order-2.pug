@@ -1,0 +1,24 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | جميع الطلبات
+block content 
+    +pageHead('إجمالي الطلبات <span>( 555 )</span>' , {url:'#' , title:'إنشاء طلب جديد'})
+    .row.row-cols-lg-4.row-cols-2 
+        +statusInfo('بإنتظار التأكيد'  , 'orange' , '450 طلب')
+        +statusInfo('جاري التوصيل'  , 'green' , '450 طلب')
+        +statusInfo('تم التسليم'  , 'blue' , '450 طلب')
+        +statusInfo('ملغي'  , 'red' , '450 طلب')
+    - var buttons = [{class:'btnn-orange' , name:'تغير حالة الطلب' , icon:''} , {class:'btnn-red' , name:'طباعة بوليصية الشحن' , icon:'printer'},{class:'btnn-gray' , name:'عرض الفاتورة' , icon:'eye'} , {class:'btnn-orange' , name:'تصدير' , icon:'download'}]
+    - var fields = ['رقم الطلب' , 'العميل' , 'تاريخ الطلب' , 'نوع الطلب' , 'الشحن' , 'الدفع' , 'حالة الطلب' , 'المجموع' , 'الإجراءات']
+    - var actions = {isButton:true , list: ['eye' , 'download']}
+    - var filters =  {selects:[ '  نوع الطلب' , 'حالة الطلب'] , dateFromTo:{title:'تاريخ الطلب '},btnSort:true,searchBox:true}
+    - var items = []
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+    - items.push([ '#6461313', '<div class="table-two-texts"><h5>Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>صفقة</h5>','<div class="table-two-texts"><h5>سبلايز</h5><h6 class="express">Express</h6></div>','<h5>كاش</h5>','<div class="table-two-texts"><h5 class="textt-orange">بإنتظار التأكيد</h5><h6>4:30 مساءً</h6></div>','<h5>64 ريال</h5>']);
+
+    +table( {filters , buttons , fields ,  items , actions , isInner:true,  isDataTable:false })

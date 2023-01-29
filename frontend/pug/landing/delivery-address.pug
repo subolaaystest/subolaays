@@ -1,0 +1,102 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block content
+    .cart-content
+        .row.w-100.m-0
+            .col-md-8
+                h4.mb-4 عنوان التوصيل
+                .row.w-100.m-0 
+                    .col-lg-6 
+                        +cardBox()
+
+                    .col-lg-6 
+                        +cardBox()
+
+                .row.justify-content-center 
+                    .col-lg-12
+                        a.load-more-sec.mb-5 
+                            p اضافة عنوان جديد
+                .payments-list-check.ways.mt-5
+                    h4.mb-4 اختار طريقة الشحن
+                    ul.p-0.m-0
+                        li.me-md-2
+                            input(type="radio" name="payment" class="active" id="way-1")
+                            label(for="way-1" class="active") 
+                                .title طريقة شحن (1)
+                        li 
+                            input(type="radio" name="payment" id="way-2")
+                            label(for="way-2") 
+                                .title طريقة شحن (1)
+                        li.me-md-2 
+                            input(type="radio" name="payment" id="way-3")
+                            label(for="way-3") 
+                                .title طريقة شحن (1)
+                        li 
+                            input(type="radio" name="payment" id="way-4")
+                            label(for="way-4") 
+                                .title طريقة شحن (1)
+                .day-time.mt-5 
+                    h4.mb-4 يوم ووقت التوصيل
+                    .d-flex.justify-content-between.align-items-start
+                        +input({label:'أختر يوم التوصيل' , type:'date' }).me-3
+                        +input({label:' وقت التوصيل' , type:'time'})
+
+                .order.mt-5
+                    h4.mb-4 ملخص الطلبية
+                    .products.mt-3
+                        +cart_delivery()
+                        +cart_delivery()
+
+            .col-md-4
+                .order-details.delivery
+                    .p-4
+                        h4.mb-4 طريقة الدفع
+                    
+                        ul.payments-list-check
+                            li 
+                                input(type="radio" name="payment" id="visa")
+                                label(for="visa") 
+                                    .title فيزا / ماستر كارد
+                                    img(src="../../assets/images/payments/visa.png" alt="" class="img")
+                                    img(src="../../assets/images/payments/visa-active.png" alt="" class="img-active")
+                            li 
+                                input(type="radio" name="payment" id="apple")
+                                label(for="apple") 
+                                    .title أبل باي
+                                    img(src="../../assets/images/payments/apple-p.png" alt="" class="img")
+                                    img(src="../../assets/images/payments/apple-p-active.png" alt="" class="img-active")
+                            li 
+                                input(type="radio" name="payment" id="mada")
+                                label(for="mada") 
+                                    .title كي نت / مدى
+                                    img(src="../../assets/images/payments/mada.png" alt="" class="img")
+                                    img(src="../../assets/images/payments/mada-active.png" alt="" class="img-active")
+                            li 
+                                input(type="radio" name="payment" id="cash")
+                                label(for="cash") 
+                                    .title كاش
+                                    img(src="../../assets/images/payments/cash.png" alt="" class="img")
+                                    img(src="../../assets/images/payments/cash-active.png" alt="" class="img-active")
+
+                        hr 
+                        .order-total 
+                            ul 
+                                li 
+                                    h5 السعر الفرعي التقريبي 
+                                    h6 350 ريال
+                                li 
+                                    h5 التوصيل
+                                        span.express Express 
+                                    h6 350 ريال
+                                li 
+                                    h5 كوبون الخصم 
+                                    h6 20 ريال
+                                li 
+                                    h5 إجمالي الطلبات
+                                    h6 620 ريال
+                        .comp-order.mt-4
+                            +Button({color:'orange' , name:'اتمام الطلب' , class:"btn-fill px-5" }) 
+    .text-center.mt-5    
+            h3 لنا مكان فى كل دُ كان
+            p جميع عمليات الدفع والطلب لدينا مضمونة 100%     

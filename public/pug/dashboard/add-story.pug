@@ -1,0 +1,115 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  المنتجات
+block content
+    ul.nav.nav-tabs.d-none
+        li.nav-item(role='presentation')
+            button#step-1-details-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#step-1-details' type='button' role='tab' aria-controls='step-1-details' aria-selected='true') Home
+        li.nav-item(role='presentation')
+            button#step-2-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-2-details' type='button' role='tab' aria-controls='step-2-details' aria-selected='false') Profile
+        li.nav-item(role='presentation')
+            button#step-3-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-3-details' type='button' role='tab' aria-controls='step-3-details' aria-selected='false') Messages
+
+    .add-product 
+        .add-product-head 
+            h1 إضافة قصة جديدة
+            +customProgress({step: 1 , textOne: 'وصف المنتج' , textTwo:'مواصفات المنتج' , textThree:'سعر المنتج'})
+        form
+            .tab-content
+                #step-1-details.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='step-1-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 ﺛﻴﻢ اﻟﻘﺼﺔ 
+                            p أﺧﺘﺮ اﻟﺜﻴﻢ اﻟﻠﺬى ﺗﺮﻳﺪ ان ﺗﻈﻬﺮ ﺑﻪ ﻗﺼﺘﻚ
+                        .row.row-cols-1.mb-5.row-cols-sm-2.row-cols-md-4 
+
+                            -var types = ['' , '' , '' , '']  
+                                each prduct_type , index in types 
+                                    .col
+                                        .product-type.story
+                                            input(type="radio" name="story-theme" ) 
+
+                                            .image 
+                                                img(src="../../assets/images/story.png" alt="")
+                                            h3 #{prduct_type}
+                        .add-product-title 
+                            h2 صور المنتج 
+                            p يمكنك إضافة صور بحد أقصى 4 صور للمنتج 
+                                span.textt-red.mr-2 مقاس 1080*1080
+
+                        .row.row-cols-1.mb-5.row-cols-sm-2.row-cols-md-4 
+                            .col 
+                                +upload_image_1({})
+                            .col 
+                                +upload_image_1({})
+                            .col 
+                                +upload_image_1({})
+                            .col 
+                                +upload_image_1({})
+                        .add-product-title
+                            h2 وصف المنتج
+                        .row.row-cols-1.row-cols-md-2 
+                            .col 
+                                +select({label:'القسم الرئيسي' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+                            .col 
+                                +select({label:'القسم الفرعي' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']}) 
+                            .col 
+                                +input_number({label:'الكمية المتاحة' }) 
+                            .col 
+                                +input({label:'SKU'  , placeholder:'إكتب الإسم'})
+
+
+                        +input({label:'ما هي الحد الأدنى من الكمية للإشعار' })
+                        +input_languages({ar: {label:'الإسم' , placeholder:'أكتب الإسم'}})
+                        +input_languages({ar: {label:'وصف المنتج' , valueText:'كم'}}, {})
+
+                    .add-product-footer
+                        +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-2' })
+                        +Button({color:'red' , name:'إلغاء ' })
+                #step-2-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-2-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 مواصفات المنتج
+                            p هي مواصفات تسهل على المستخدم إتخاذ قرار الشراء مثل الحجم - الوزن - اللون
+                        .row.row-cols-1.row-cols-md-2.align-items-end 
+                            .col 
+                                +select({label:'إختر الصفة' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+                            .col 
+                                +input_languages({ar: {label:'أكتب الوزن' , placeholder:'أكتب الإسم'}})
+
+                        a.load-more-sec 
+                            p أضف المزيد من المواصفات
+                    .add-product-footer
+                        +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-3' })
+                        +Button({color:'red' , name:'إلغاء ' })      
+                #step-3-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-3-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 ﺳﻌﺮ اﻟﺒﻴﻊ 
+                            p ضع سعراً مناسباً لسلعتك
+                        .row.row-cols-1.row-cols-md-2.align-items-start 
+                            .col 
+                                +input({label:'السعر ' , valueText:'دينار'})
+
+
+                            .col 
+                                +input({label:'نسبة الخصم' , valueText:'%'})
+                            .col 
+                        +input({label:'السعر بعد الخصم' , valueText:'دينار'})
+                    .add-product-footer
+                    button.btnn-orange.btn.btnn.hvr-shadow.btn-fill(data-bs-toggle='modal' type="button" data-bs-target='#successModal')
+                        span  إضافة
+                    #successModal.modal.fade(tabindex='-1' aria-labelledby='successModalLabel' aria-hidden='true')
+                        .modal-dialog
+                            .modal-content
+                                .modal-header
+                                    h5#successModalLabel.modal-title 
+                                    button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                                .modal-body.p-0
+                                    .send-offer-modal 
+                                        .icon 
+                                            img(src="../../assets/images/success-icon-big.png" alt="")
+                                        h2 ﺗﻢ ارﺳﺎل اﻟﻘﺼﺔ ﺑﻨﺠﺎح
+                                        p ﺳﻴﺘﻢ ﻣﺮاﺟﻌﺘﻬﺎ ﻣﻦ ﻗﺒﻞ اﻟﺪﻋﻢ اﻟﻔﻨﻰ ﻟﺪﻳﻨﺎ ﻟﻠﻤﻮاﻓﻘﺔ ﻋﻠﻴﻬﺎ
+
+                    +Button({color:'red' , name:'إلغاء ' })

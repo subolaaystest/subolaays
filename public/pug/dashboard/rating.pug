@@ -1,0 +1,106 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | إدارة التقييمات
+block content 
+
+    .row.match-height.mt-4 
+        .col-lg-12
+            .custom-cart 
+                .custom-cart-header 
+                    h2 تقييمات المنتجات
+                .custom-cart-body 
+                    #ratingChart 
+
+    .row.match-height.mt-4 
+        .col-lg-12
+            .custom-cart 
+                .custom-cart-header 
+                    h2  الاعلى تقييما
+
+                .custom-cart-body 
+                    - var fields1 = ['', '' ,'' , '' , '']
+                    - var items1 = []
+                    
+                    - var i = 0;
+                        while i < 4
+                            - items1.push([ '<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>', '<div class="table-two-texts"><h5>خضروات مشكل</h5><h6>#5454545</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6>خضراوات</h6></div>','<h5>64 ريال</h5>']);
+                            - i++
+                    - var actions1 = {isRate:true} 
+                    +table( { fields: fields1 , items: items1 , actions: actions1 , isTheadHidden:true })
+block scripts 
+    script.
+        var options = {
+            series: [{
+            name: 'Servings',
+            data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
+        }],
+            annotations: {
+            points: [{
+                x: 'Bananas',
+                seriesIndex: 0,
+                label: {
+                    borderColor: '#775DD0',
+                    offsetY: 0,
+                    style: {
+                        color: '#fff',
+                        background: '#775DD0',
+                    },
+                    text: 'Bananas are good',
+                }
+            }]
+        },
+        chart: {
+            height: 350,
+            type: 'bar',
+        },
+        colors:['#FDB933'],
+        plotOptions: {
+            bar: {
+                borderRadius: 10,
+                columnWidth: '50%',
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            width: 2
+        },
+
+        grid: {
+            row: {
+                colors: ['#fff', '#f2f2f2']
+            }
+        },
+        xaxis: {
+            labels: {
+                rotate: -45
+            },
+            categories: [ 'منتج 1','منتج 2','منتج 3','منتج 4','منتج 5','منتج 6','منتج 7','منتج 8','منتج 9','منتج 10' ,'منتج 9','منتج 10'  ,'منتج 9','منتج 10'],
+
+            tickPlacement: 'on'
+        },
+   
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'light',
+                type: "horizontal",
+                shadeIntensity: 0.25,
+                gradientToColors: ['#FFE8BA'],
+                inverseColors: true,
+                opacityFrom: 0.85,
+                opacityTo: 0.85,
+                stops: [50, 0, 100]
+            },
+        }
+        };
+        const ratingChart = document.querySelector("#ratingChart")
+
+
+        if (ratingChart) {
+            var apexChart = new ApexCharts(ratingChart, options);
+
+            apexChart.render(); 
+        }
+

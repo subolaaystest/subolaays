@@ -1,0 +1,138 @@
+mixin notisHead(text)
+    .landing-notis-head.d-flex.justify-content-center.align-items-center 
+        p.m-0 هل تريد ان تبدء صفقة جديدة الان ؟ 
+        +Button({color:'orange' , name:'اضافة صفقة ' , class:"btn-fill" })
+mixin homeHead (head)
+    .home-sec-head.mb-4  
+        .text 
+            h4  #{head.header}
+            if head.pargh
+                p  #{head.pargh}
+            if head.link
+                a(href='#').link #{head.link}
+                    svg
+                        use( href="../../assets/images/icons/icons.svg#arrow-right")
+
+        .button 
+            +Button({color:'orange' , name: head.button})
+mixin product (prod)
+    a.product.hvr-float-shadow(href="#")     
+        div
+            .icon.d-flex.justify-content-center.align-items-center 
+                svg 
+                    use(href="../../assets/images/icons/icons.svg#heart-fill")
+            if (prod.isDiscount == true)
+                span.discount 10%
+            .img.mb-4
+                img(src="../../assets/images/products/product-1.png" alt="")
+            p.name اسم التاجر
+            h4 جبنة لافاش كيري
+            p.price 150 دينار
+                span.old-price 50 دينار
+            span.number 48 قطعة
+            button.plus 
+                svg
+                    use(href="../../assets/images/icons/icons.svg#plus")
+            
+mixin bargain(bargain)
+    .bargain
+        .bargain-head 
+            h6.m-0 حالة الصفقة
+            span لم يتم الترسية بعد
+        .bargain-body 
+            .row.w-100.m-0 
+                .col-6
+                    .bargain-body-sec
+                        span القسم
+                        h6 بقالة - خضراوات
+                .col-6
+                    .bargain-body-sec
+                        span اسم المنتج
+                        h6 Grocery shope
+                .col-6
+                    .bargain-body-sec
+                        span الكمية
+                        h6 40 صندوق
+                .col-6
+                    .bargain-body-sec
+                        span العروض
+                        h6.textt-red 50 عرض
+
+mixin offer(offer)
+    .offer
+        .offer-image
+            img(src="../../assets/images/" + (offer.image) +".png" alt="")
+        .offer-body
+            h4.mb-2 #{offer.name}
+            p.m-0 #{offer.discount}
+
+mixin cart(prod)   
+    .product.d-flex.justify-content-between.mb-3
+        .img
+            img(src="../../assets/images/products/product-1.png" alt="")
+        div
+            p.name.m-0 اسم التاجر
+            h4 جبنة لافاش كيري
+            span.number 48 قطعة
+        div
+            p.price.m-0 150 دينار
+            span.old-price.m-0 50 دينار
+        +input_number({label:'' })
+        svg
+            use(href="../../assets/images/icons/icons.svg#plus")  
+  
+mixin cart_delivery(prod)   
+    .product.d-flex.justify-content-between.mb-3
+        .img
+            img(src="../../assets/images/products/product-1.png" alt="")
+        div
+            p.name.m-0 اسم التاجر
+            h4 جبنة لافاش كيري
+            span.number 48 قطعة
+        div
+            p.price.m-0 150 دينار
+            span.old-price.m-0 50 دينار
+        p.amount.m-0 الكمية 1
+
+mixin add_deal(prod)   
+    .product.add-deal.d-flex.justify-content-between.mb-3
+        .img
+            img(src="../../assets/images/products/product-1.png" alt="")
+        div
+            p.name.m-0 بقالة
+            h4 ليمون مزارع طازج
+            span.number حجم المنتج 2 كم
+            p نستلة - جهينة
+        div
+            p.m-0 السعر التقريبى
+            p.price.m-0  150 دينار
+        p.amount.m-0 الكمية 5
+        div 
+            svg.me-3
+                use(href="../../assets/images/icons/icons.svg#plus")  
+            svg
+                use(href="../../assets/images/icons/icons.svg#plus")  
+
+mixin merchant-details(details) 
+    .merchant-details.d-flex.justify-content-between.mb-4
+        .d-flex.justify-content-start.align-items-center 
+            .img.me-3 
+                img(src="../../assets/images/landing/avatar.png" alt="" class="img")
+            .info
+                h6 التاجر
+                h5.mb-0 Grocery shope
+        .d-flex.justify-content-end.align-items-center  
+            if (details.follow)
+                +Button({color:'orange' , name:'متابعة'})
+            else
+                +Button({color:'orange btn-fill' , name:'تتابع', icon: 'check'})
+            if (details.chat)
+                .message-view-box-actions 
+                    +Button({color:'orange btn-fill' , class:'ms-2' , icon:'envelope'})
+    
+            
+            
+           
+
+
+

@@ -1,0 +1,51 @@
+extends ../layouts/accountLayout.pug
+include ../mixins/landingMixin.pug
+include ../mixins/accountMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .home-progress 
+        .row.m-0.w-100
+            .col-10
+                h2.home-progress-title أكمل إعدادات متجرك
+                .home-progress-bar-parent.m-0 
+                    .home-progress-bar-inner(style="width:57%")
+                    h4
+                        span مكتمل
+                        span <div class="counter">57</div>% 
+        .icon 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#plus")
+    .support-content
+        h2 ماسبب تواصلك معنا
+        ul.payments-list-check
+            li 
+                input(type="radio" name="payment" id="visa")
+                label(for="visa") 
+                    .title شكوى
+            li 
+                input(type="radio" name="payment" id="apple")
+                label(for="apple") 
+                    .title اقتراح
+            li 
+                input(type="radio" name="payment" id="mada")
+                label(for="mada") 
+                    .title اراء
+            li 
+                input(type="radio" name="payment" id="cash")
+                label(for="cash") 
+                    .title مشاكل فنية
+            li 
+                input(type="radio" name="payment" id="cash")
+                label(for="cash") 
+                    .title تعليق
+
+
+
+
+
+
+
+
+    

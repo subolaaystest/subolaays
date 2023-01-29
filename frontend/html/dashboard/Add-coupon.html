@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/rtl.css">
+    <title>Document</title>
+  </head>
+  <body></body>
+  <div class="dashboard-layout"> 
+    <div class="dashbord-navbar"> 
+      <div class="logo">  <img src="../../assets/images/logo.png" alt="alt"></div>
+      <div class="dash-breadcrumb"> 
+        <h1> جميع الطلبات
+        </h1>
+      </div>
+      <div class="dash-actions"><a class="lang-btn"> 
+          <div class="code"> ar </div><span>العربية </span></a>
+        <div class="search"> 
+          <form action="#" method="method">
+            <div class="form-group"> 
+              <input class="form-control" type="text">
+              <button>~<i class="fas fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+        <div class="noti"> 
+          <button>
+            <svg> 
+              <use href="../../assets/images/icons/icons.svg#notification"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="account-area">
+          <div class="dropdown">
+            <button class="btn p-0 dropdown-toggle" id="userStatus" type="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../../assets/images/photo-top.png" alt=""></button>
+            <ul class="dropdown-menu" aria-labelledby="userStatus">
+              <li><a class="dropdown-item" href="#"> 
+                  <h5>Matgar One</h5><span>46313</span></a></li>
+              <li><a class="dropdown-item" href="#"> 
+                  <h5>Mazen</h5><span>Mazen98@gmail.com</span></a></li>
+              <li><a class="dropdown-item" href="#">
+                  <h5>تسجيل الخروج</h5></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div class="dash-sidebar">
+        <div class="top-sidebar"> 
+          <div class="logo">  <img src="../../assets/images/logo.png" alt="alt"></div>
+          <div class="close-menu"> <i class="fas fa-times">    </i></div>
+        </div>
+        <div class="list-links"> 
+                <div class="list-links-group">
+                  <h5></h5>
+                  <ul>
+                    <li><a class="active" href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/home.svg" alt=""></div><span>الرئيسة</span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>المنتجات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Product_Package.svg" alt=""></div><span> المنتجات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/plus.svg" alt=""></div><span> تصنيفات المنتجات </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>الطلبات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Shopping_Bag.svg" alt=""></div><span> الطلبات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Tag.svg" alt=""></div><span> الصفقات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/offer.svg" alt=""></div><span> عروض الصفقات  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/circular-diagram.svg" alt=""></div><span> التقارير  </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>التسويق</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/cart.svg" alt=""></div><span> السلات المتروكة </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/coupon.svg" alt=""></div><span> قسائم التخفيض </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/send.svg" alt=""></div><span> حملات الرسائل  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/instagram-live.svg" alt=""></div><span> إضافة القصص  </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>العملاء</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/users.svg" alt=""></div><span> العملاء </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/comm-chat.svg" alt=""></div><span> الرسائل </span></a></li>
+                  </ul>
+                </div>
+                <div class="list-links-group"> 
+                  <h5>الإعدادات</h5>
+                  <ul>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/setting 2.svg" alt=""></div><span> إعدادات الموقع </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/fast.svg" alt=""></div><span> الشحن والتوصيل </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/shed.svg" alt=""></div><span> مواقع التخزين  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/Bank-Statement.svg" alt=""></div><span> تفعيل الضريبة </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/wallet.svg" alt=""></div><span> طرق الدفع </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/shipping.svg" alt=""></div><span> المخزون  </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/location.svg" alt=""></div><span> إدارة نقاط التغطية </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/favorites.svg" alt=""></div><span> إدارة التقييمات </span></a></li>
+                    <li><a href="#">
+                        <div class="icon"> <img src="../../assets/images/menu/users.svg" alt=""></div><span> إدارة الفريق  </span></a></li>
+                  </ul>
+                </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="sidbar-icon"> <i class="fas fa-bars"> </i></div>
+        <div class="dash-tabs">
+          <div class="nav-tabs-1"> 
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="Voucher-data-tab" data-bs-toggle="tab" data-bs-target="#Voucher-data" type="button" role="tab" aria-controls="Voucher-data" aria-selected="true">ﺑﻴﺎﻧﺎت اﻟﻘﺴﻴﻤﺔ</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="Voucher-Included-tab" data-bs-toggle="tab" data-bs-target="#Voucher-Included" type="button" role="tab" aria-controls="Voucher-Included" aria-selected="false">ﻣﺸﻤﻮل اﻟﻘﺴﻴﻤﺔ</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="excluded-coupon-tab" data-bs-toggle="tab" data-bs-target="#excluded-coupon" type="button" role="tab" aria-controls="excluded-coupon" aria-selected="false">ﻣﺴﺘﺜﻨﻰ ﻣﻦ اﻟﻘﺴﻴﻤﺔ</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="Voucher-data" role="tabpanel" aria-labelledby="Voucher-data-tab"> 
+                <div class="coupon-note">
+                  <div class="icon"> <img src="../../assets/images/coupon-icon.png" alt=""></div>
+                  <h3>ﻛﻮد اﻟﻜﻮﺑﻮن ( اﺣﺮف اﻧﺠﻠﻴﺰﻳﺔ وارﻗﻢ ﻓﻘﻂ )</h3>
+                  <button class="btnn-orange btn btnn btn-fill px-5 mx-auto code-generator-btn hvr-shadow" type="button"><span>مولد الأكواد</span>
+                  </button>
+                  <div class="coupon-finish"> <img src="../../assets/images/coupon-finish.png" alt=""></div>
+                </div>
+                <div class="code-generator-box">
+                  <div class="form-group"> 
+                    <input class="form-control" type="text" id="input-975" placeholder="اﻛﺘﺐ اﻟﻜﻮد"/>
+                  </div>
+                </div>
+                <div class="choose-amount">
+                  <div class="form-group">
+                    <label for="input-140"> ﻧﻮع اﻟﺨﺼﻢ</label>
+                    <select class="niceselect" type="text" id="select-140">
+                      <option value="ﻣﺒﻠﻎ ﺛﺎﺑﺖ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت">ﻣﺒﻠﻎ ﺛﺎﺑﺖ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت  </option>
+                      <option value="ﻧﺴﺒﺔ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت">ﻧﺴﺒﺔ ﻣﻦ ﻣﺠﻤﻮع اﻟﻤﺸﺘﺮﻳﺎت  </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="Discount-amount"> 
+                  <div class="form-group"> 
+                    <input class="form-control" type="text" id="input-265" placeholder="ادﺧﻞ ﻫﻨﺎ ﻣﺒﻠﻎ اﻟﺨﺼﻢ "/>
+                    <div class="value-text">دينار</div>
+                  </div>
+                </div>
+                <div class="discount-percentage" style="display:none">
+                  <div class="form-group"> 
+                    <input class="form-control" type="text" id="input-895" placeholder="ادﺧﻞ ﻫﻨﺎ نسبة اﻟﺨﺼﻢ "/>
+                    <div class="value-text">%</div>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between" style="margin-top:-10px"> 
+                  <div class="form-group">
+                    <label for="switch5"> ﻣﻊ ﺷﺤﻦ ﻣﺠﺎﻧﻰ</label>
+                  </div>
+                  <div class="form-check form-switch form-switch-md">
+                    <input class="form-check-input" type="checkbox" id="switch5" role="switch">
+                    <label class="form-check-label" for="switch5"></label>
+                  </div>
+                </div>
+                <hr class="cus-hr">
+                <div class="form-group"> 
+                  <label for="input-724">اﻟﻤﺒﻠﻎ اﻟﺎﻗﺼﻰ ﻟﻠﺨﺼﻢ</label>
+                  <input class="form-control" type="text" id="input-724" placeholder="ادﺧﻞ ﻫﻨﺎ ﻣﺒﻠﻎ اﻟﺨﺼﻢ "/>
+                  <div class="value-text">دينار</div>
+                </div>
+                <div class="form-group"> 
+                  <label for="input-670">ﺗﺎرﻳﺦ ووﻗﺖ اﻧﺘﻬﺎء اﻟﻌﺮض</label>
+                  <input class="form-control" type="datetime-local" id="input-670"/>
+                </div>
+                <hr class="cus-hr">
+                <div class="form-group">
+                  <label for="input-331">اﺳﺘﺜﻨﺎء اﻟﻤﻨﺘﺠﺎت اﻟﻤﺨﻔﻀﺔ</label>
+                  <select class="niceselect" type="text" id="select-331">
+                    <option value="نعم">نعم  </option>
+                    <option value="لا">لا  </option>
+                  </select>
+                </div>
+                <div class="form-group"> 
+                  <label for="input-442">ﻋﺪد اﻟﻤﺮات اﻟﺎﺳﺘﺨﺪام ﻟﻠﺠﻤﻴﻊ</label>
+                  <input class="form-control" type="text" id="input-442" placeholder="اﻛﺘﺐ ﻋﺪد اﻟﻤﺮات "/>
+                </div>
+                <div class="form-group"> 
+                  <label for="input-937">ﻋﺪد اﻟﻤﺮات اﻟﺎﺳﺘﺨﺪام ﻟﻠﻌﻤﻴﻞ اﻟﻮاﺣﺪ   </label>
+                  <input class="form-control" type="text" id="input-937" placeholder="اﻛﺘﺐ ﻋﺪد اﻟﻤﺮات "/>
+                </div>
+                <div class="btn-submit-300 mt-5">
+                  <button class="btnn-orange btn btnn btn-fill px-5 hvr-shadow" type="button"><span>حفظ</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="Voucher-Included" role="tabpanel" aria-labelledby="Voucher-Included-tab"> 
+                <div class="form-group">
+                  <label for="paymentsOptions">  ﻃﺮق اﻟﺪﻓﻊ اﻟﻤﺸﻤﻮﻟﺔ ﻓﻰ اﻟﻘﺴﻴﻤﺔ</label>
+                  <div class="cus-multi-select" id="paymentsOptions" data-options="[{&quot;label&quot;: &quot;New York&quot;,&quot;value&quot;: &quot;NY&quot;},{&quot;label&quot;: &quot;Washington&quot;,&quot;value&quot;: &quot;WA&quot;},{&quot;label&quot;: &quot;California&quot;,&quot;value&quot;: &quot;CA&quot;},{&quot;label&quot;: &quot;New Jersey&quot;,&quot;value&quot;: &quot;NJ&quot;},{&quot;label&quot;: &quot;North Carolina&quot;,&quot;value&quot;: &quot;NC&quot;}]"> </div>
+                </div>
+                <div class="form-group">
+                  <label for="IncludedRatings"> ﺗﺼﻨﻴﻔﺎت ﻣﺸﻤﻮﻟﺔ</label>
+                  <div class="cus-multi-select" id="IncludedRatings" data-options="[{&quot;label&quot;: &quot;New York&quot;,&quot;value&quot;: &quot;NY&quot;},{&quot;label&quot;: &quot;Washington&quot;,&quot;value&quot;: &quot;WA&quot;},{&quot;label&quot;: &quot;California&quot;,&quot;value&quot;: &quot;CA&quot;},{&quot;label&quot;: &quot;New Jersey&quot;,&quot;value&quot;: &quot;NJ&quot;},{&quot;label&quot;: &quot;North Carolina&quot;,&quot;value&quot;: &quot;NC&quot;}]"> </div>
+                </div>
+                <div class="add-product-title"> 
+                  <h2>ﻣﻨﺘﺠﺎت ﻣﺸﻤﻮﻟﺔ</h2>
+                  <p> ﻳﻤﻜﻨﻚ اﻟﺒﺤﺚ ﻓﻲ اﻟﻤﻨﺘﺠﺎت اﻟﺠﺎﻫﺰة اﻟﺘﻲ ﻟﺎ ﺗﺤﺘﻮي ﻋﻠﻰ ﺧﻴﺎرات</p>
+                </div>
+                <div class="search-results-box">
+                  <div class="form-group"> 
+                    <input class="search-results-input form-control" type="text"/>
+                  </div>
+                  <div class="search-results-list"> 
+                    <ul> 
+                      <li data-id="1"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="3"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="4"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="5"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="data-addedd">
+                    <ul> 
+                      <li data-id="1"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5><a class="delete text-red" href="#"><i class="fas fa-times"> </i></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="IncludedClients">ﻋﻤﻠﺎء ﻣﺸﻤﻮﻟﻴﻦ</label>
+                  <div class="cus-multi-select" id="IncludedClients" data-options="[{&quot;label&quot;: &quot;New York&quot;,&quot;value&quot;: &quot;NY&quot;},{&quot;label&quot;: &quot;Washington&quot;,&quot;value&quot;: &quot;WA&quot;},{&quot;label&quot;: &quot;California&quot;,&quot;value&quot;: &quot;CA&quot;},{&quot;label&quot;: &quot;New Jersey&quot;,&quot;value&quot;: &quot;NJ&quot;},{&quot;label&quot;: &quot;North Carolina&quot;,&quot;value&quot;: &quot;NC&quot;}]"> </div>
+                </div>
+                <div class="form-group">
+                  <label for="input-250">  </label>
+                  <select class="niceselect" type="text" id="select-250">
+                    <option value="إختر">إختر  </option>
+                    <option value="إختر">إختر  </option>
+                  </select>
+                </div>
+                <div class="btn-submit-300 mt-5">
+                  <button class="btnn-orange btn btnn btn-fill px-5 hvr-shadow" type="button"><span>حفظ</span>
+                  </button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="excluded-coupon" role="tabpanel" aria-labelledby="excluded-coupon-tab"> 
+                <div class="form-group">
+                  <label for="input-79">ﺗﺼﻨﻴﻔﺎت ﻣﺴﺘﺜﻨﺎة   </label>
+                  <select class="niceselect" type="text" id="select-79">
+                    <option value="إختر">إختر  </option>
+                    <option value="إختر">إختر  </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="input-173">ﻣﺎرﻛﺎت ﻣﺴﺘﺜﻨﺎة    </label>
+                  <select class="niceselect" type="text" id="select-173">
+                    <option value="إختر">إختر  </option>
+                    <option value="إختر">إختر  </option>
+                  </select>
+                </div>
+                <div class="add-product-title"> 
+                  <h2>ﻣﻨﺘﺠﺎت ﻣﺴﺘﺜﻨﺎة</h2>
+                  <p> ﻳﻤﻜﻨﻚ اﻟﺒﺤﺚ ﻓﻲ اﻟﻤﻨﺘﺠﺎت اﻟﺠﺎﻫﺰة اﻟﺘﻲ ﻟﺎ ﺗﺤﺘﻮي ﻋﻠﻰ ﺧﻴﺎرات</p>
+                </div>
+                <div class="search-results-box">
+                  <div class="form-group"> 
+                    <input class="search-results-input form-control" type="text"/>
+                  </div>
+                  <div class="search-results-list"> 
+                    <ul> 
+                      <li data-id="1"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="3"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="4"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                      <li data-id="5"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="data-addedd">
+                    <ul> 
+                      <li data-id="1"> 
+                        <div class="side">
+                          <div class="table-img"><img src="../../assets/images/product-thumb.png" alt=""/></div>
+                          <div class="table-two-texts">
+                            <h5>خضراوات مشكل</h5>
+                            <h6>#54545454</h6>
+                          </div>
+                        </div>
+                        <div class="side">
+                          <h5 class="textt-green">45 ريال</h5><a class="delete text-red" href="#"><i class="fas fa-times"> </i></a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="ExcludedClients">ﻋﻤﻠﺎء ﻣﺴﺘﺜﻨﺎة</label>
+                  <div class="cus-multi-select" id="ExcludedClients" data-options="[{&quot;label&quot;: &quot;New York&quot;,&quot;value&quot;: &quot;NY&quot;},{&quot;label&quot;: &quot;Washington&quot;,&quot;value&quot;: &quot;WA&quot;},{&quot;label&quot;: &quot;California&quot;,&quot;value&quot;: &quot;CA&quot;},{&quot;label&quot;: &quot;New Jersey&quot;,&quot;value&quot;: &quot;NJ&quot;},{&quot;label&quot;: &quot;North Carolina&quot;,&quot;value&quot;: &quot;NC&quot;}]"> </div>
+                </div>
+                <div class="btn-submit-300 mt-5">
+                  <button class="btnn-orange btn btnn btn-fill px-5 hvr-shadow" type="button"><span>حفظ</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
+    <script src="../../assets/js/jquery-pincode-autotab.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"> </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSbSmPAGJ9yjR_hfPXnHBH_5zplpE_5sY&amp;callback=initAutocomplete&amp;libraries=places&amp;v=weekly" defer></script>
+    <script src="../../assets/js/bundle.min.js"> </script>
+    <script src="../../assets/js/moreFields.js"> </script>
+    <script src="../../assets/js/main.js"> </script>
+    <script src="../../assets/js/charts.js"> </script>
+  </div>
+</html>

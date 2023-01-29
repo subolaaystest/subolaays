@@ -1,0 +1,35 @@
+extends ../layouts/accountLayout.pug
+include ../mixins/landingMixin.pug
+include ../mixins/accountMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .home-progress
+        .row.m-0.w-100
+            .col-10
+                h2.home-progress-title أكمل إعدادات متجرك
+                .home-progress-bar-parent.m-0 
+                    .home-progress-bar-inner(style="width:57%")
+                    h4
+                        span مكتمل
+                        span <div class="counter">57</div>% 
+        .icon 
+            svg 
+                use(href="../../assets/images/icons/icons.svg#plus")
+    .row.w-100.m-0 
+        .col-lg-5
+            +cardBox()
+
+        .col-lg-5 
+            +cardBox()
+        .col-lg-10
+            a.load-more-sec
+                p اضافة عنوان جديد
+                    .day-time.mt-5 
+
+
+
+
+
+

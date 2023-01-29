@@ -1,0 +1,61 @@
+
+extends ../layouts/dashboardLayout.pug
+
+block title 
+    | المنتجات
+block content
+    .page-content-inner.single-order 
+        .head 
+            .single-order-title
+                h1 خضراوات ومشكل    
+                h5 #654545454
+            .buttons-list 
+                +Button({color:'gray' , name:'تعديل المنتج'})
+                +Button({color:'red' , name:'حذف المنتج' , class:'mr-2'})
+                +Button({color:'orange' , name:'تصدير' , class:'mr-2' , icon:'export'})
+        .body 
+            .order-image 
+                img(src="../../assets/images/product-1.png" alt="")
+            .order-details
+                .row.row-cols-lg-2.row-cols-1
+                    .col 
+                        .order-details-group.order-desc 
+                            h3 وصف المنتج
+                            p لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم. 
+                        .order-details-group.order-details-table 
+                            h3 مواصفات المنتج
+                            ul 
+                                li 
+                                    span الحجم
+                                    strong 50 كيلو جرام
+                                li 
+                                    span النوع
+                                    strong مزارع
+                                li 
+                                    span مواد حافظة
+                                    strong لا
+                                li 
+                                    span الحجم
+                                    strong 50 كيلو جرام 
+                    .col  
+                        .order-details-group.order-price
+                            h3 السعر الحالي
+                            h2 50 ريال سعودي
+                        .order-details-group.order-discount 
+                            h3 الخصم المفعل
+                            h2 خصم 50%
+                            ul 
+                                li 
+                                    span السعر قبل الخصم
+                                    strong (450 ريال)  
+                                li 
+                                    span السعر بعد الخصم
+                                    strong (450 ريال) 
+                        .order-details-group.order-status
+                            h3 حالة المنتج 
+                            p أوشك على النفاذ
+
+                        .order-details-group.order-status
+                            h3 الكمية المتاحة 
+                            p 3 قطع فقط
+                                                        

@@ -1,0 +1,71 @@
+mixin input(input , texarea)
+    - var number = Math.floor(Math.random() * 1000); 
+    .form-group 
+        if input.label 
+            label(for="input-" + number) #{input.label}
+        if texarea
+            textarea.form-control(rows=texarea.rows || 5 )
+        else
+            input.form-control(type=input.type || 'text' id="input-" + number placeholder=input.placeholder)
+            if input.valueText
+                .value-text #{input.valueText}
+
+mixin select(select)
+    - var number = Math.floor(Math.random() * 1000); 
+    .form-group(class=select.class)
+        if select.label 
+            label(for="input-" + number) #{select.label}
+        select.niceselect(type="text" id="select-" + number)
+            each option in select.options   
+                option(value=option) #{option}  
+
+mixin multiSelect(select)
+    - var number = Math.floor(Math.random() * 1000); 
+    .form-group(class=select.class)
+        if select.label 
+            label(for=select.id) #{select.label}
+        div(id=select.id data-options=select.options class="cus-multi-select")  
+mixin input_number(input)
+    - var number = Math.floor(Math.random() * 1000); 
+    .input-number
+        .form-group 
+            if input.label 
+                label(for="input-" + number) #{input.label}
+            .input-number-control
+                a(href="#" class="input-increment")  +
+                input(type="text" id="input-" + number placeholder=00 value=0)
+                a(href="#" class="input-decrement")  -
+mixin input_languages(input , texarea )
+    - var tabs_id = Math.floor(Math.random() * 1000); 
+    - var nav_item = Math.floor(Math.random() * 1000); 
+    -var tabcontent = Math.floor(Math.random() * 1000)
+        .custom-js-tabs
+            ul.nav.nav-tabs.form-lang-tabs(role='tablist' id="tabs-" + tabs_id )
+                li.nav-item(role='presentation')
+                    button.nav-link.active(data-tab='arabic-tab' type='button' role='tab') العربية
+                li.nav-item(role='presentation')
+                    button.nav-link(data-tab='english-tab' type='button' role='tab') English
+            .tab-content(id="tabs-" + tabs_id + "Content")
+                .tab-pane.fade.show.active(role='tabpanel' class="arabic-tab") 
+                    +input(input.ar , texarea)
+                .tab-pane.fade(role='tabpanel' class="english-tab" ) 
+                    +input(input.ar , texarea)
+
+mixin upload_image_1(checkbox)
+    - var number = Math.floor(Math.random() * 1000); 
+
+    .image-upload
+        if checkbox.isMainImage 
+            .check-image
+
+                label(for="radio-" + number) اجعلها صورة رئيسية
+
+                .form-check
+                    input.form-check-input( id="radio-" + number type='radio' name='image-check')
+                    label.form-check-label(for="radio-" + number)
+        .input-image 
+            input(type="file")
+            img(src="" class="preview-image" alt="")
+            .icon 
+                svg
+                    use(href="../../assets/images/icons/icons.svg#gallery")

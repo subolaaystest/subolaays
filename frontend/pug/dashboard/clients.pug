@@ -1,0 +1,13 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  العملاء
+block content 
+    +pageHead('العملاء  <span>( 555 )</span>')
+    - var fields = [ 'العميل' , 'تاريخ الإنضمام' , 'ﻋﺪد اﻟﻄﻠﺒﺎت ' , 'العنوان' , 'اﺟﻤﺎﻟﻰ اﻟﺸﺮاء' , 'الإجراءات']
+    - var actions = {isCustomBtn:{color:'orange' , name:'ارﺳﺎل ﺗﻨﺒﻴﻪ'}}
+    - var items = []
+    - var i = 0;
+    while i < 4
+        - items.push([ '<div class="d-flex"><div class="table-img"><img src="../../assets/images/product-thumb.png" /></div><div class="table-two-texts mx-2"><h5 >Mohamed ahmed</h5><h6>عميل منذ 21/14/2021</h6></div></div>' ,'<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>3 طلبات</h5>','<h5>اﻟﺪﻣﺎم ، اﻟﺴﻌﻮدﻳﺔ</h5>' ,'<h5>64 ريال</h5>']);
+        - i++
+    +table( {  fields ,  items , actions , isInner:true,  isDataTable:true , isTableCheckbox:true }) 

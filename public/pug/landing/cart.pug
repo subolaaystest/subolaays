@@ -1,0 +1,44 @@
+extends ../layouts/landingLayout.pug
+include ../mixins/landingMixin.pug
+
+block headContent
+    +notisHead
+block content
+    .cart-content
+        .row.w-100.m-0
+            .col-md-8
+                .header.d-md-flex.justify-content-md-between.align-items-md-center 
+                    .d-md-flex.justify-content-md-between.align-items-md-center
+                        h4.m-0 المنتجات
+                        span.mx-md-3.me-3 3 منتجات من
+                        a Grocery shope
+                    a.back عودة
+                .products.mt-3
+                    +cart()
+                    +cart()
+                    +cart()
+                    
+            .col-md-4
+                .order-details 
+                    h4.p-4 تفاصيل الطلب
+                    .coupon-note
+                        .icon  
+                            img(src="../../assets/images/landing/coupon-icon.png" alt="")
+                        h3.m-0 لديك كوبون خصم ؟
+                        .coupon-finish 
+                            img(src="../../assets/images/landing/coupon-finish.png" alt="")
+                    .p-4
+                        .code-input.d-md-flex.justify-content-md-between.align-md-items-center
+                            +input({placeholder:'أكتب كوبون الخصم'})
+                            
+                            +Button({color:'orange' , name:'تفعيل' , class:"btn-fill px-5" }) 
+                        hr      
+                        .d-flex.justify-content-between.align-items-center
+                            span المجموع
+                            span.fw-bold 350 ريال
+                        .comp-order.mt-4
+                            +Button({color:'orange' , name:'اتمام الطلب' , class:"btn-fill px-5" }) 
+        .text-center.mt-5    
+            h3 لنا مكان فى كل دُ كان
+            p جميع عمليات الدفع والطلب لدينا مضمونة 100%          
+        

@@ -1,0 +1,39 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  ﻃﺮق اﻟﺪﻓﻊ
+block content 
+    +pageHead('اﻟﺤﺴﺎﺑﺎت اﻟﺒﻨﻜﻴﺔ اﻟﻤﻀﺎﻓﺔ  <span>( 555 )</span>' ,  {url:'#' , title:'اﺿﺎﻓﺔ ﺣﺴﺎب ﺑﻨﻜﻰ   '})
+
+    label.cover-card-sec(for="card")
+        .form-check.form-switch.form-switch-md
+            input.form-check-input(type='checkbox' id="card" role='switch')
+            label.form-check-label(for="card")
+        img.bg-image(src="../../assets/images/card-bg.png" alt="")
+        .text-box
+            .d-flex.justify-content-between
+                .text 
+                    h2  الحساب البنكى
+                    h3 2646 1664 16
+                .text 
+                    h2  اسم صاحب الحساب
+                    h3 سبلايز
+            .text
+                h2  رقم الايبان
+                h3 SA 6461 6494 13136 4979
+
+            .text
+                h2  البنك
+                h3 بنك الرياض
+
+
+
+
+    .row.row-cols-md-2.row-cols-lg-3.row-cols-xl-4.match-height 
+        .col 
+            +CompanyBox({title:'وﺳﻴﻠﺔ اﻟﺪﻓﻊ' , name: 'STC Pay' , logo:'stc' , check:true})
+        .col 
+            +CompanyBox({title:'وﺳﻴﻠﺔ اﻟﺪﻓﻊ' , name: 'ﻓﻴﺰا / ﻣﺎﺳﺘﺮ ﻛﺎرد' , logo:'visa' , check:true })
+        .col 
+            +CompanyBox({title:'وﺳﻴﻠﺔ اﻟﺪﻓﻊ' , name: 'PayPal' , logo:'paypal' , check:true})
+        .col 
+            +CompanyBox({title:'وﺳﻴﻠﺔ اﻟﺪﻓﻊ' , name: 'Mada' , logo:'mada' , check:true})

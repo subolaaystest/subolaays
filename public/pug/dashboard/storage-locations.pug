@@ -1,0 +1,35 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |   ﻣﻮاﻗﻊ اﻟﺘﺨﺰﻳﻦ
+block content
+
+    +pageHead(' ﻣﻮاﻗﻊ اﻟﺘﺨﺰﻳﻦ <span>( 555 )</span>' , {url:'#' , title:'اﺿﺎﻓﺔ ﻣﻮﻗﻊ ﺟﺪﻳﺪ    '})
+
+    .page-content-inner
+
+        .d-flex.justify-content-between.mt-5
+            .add-product-title 
+                h2  اﻟﻤﺴﺘﻮدع اﻟﺮﺋﻴﺴﻰ
+                    .green-label مفتوح
+                p   ﻣﺴﺘﻮدع 
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 7 role='switch')
+                label.form-check-label(for="switch" + 7)
+        .set-default
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+                label.form-check-label(for="switch" + 6) افتراضى
+        hr.cus-hr
+
+        .d-flex.justify-content-between.mt-5
+            .add-product-title 
+                h2   ﻓﺮع اﻟﺴﻠﻤﺎﻧﻴﺔ
+                    .green-label مفتوح
+                p   رفع 
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                label.form-check-label(for="switch" + 5)
+        .set-default
+            .form-check.form-switch.form-switch-md
+                input.form-check-input(type='checkbox' id="switch" + 3 role='switch')
+                label.form-check-label(for="switch" + 3) افتراضى

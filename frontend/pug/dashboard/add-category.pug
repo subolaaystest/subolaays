@@ -1,0 +1,18 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  التصنيفات
+block content
+    .page-content-inner
+        .add-product 
+            .add-product-title 
+                h2 صور المنتج 
+                    a(href="")
+                        p أو إختر من مجموعة الأيقنات لدينا 
+            .row 
+                .col-lg-3.col-md-4
+                    +upload_image_1({})
+            +input_languages({ar: {label:'الإسم' , placeholder:'أكتب الإسم'}})
+            +select({label:'القسم الرئيسي' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+        .add-product-footer
+            +Button({color:'orange' , name:'إضافة ' , class:'ml-2 go-to-step-2' })
+            +Button({color:'red' , name:'إلغاء ' })

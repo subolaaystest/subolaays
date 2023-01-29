@@ -1,0 +1,19 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  ﺗﻔﻌﻴﻞ اﻟﻀﺮﻳﺒﺔ
+block content
+    .page-content-inner
+
+        .add-product-title 
+            h2  ﺣﺪد اﻟﺒﻨﻚ
+            p ﺣﺪد اﻟﺒﻨﻚ اﻟﺘﺎﺑﻊ ﻟﻪ
+        +select({ options:[' ﻣﺜﻠﺎ : ﺑﻨﻚ اﻟﺮﻳﺎض ' , 'ﺣﺴﺐ اﻟﻮزن' , 'ﺣﺴﺐ اﻟﻮزن' , 'إختر']})
+       
+        +input({label:' اﺳﻢ ﺻﺎﺣﺐ اﻟﺤﺴﺎب'})
+        +input({label:' رﻗﻢ اﻟﺤﺴﺎب  '})
+
+        +input({label:' رﻗﻢ اﻟﺎﻳﺒﺎن  '})
+
+        .add-product-footer
+            +Button({color:'orange' , name:'إضافة ' , class:'ml-2 go-to-step-2' })
+            +Button({color:'red' , name:'إلغاء ' })

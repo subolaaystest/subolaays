@@ -1,0 +1,94 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | الصفقات
+block content
+    .dash-tabs
+        .nav-tabs-1 
+            ul#myTab.nav.nav-tabs(role='tablist')
+                li.nav-item(role='presentation')
+                    button#invoice-details-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#invoice-details' type='button' role='tab' aria-controls='invoice-details' aria-selected='true') تفاصيل العميل
+                li.nav-item(role='presentation')
+                    button#product-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#product-details' type='button' role='tab' aria-controls='product-details' aria-selected='false') تفاصيل المنتجات
+            #myTabContent.tab-content
+                #invoice-details.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='invoice-details-tab') 
+                    .order-details 
+                        .row
+                            .col-lg-2 
+                                +orderDetailsBox('رقم الصفقة' , '6461313#')
+                            .col-lg-4 
+                                +orderDetailsBox('تاريخ ووقت الصفقة' , '12 سبتمبر 2021')
+                            .col-lg-4 
+                                +orderDetailsBox('العروض المقدمة' , '+50 عرض مقدم')
+                            .col-lg-2 
+                                +orderDetailsBox('إجمالي الطلب' , '64 ريال')
+                        hr
+                        .row
+                            .col-lg-2 
+                                +orderDetailsBox('نوع المنشأة' , 'بقالة')
+                            .col-lg-4 
+                                +orderDetailsBox('إسم العميل' , 'Mohamed ahmed')
+                            .col-lg-4 
+                                +orderDetailsBox('البريد الإلكتروني' , 'Mohamed ahmed @gmail.com')
+                            .col-lg-2 
+                                +orderDetailsBox('عضو من'  , '2021/4/21') 
+                        .bottom-row.d-flex.justify-content-between.flex-wrap.mt-5 
+                            +orderDetailsBox('موقع العميل' , 'تبوك السعودية')
+                            .buttons.d-flex
+                                button(class=['btnn-' + 'gray' , 'btn' , 'btnn' , 'hvr-shadow' ] type='button' data-bs-toggle='modal' data-bs-target='#mapModal')
+                                    span عرض الموقع
+                                        svg 
+                                            use(href='../../assets/images/icons/icons.svg#' + 'marker')
+
+                                +Button({color:'orange' , name:'تفاصيل العميل' , class:'ml-2' , icon:'user'})
+                        hr
+                        .order-total 
+                            ul 
+                                li 
+                                    h5 السعر الفرعي التقريبي 
+                                    h6 350 ريال
+                                li 
+                                    h5 التوصيل
+                                        span.express Express 
+                                    h6 350 ريال
+                                li 
+                                    h5 كوبون الخصم 
+                                    h6 20 ريال
+                                li 
+                                    h5 إجمالي الطلبات
+                                    h6 620 ريال
+                            hr
+                            ul 
+                                li 
+                                    h5 الملاحظات
+                                    h6 لا يوجد
+                            hr
+                        .load-more-sec.mb-5.d-flex.justify-content-between 
+                            p ﺗﻢ ﺗﻘﺪﻳﻢ ﻋﺮض ﺑﺎﻟﻔﻌﻞ ﻟﻬﺬه اﻟﺼﻔﻘﺔ
+                            a.textt-orange رؤية العرض
+
+                #product-details.tab-pane.fade(role='tabpanel' aria-labelledby='product-details-tab') 
+                    - var fields = ['المنتج' , 'الإسم' , 'القسم', 'السعر' , 'الكمية']
+                    - var items = []
+                    - var i = 0;
+                        while i < 4
+                            - items.push([`<div class="table-img"><img src="../../assets/images/product-thumb.png" /></div>`, '<div class="table-two-texts"><h5>خضراوات مشكل</h5><h6>#54545454</h6></div>','<div class="table-two-texts"><h5>بقالة</h5><h6> خضراوات </h6></div>' , '<h5 class="textt-green">45 ريال</h5>' , '<h5><strong>5</strong></h5>']);
+                            - i++
+                    .row.justify-content-center 
+                        .col-lg-8
+                            +table( {filters:false , fields , items , headTitle: 'جميع الطلبات' , isInner: false , isDataTable:false })
+                    .row.justify-content-center 
+                        .col-lg-10                         
+                            .load-more-sec.mb-5.d-flex.justify-content-between 
+                                p ﺗﻢ ﺗﻘﺪﻳﻢ ﻋﺮض ﺑﺎﻟﻔﻌﻞ ﻟﻬﺬه اﻟﺼﻔﻘﺔ
+                                a.textt-orange رؤية العرض
+
+
+                #mapModal.modal.fade(tabindex='-1' aria-labelledby='mapModalLabel' aria-hidden='true')
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h5#mapModalLabel.modal-title
+                                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                            .modal-body.p-0
+                                iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7455039.775340255!2d40.580571945242326!3d24.16625624451223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e7b33fe7952a41%3A0x5960504bc21ab69b!2sSaudi%20Arabia!5e0!3m2!1sen!2s!4v1638267085857!5m2!1sen!2s' width='100%' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+

@@ -1,0 +1,32 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    | جميع الطلبات
+block content 
+    +pageHead('التصنيفات <span>( 555 )</span>' , {url:'#' , title:'إضافة تصنيف'})
+   
+    - var buttons = [{class:'btnn-red' , name:'حذف جميع التصنيفات'} ]
+    - var fields = ['الإسم' , 'تاريخ الإنشاء' , 'تاريخ الطلب' , 'القسم الرئيسي', 'حالة التصنيف' , 'الإجراءات']
+    - var actions = {isSwitch:true, html: ['switch']} 
+    - var items = []
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'غير مفعل']);
+    - items.push([ '#6461313', '<h5>خضراوات</h5>','<div class="table-two-texts"><h5>12 سبمتمر 2021</h5><h6>4:30 مساءً</h6></div>','<h5>بقالة</h5>' , 'قيد المراجعة']);
+    +table( {filters:false , buttons , fields , items , headTitle: 'التصنيفات' , isInner: true , isDataTable:true , actions })
+

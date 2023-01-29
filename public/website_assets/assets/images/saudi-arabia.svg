@@ -1,0 +1,16 @@
+<svg id="saudi-arabia_14_1" data-name="saudi-arabia (14) 1" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-2{fill:#f0f0f0}
+        </style>
+    </defs>
+    <path id="Vector" d="M36 18A18 18 0 1 1 18 0a18 18 0 0 1 18 18z" style="fill:#6da544"/>
+    <g id="Group">
+        <path id="Vector-2" data-name="Vector" class="cls-2" d="M0 0a2.348 2.348 0 0 0 2.348 2.348h7.043A1.957 1.957 0 0 0 11.348 4.3H13.7a1.957 1.957 0 0 0 1.957-1.957V0z" transform="translate(10.174 21.522)"/>
+        <path id="Vector-3" data-name="Vector" class="cls-2" d="M1.565 0v5.478A1.567 1.567 0 0 1 0 7.043v2.348a3.917 3.917 0 0 0 3.913-3.913V0z" transform="translate(24.457 10.174)"/>
+        <path id="Vector-4" data-name="Vector" class="cls-2" d="M1.565 5.478A1.567 1.567 0 0 1 0 7.043v2.348a3.917 3.917 0 0 0 3.913-3.913V0H1.565z" transform="translate(7.63 10.175)"/>
+        <path id="Vector-5" data-name="Vector" class="cls-2" d="M0 0h2.348v5.478H0z" transform="translate(22.5 10.174)"/>
+        <path id="Vector-6" data-name="Vector" class="cls-2" d="M6.261 3.13a.391.391 0 1 1-.783 0V0H3.13v3.13a.391.391 0 1 1-.783 0V0H0v3.13a2.737 2.737 0 0 0 4.3 2.246 2.716 2.716 0 0 0 1.911.471 1.567 1.567 0 0 1-1.52 1.2v2.344a3.917 3.917 0 0 0 3.918-3.913V0H6.261v3.13z" transform="translate(12.717 10.174)"/>
+        <path id="Vector-7" data-name="Vector" class="cls-2" d="M0 0h3.522v2.348H0z" transform="translate(12.717 17.217)"/>
+    </g>
+</svg>

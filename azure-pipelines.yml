@@ -1,0 +1,44 @@
+# Push latest commits on staging server after push event
+# on the main branch
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: DownloadSecureFile@1
+  name: sshKey
+  displayName: 'Download SSH Key'
+  inputs:
+    secureFile: 'id_rsa'
+
+- script: |
+    echo Installing $(sshKey.secureFilePath) to the trusted CA directory...
+    sudo chown root:root $(sshKey.secureFilePath)
+    sudo chmod a+r $(sshKey.secureFilePath)
+    mkdir -p ~/.ssh/
+    sudo ln -s -t ~/.ssh $(sshKey.secureFilePath)
+  displayName: Create SSH Key
+
+- script: |
+    cat >>~/.ssh/config <<END
+    Host staging
+      HostName 38.242.249.129
+      User root
+      StrictHostKeyChecking no
+    END
+  displayName: Configure SSH
+
+- script: ssh staging -tt "cd /home/subolaaystest/public_html/ && git fetch && git pull"
+  displayName: Check out the source
+
+- script:  ssh staging -tt "php -version"
+  displayName: 'Current PHP version'
+
+- script:  ssh staging -tt "cd /home/subolaaystest/public_html/ && composer update --no-interaction --prefer-dist"
+  displayName: Install dependencys
+
+- script: ssh staging -tt "cd /home/subolaaystest/public_html/ && php artisan migrate --no-interaction"
+  displayName: Artisan Migrate

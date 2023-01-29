@@ -1,0 +1,134 @@
+extends ../layouts/dashboardLayout.pug
+block title 
+    |  المنتجات
+block content
+    ul.nav.nav-tabs.d-none
+        li.nav-item(role='presentation')
+            button#step-1-details-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#step-1-details' type='button' role='tab' aria-controls='step-1-details' aria-selected='true') Home
+        li.nav-item(role='presentation')
+            button#step-2-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-2-details' type='button' role='tab' aria-controls='step-2-details' aria-selected='false') Profile
+        li.nav-item(role='presentation')
+            button#step-3-details-tab.nav-link(data-bs-toggle='tab' data-bs-target='#step-3-details' type='button' role='tab' aria-controls='step-3-details' aria-selected='false') Messages
+
+    .add-product 
+        .add-product-head 
+            h1 إضافة منتج جديد
+            +customProgress({step: 1 , textOne: 'وصف المنتج' , textTwo:'مواصفات المنتج' , textThree:'سعر المنتج'})
+        form
+            .tab-content
+                #step-1-details.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='step-1-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 صور المنتج 
+                            p يمكنك إضافة صور بحد أقصى 4 صور للمنتج 
+                                span.textt-red.mr-2 مقاس 1080*1080
+                        .row.row-cols-1.mb-5.row-cols-sm-2.row-cols-md-4 
+                            .col 
+                                +upload_image_1({isMainImage:true})
+                            .col 
+                                +upload_image_1({isMainImage:true})
+                            .col 
+                                +upload_image_1({isMainImage:true})
+                            .col 
+                                +upload_image_1({isMainImage:true})
+                        .add-product-title
+                            h2 وصف المنتج
+                        .row.row-cols-1.row-cols-md-2 
+                            .col 
+                                +select({label:'القسم الرئيسي' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+                                a(href="" class="text-danger text-decoration-none mb-4 d-block" style="margin-top:-15px") تصنيف غير موجود (إضافة تصنيف جديد)
+                            .col 
+                                +select({label:'القسم الفرعي' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']}) 
+                            .col 
+                                +input_number({label:'الكمية المتاحة' }) 
+                            .col 
+                                +input({label:'SKU'  , placeholder:'إكتب الإسم'})
+
+
+                        +input({label:'ما هي الحد الأدنى من الكمية للإشعار' })
+                        +input_languages({ar: {label:'الإسم' , placeholder:'أكتب الإسم'}})
+                        +input_languages({ar: {label:'وصف المنتج' , valueText:'كم'}}, {})
+
+                    .add-product-footer
+                        +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-2' })
+                        +Button({color:'red' , name:'إلغاء ' })
+                #step-2-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-2-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 مواصفات المنتج
+                            p هي مواصفات تسهل على المستخدم إتخاذ قرار الشراء مثل الحجم - الوزن - اللون
+                        #repeater
+                            #structure(style="display:none") 
+                                .row.row-cols-1.row-cols-md-2.align-items-end
+                                    .col 
+                                        +select({label:'إختر الصفة' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+                                    .col 
+                                        +input_languages({ar: {label:'أكتب الوزن' , placeholder:'أكتب الإسم'}})
+                            #containerElement
+                            a.load-more-sec#createElement 
+                                p أضف المزيد من المواصفات
+                        //- a.load-more-sec 
+                        //-     p أضف المزيد من المواصفات
+                    .add-product-footer
+                        +Button({color:'orange' , name:'التالي ' , class:'ml-2 go-to-step-3' })
+                        +Button({color:'red' , name:'إلغاء ' })      
+                #step-3-details.tab-pane.fade(role='tabpanel' aria-labelledby='step-3-details-tab') 
+                    .add-product-body
+                        .add-product-title 
+                            h2 سعر المنتج
+                            p ضع سعراً مناسباً لسلعتك
+                        .row.row-cols-1.row-cols-md-2.align-items-start 
+                            .col 
+                                +input({label:'سعر التكلفة' , valueText:'دينار'})
+                                .d-flex.justify-content-between(style="margin-top:-10px") 
+                                    .form-group
+                                        label(for="flexCheck") هل السعر خاضع للضريبة 
+                                    .form-check
+                                        input#flexCheck.form-check-input.size-sm(type='checkbox' value='')
+                                        label.form-check-label(for='flexCheck')
+
+                            .col 
+                                +input({label:'نسبة الخصم' , valueText:'%'})
+                            .col 
+                        +input({label:'السعر بعد الخصم' , valueText:'دينار'})
+                        +input({label:'الحد الأدنى للطلب' , valueText:'دينار'})
+                        .d-flex.justify-content-between(style="margin-top:-10px") 
+                            .form-group
+                                label(for="switch5")  السعر  الذكي كل ما زادت الكمية قل السعر 
+                            .form-check.form-switch.form-switch-md
+                                input.form-check-input(type='checkbox' id="switch" + 5 role='switch')
+                                label.form-check-label(for="switch" + 5)
+                        .add-more-sec
+                            .row.input_fields_wrap 
+                                .col-lg-6  
+                                    .form-group
+                                        label(for="")  الكمية
+                                        .d-flex.justify-content-between.flex-wrap
+                                            .d-flex.align-items-center.mb-2
+                                                label(style="min-width:70px")  من
+                                                input(type="text" class="form-control")
+                                            .d-flex.align-items-center.mb-2
+                                                label(style="min-width:70px")  إلى
+                                                input(type="text" class="form-control")
+
+                                .col-lg-6  
+                                    +input({label:'السعر' , valueText:'دينار'})
+                            .row
+                                .col-12 
+                                    +Button({color:'orange' , name:'إضافة بند آخر' , class:"add_field_button"}) 
+
+
+                        .d-flex.justify-content-between.mt-5
+                            .add-product-title 
+                                h2  عرض المنتج
+                                p   هل تريد عرض المنتج في الزونات 
+                            .form-check.form-switch.form-switch-md
+                                input.form-check-input(type='checkbox' id="switch" + 6 role='switch')
+                                label.form-check-label(for="switch" + 6)
+
+                        +select({label:' ' , options:['إختر' , 'إختر' , 'إختر' , 'إختر']})
+                        +multiSelect({id:'zoneOptions' , label:'  إختر زون من الزونات المتاحة' , options:'[{"label": "New York","value": "NY"},{"label": "Washington","value": "WA"},{"label": "California","value": "CA"},{"label": "New Jersey","value": "NJ"},{"label": "North Carolina","value": "NC"}]'})
+
+                    .add-product-footer
+                        +Button({color:'orange' , name:'إضافة ' , class:'ml-2' , type:'submit' })
+                        +Button({color:'red' , name:'إلغاء ' })
