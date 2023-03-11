@@ -73,7 +73,7 @@
                                 <use href="{{asset('website_assets/')}}/assets/images/icons/icons.svg#phone"></use>
                             </svg><span>رقم الجوال</span>
                             <input class="phone_number" type="text" id="phone" name="mobile" value="{{\Auth::guard('buyer')->user()->mobile}}">
-                            <input type="hidden" id="fullNumber">
+                            <input type="hidden" id="fullNumber" name="fullNumber">
                         </div>
                         <div class="input-text-icon-box form-group">
                             <svg>

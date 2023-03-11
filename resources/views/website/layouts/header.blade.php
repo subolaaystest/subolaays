@@ -36,7 +36,7 @@
                             <svg>
                                 <use href="{{asset('website_assets/assets/images/icons/icons.svg#heart')}}"></use>
                             </svg>
-                            <p> <span>{{ auth()->guard('buyer')->user()->favorites?->count()}}</span></p>
+                            <p> <span class="favorites-count">{{ auth()->guard('buyer')->user()->favorites?->count()}}</span></p>
                         </a>
                     @endauth
                 </li>

@@ -13,7 +13,7 @@ class ProfileController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     private $buyerService;
@@ -25,13 +25,18 @@ class ProfileController extends Controller
 
     public function profileForm()
     {
+
         return view('website.buyer.profile')->with([
             'buyer_categories' => $this->buyerService->getBuyerCategory()
         ]);
     }
 
-    public function profile(ProfileRequest $request , Buyer $buyer){
-        $this->buyerService->createOrUpdateBuyer($request->validated(),$buyer->id);
-        return redirect()->back()->with('success','profile updated successfully');
+    public function profile(ProfileRequest $request, Buyer $buyer)
+    {
+        $data = $request->validated();
+        $data['mobile'] = $data['fullNumber'];
+
+        $this->buyerService->createOrUpdateBuyer($data, $buyer->id);
+        return redirect()->back()->with('success', 'profile updated successfully');
     }
 }

@@ -25,9 +25,10 @@ class CartController extends Controller
      */
     public function store(CartRequest $request)
     {
+
         $product = Product::whereId($request->input('product_id'))->first();
 
-        if (!$product || !$product->name || $product->quantity_available == 0) {
+        if (!$product ||   $product->quantity_available == 0) {
             return response()->json([
                 'success' => false,
                 'message' => trans('website.not_found'),
@@ -46,7 +47,7 @@ class CartController extends Controller
             Cart::session(Session::getId())->update($product->id, ['quantity' => 1]);
         } else {
             $cart
-                ->add("$product->id", $product->name, $product->price, $request->input('quantity', 1), [
+                ->add("$product->id", $product->name ?? '-', $product->price, $request->input('quantity', 1), [
                     'image' => $product->main_image,
                     'seller_id' => $product->seller_id,
                     'quantity_available' => $product->quantity_available,
@@ -58,7 +59,7 @@ class CartController extends Controller
             'success' => true,
             'quantity' => $cart->getContent()->count(),
             'message' => trans('website.added_to_cart_successfully', [
-                'product' => $product->name,
+                'product' => $product->name ?? '',
                 'quantity' => $detailsCart->quantity ?? 1,
             ]),
         ]);

@@ -14,6 +14,9 @@ return [
     'the_coupon_code_is_currently_not_available' => 'كود الكوبون غير متاح حاليا',
     'the_product_has_been_successfully_deleted' => 'تم حذف المنتج بنجاح',
 
+    'added_to_favorite_successfully' => 'تمت الإضافة إلى المفضلة بنجاح',
+    'deleted_from_favorite_successfully' => 'تم الحذف من المفضلة بنجاح',
+
     'home' => 'الرئيسية',
     'ok' => 'تم العملية بنجاح',
     'wrongEmail' => 'البريد الالكتروني غير صحيح',

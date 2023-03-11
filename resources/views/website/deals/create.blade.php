@@ -602,6 +602,7 @@
                         var el = $(document).find('[name="' + i + '"]');
                     }
                     el.parents('.form-group').append($('<span class="error">' + error[0] + '</span>'));
+                    toastr.error(error[0])
                 });
             }
         }

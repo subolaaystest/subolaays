@@ -288,4 +288,7 @@ return [
     'the_discount_code_has_been_activated_successfully' => 'The discount code has been activated successfully',
     'the_coupon_code_is_currently_not_available' => 'The coupon code is currently not available',
     'the_product_has_been_successfully_deleted' => 'The product has been successfully deleted',
+
+    'added_to_favorite_successfully' => 'Added to favorite successfully',
+    'deleted_to_favorite_successfully' => 'Deleted to favorite successfully',
 ];
